@@ -1,0 +1,2433 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>数据挖掘01-为什么进行数据挖掘 | 令狐冲</title>
+  <meta name="keywords" content=" 数据体系 ">
+  <meta name="description" content="数据挖掘01-为什么进行数据挖掘 | 令狐冲">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="“古人之观于天地、山川、草木、虫鱼、鸟兽，往往有得，以其求思之深而无不在也。夫夷以近，则游者众；险以远，则至者少。而世之奇伟、瑰怪，非常之观，常在于险远，而人之所罕至焉，故非有志者不能至也。有志矣，不随以止也，然力不足者，亦不能至也。有志与力，而又不随以怠，至于幽暗昏惑而无物以相之，亦不能至也。然力足以至焉，于人为可讥，而在己为有悔；尽吾志也而不能至者，可以无悔矣，其孰能讥之乎？” —— 《游">
+<meta property="og:type" content="website">
+<meta property="og:title" content="关于我">
+<meta property="og:url" content="https://walterhost.github.io/about/index.html">
+<meta property="og:site_name" content="令狐冲">
+<meta property="og:description" content="“古人之观于天地、山川、草木、虫鱼、鸟兽，往往有得，以其求思之深而无不在也。夫夷以近，则游者众；险以远，则至者少。而世之奇伟、瑰怪，非常之观，常在于险远，而人之所罕至焉，故非有志者不能至也。有志矣，不随以止也，然力不足者，亦不能至也。有志与力，而又不随以怠，至于幽暗昏惑而无物以相之，亦不能至也。然力足以至焉，于人为可讥，而在己为有悔；尽吾志也而不能至者，可以无悔矣，其孰能讥之乎？” —— 《游">
+<meta property="og:image" content="http://zhwhong.ml/images/about_img.png">
+<meta property="og:updated_time" content="2018-04-01T10:52:23.901Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="关于我">
+<meta name="twitter:description" content="“古人之观于天地、山川、草木、虫鱼、鸟兽，往往有得，以其求思之深而无不在也。夫夷以近，则游者众；险以远，则至者少。而世之奇伟、瑰怪，非常之观，常在于险远，而人之所罕至焉，故非有志者不能至也。有志矣，不随以止也，然力不足者，亦不能至也。有志与力，而又不随以怠，至于幽暗昏惑而无物以相之，亦不能至也。然力足以至焉，于人为可讥，而在己为有悔；尽吾志也而不能至者，可以无悔矣，其孰能讥之乎？” —— 《游">
+<meta name="twitter:image" content="http://zhwhong.ml/images/about_img.png">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link rel="stylesheet" href="/css/style.css">
+
+<link rel="stylesheet" href="/css/hl_theme/sublime.css">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/photoswipe/4.1.2/photoswipe.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/photoswipe/4.1.2/default-skin/default-skin.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="" ></script>
+
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+</div>
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>令狐冲</span>
+</div>
+
+<div class="icon">
+    
+    <a class="rss" title="rss" href="/atom.xml" target="_blank"></a>
+    
+    
+    <a class="github" title="github" href="https://github.com/walterhost" target="_blank"></a>
+    
+    
+    
+    
+    
+    
+    
+    <a class="weibo" title="weibo" href="http://weibo.com/u/2104012700" target="_blank"></a>
+    
+    
+    <a class="email" title="email" href="mailto:walterhost@qq.com"></a>
+    
+</div>
+
+
+
+<a class="more-menus">更多菜单</a>
+
+<ul>
+    <li class="all active">全部</li>
+    
+    <li data-rel="个人"> 个人 </li>
+    
+    <li data-rel="产品"> 产品 </li>
+    
+    <li data-rel="哲学"> 哲学 </li>
+    
+    <li data-rel="工具"> 工具 </li>
+    
+    <li data-rel="商业"> 商业 </li>
+    
+    <li data-rel="思维"> 思维 </li>
+    
+    <li data-rel="心理"> 心理 </li>
+    
+    <li data-rel="技术"> 技术 </li>
+    
+    <li data-rel="数据"> 数据 </li>
+    
+    <li data-rel="理财"> 理财 </li>
+    
+    <li data-rel="管理"> 管理 </li>
+    
+    <li data-rel="读书"> 读书 </li>
+    
+    <li data-rel="育儿"> 育儿 </li>
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    <a class="dynamic-menu " target="_self"   href="https://walterhost.github.io/">令狐冲</a>
+    
+    
+    <a class="dynamic-menu " target="_blank"  href="https://github.com/walterhost">github</a>
+    
+    </div>
+    <div><a style="border-right: 1px solid #fff; width: 49%"  class="about site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="175">
+<input type="hidden" id="yelog_site_word_count" value="350.4k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="https://walterhost.github.io/">令狐冲</a></li>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+            <li><a target="_blank" href="http://www.gitnavi.com/">GitNav</a></li>
+            
+            <li><a target="_blank" href="http://youmeek.com">YouMeek</a></li>
+            
+            <li><a target="_blank" href="http://vinnyxiong.cn/">熊远文</a></li>
+            
+            <li><a target="_blank" href="https://post.zz173.com/">青枫浦</a></li>
+            
+            <li><a target="_blank" href="http://zhwhong.ml/">zhwhong</a></li>
+            
+            <li><a target="_blank" href="http://keeganlee.me/archive">Keegan小钢</a></li>
+            
+            <li><a target="_blank" href="http://lucida.me/">璟鸿</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode==13){return false;}">
+        <input class="search" type="text" placeholder="Search..." autocomplete="off"id="local-search-input" >
+        <i class="cross"></i>
+        <span>
+        <label for="tagswitch" style="color: #757575;">Tags:</label>
+        <input id="tagswitch" type="checkbox">
+    </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">BookNote</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">成长体系</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">产品体系</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">职场方法论</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">技术体系</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">三观体系</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">哲学</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">哲学体系</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">插件体系</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">工具体系</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">工具管理</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">商业体系</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">心理学</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">方法论</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">思维</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">思维体系</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">数据体系</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">资产体系</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">开源技术</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">技术</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">hexo</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">Hexo</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">Java线程</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">资源管理</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">shell</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">企业管理</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">育儿</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">文学</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class="个人 "
+           href="/2018/04/01/个人/为什么要写博客/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="为什么要写博客">为什么要写博客</span>
+            <span class="post-date" title="2018-04-01 18:52:23">2018/04/01</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/04/01/思维模型-结构化知识/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-结构化知识">思维模型-结构化知识</span>
+            <span class="post-date" title="2018-04-01 17:39:14">2018/04/01</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/03/28/我别无选择/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="我别无选择">我别无选择</span>
+            <span class="post-date" title="2018-03-28 22:46:41">2018/03/28</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/03/28/IDEA注册/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="IDEA注册">IDEA注册</span>
+            <span class="post-date" title="2018-03-28 11:33:23">2018/03/28</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/03/23/得到-汤君健-有效提升你的职场说服力/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="得到-汤君健-有效提升你的职场说服力">得到-汤君健-有效提升你的职场说服力</span>
+            <span class="post-date" title="2018-03-23 19:25:04">2018/03/23</span>
+        </a>
+        
+        <a  class=""
+           href="/2018/03/12/吴辉-大学前致女儿的一封信/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="吴辉-大学前致女儿的一封信">吴辉-大学前致女儿的一封信</span>
+            <span class="post-date" title="2018-03-12 12:49:32">2018/03/12</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/03/07/技术/Diamond-开发接口/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="Diamond-开发接口">Diamond-开发接口</span>
+            <span class="post-date" title="2018-03-07 19:27:19">2018/03/07</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/03/07/技术/Diamond-快速接入/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="Diamond-快速接入">Diamond-快速接入</span>
+            <span class="post-date" title="2018-03-07 19:25:14">2018/03/07</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/03/07/技术/Diamond-配置中心数据发布命名规范/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="Diamond-配置中心数据发布命名规范">Diamond-配置中心数据发布命名规范</span>
+            <span class="post-date" title="2018-03-07 19:24:13">2018/03/07</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/03/07/技术/Diamond-核心功能和用例/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="Diamond-核心功能和用例">Diamond-核心功能和用例</span>
+            <span class="post-date" title="2018-03-07 19:21:50">2018/03/07</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/03/07/技术/Diamond-使用约束/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="Diamond-使用约束">Diamond-使用约束</span>
+            <span class="post-date" title="2018-03-07 19:20:33">2018/03/07</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/03/07/技术/Diamond-数据获取模型/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="Diamond-数据获取模型">Diamond-数据获取模型</span>
+            <span class="post-date" title="2018-03-07 19:18:50">2018/03/07</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/03/07/技术/Diamond-容灾机制/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="Diamond-容灾机制">Diamond-容灾机制</span>
+            <span class="post-date" title="2018-03-07 19:16:56">2018/03/07</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/03/06/技术/Diamond基本实现-简介/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="Diamond基本实现-简介">Diamond基本实现-简介</span>
+            <span class="post-date" title="2018-03-06 17:10:27">2018/03/06</span>
+        </a>
+        
+        <a  class="读书 "
+           href="/2018/03/05/读书/读书-坚毅grit-释放激情与坚持的力量/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="读书-坚毅grit-释放激情与坚持的力量">读书-坚毅grit-释放激情与坚持的力量</span>
+            <span class="post-date" title="2018-03-05 17:17:31">2018/03/05</span>
+        </a>
+        
+        <a  class="读书 "
+           href="/2018/03/05/读书/读书-A-TOUR-OF-CPP-学习使用技术的四种层次/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="读书-A-TOUR-OF-CPP-学习使用技术的四种层次">读书-A-TOUR-OF-CPP-学习使用技术的四种层次</span>
+            <span class="post-date" title="2018-03-05 17:12:03">2018/03/05</span>
+        </a>
+        
+        <a  class="读书 "
+           href="/2018/03/05/读书/读书-活法-可能性即未来的能力/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="读书-活法-可能性即未来的能力">读书-活法-可能性即未来的能力</span>
+            <span class="post-date" title="2018-03-05 15:36:28">2018/03/05</span>
+        </a>
+        
+        <a  class="读书 "
+           href="/2018/03/05/读书/读书-干法-稻盛和夫/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="读书-干法-稻盛和夫">读书-干法-稻盛和夫</span>
+            <span class="post-date" title="2018-03-05 15:03:35">2018/03/05</span>
+        </a>
+        
+        <a  class="读书 "
+           href="/2018/03/05/读书/读书-浪潮之巅-永远不可高枕无忧/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="读书-浪潮之巅-永远不可高枕无忧">读书-浪潮之巅-永远不可高枕无忧</span>
+            <span class="post-date" title="2018-03-05 13:23:52">2018/03/05</span>
+        </a>
+        
+        <a  class="读书 "
+           href="/2018/03/05/读书/读书-少有人走的路-走向心智成熟之路/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="读书-少有人走的路-走向心智成熟之路">读书-少有人走的路-走向心智成熟之路</span>
+            <span class="post-date" title="2018-03-05 12:46:06">2018/03/05</span>
+        </a>
+        
+        <a  class="读书 "
+           href="/2018/03/05/读书/读书-思考的技术-分析假设证明结论/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="读书-思考的技术-分析假设证明结论">读书-思考的技术-分析假设证明结论</span>
+            <span class="post-date" title="2018-03-05 12:42:47">2018/03/05</span>
+        </a>
+        
+        <a  class="读书 "
+           href="/2018/03/03/读书/读书-思考的技术-培养具有竞争力的思维方式/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="读书-思考的技术-培养具有竞争力的思维方式">读书-思考的技术-培养具有竞争力的思维方式</span>
+            <span class="post-date" title="2018-03-03 12:14:00">2018/03/03</span>
+        </a>
+        
+        <a  class="读书 "
+           href="/2018/03/03/读书/读书-我看电商-成本效益看电商行业发展/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="读书-我看电商-成本效益看电商行业发展">读书-我看电商-成本效益看电商行业发展</span>
+            <span class="post-date" title="2018-03-03 08:56:38">2018/03/03</span>
+        </a>
+        
+        <a  class="读书 "
+           href="/2018/03/03/读书/读书-痛点挖掘小数据满足用户需求-7C/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="读书-痛点挖掘小数据满足用户需求-7C">读书-痛点挖掘小数据满足用户需求-7C</span>
+            <span class="post-date" title="2018-03-03 08:07:35">2018/03/03</span>
+        </a>
+        
+        <a  class="读书 "
+           href="/2018/03/03/读书/读书-说服力-通过逻辑化和视觉化做好PPT/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="读书-说服力-通过逻辑化和视觉化做好PPT">读书-说服力-通过逻辑化和视觉化做好PPT</span>
+            <span class="post-date" title="2018-03-03 07:34:03">2018/03/03</span>
+        </a>
+        
+        <a  class="读书 "
+           href="/2018/03/03/读书/读书-学会学习-与其做学习方法的搬运工不如做解剖者/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="读书-学会学习-与其做学习方法的搬运工不如做解剖者">读书-学会学习-与其做学习方法的搬运工不如做解剖者</span>
+            <span class="post-date" title="2018-03-03 01:06:54">2018/03/03</span>
+        </a>
+        
+        <a  class="读书 "
+           href="/2018/03/03/读书/读书-好好学习-植入临界知识的芯片/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="读书-好好学习-植入临界知识的芯片">读书-好好学习-植入临界知识的芯片</span>
+            <span class="post-date" title="2018-03-03 01:02:45">2018/03/03</span>
+        </a>
+        
+        <a  class="读书 "
+           href="/2018/03/02/读书/读书-好好学习-解决低水平勤奋二/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="读书-好好学习-解决低水平勤奋二">读书-好好学习-解决低水平勤奋二</span>
+            <span class="post-date" title="2018-03-02 15:41:27">2018/03/02</span>
+        </a>
+        
+        <a  class="读书 "
+           href="/2018/03/02/读书/读书-好好学习-解决低水平勤奋一/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="读书-好好学习-解决低水平勤奋一">读书-好好学习-解决低水平勤奋一</span>
+            <span class="post-date" title="2018-03-02 11:30:46">2018/03/02</span>
+        </a>
+        
+        <a  class="读书 "
+           href="/2018/03/01/读书/读书-把时间当作朋友-其实要管理的不是时间而是自己/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="读书-把时间当作朋友-其实要管理的不是时间而是自己">读书-把时间当作朋友-其实要管理的不是时间而是自己</span>
+            <span class="post-date" title="2018-03-01 19:55:47">2018/03/01</span>
+        </a>
+        
+        <a  class="读书 "
+           href="/2018/03/01/读书/读书-自来水哲学-把大众需要的东西变得像自来水一样便宜/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="读书-自来水哲学-把大众需要的东西变得像自来水一样便宜">读书-自来水哲学-把大众需要的东西变得像自来水一样便宜</span>
+            <span class="post-date" title="2018-03-01 17:32:30">2018/03/01</span>
+        </a>
+        
+        <a  class="读书 "
+           href="/2018/03/01/读书/读书-思维改变生活-观念和行为能够相互影响/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="读书-思维改变生活-观念和行为能够相互影响">读书-思维改变生活-观念和行为能够相互影响</span>
+            <span class="post-date" title="2018-03-01 17:30:28">2018/03/01</span>
+        </a>
+        
+        <a  class="读书 "
+           href="/2018/03/01/读书/读书-暗时间-通过推理深入理解事物/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="读书-暗时间-通过推理深入理解事物">读书-暗时间-通过推理深入理解事物</span>
+            <span class="post-date" title="2018-03-01 17:16:53">2018/03/01</span>
+        </a>
+        
+        <a  class="读书 "
+           href="/2018/03/01/读书/读书-人类简史-从动物到上帝-回应问题/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="读书-人类简史-从动物到上帝-回应问题">读书-人类简史-从动物到上帝-回应问题</span>
+            <span class="post-date" title="2018-03-01 15:17:59">2018/03/01</span>
+        </a>
+        
+        <a  class="读书 "
+           href="/2018/03/01/读书/读书-人类简史-读书笔记/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="读书-人类简史-读书笔记">读书-人类简史-读书笔记</span>
+            <span class="post-date" title="2018-03-01 13:49:18">2018/03/01</span>
+        </a>
+        
+        <a  class="管理 "
+           href="/2018/03/01/管理/课程-组织行为学-重点/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="课程-组织行为学-重点">课程-组织行为学-重点</span>
+            <span class="post-date" title="2018-03-01 07:26:38">2018/03/01</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/02/28/技术/JAVA线程-新特征-闭锁CountDownLatch与栅栏CyclicBarrier/"
+           data-tag="Java线程"
+           data-author="" >
+            <span class="post-title" title="JAVA线程-新特征-闭锁CountDownLatch与栅栏CyclicBarrier">JAVA线程-新特征-闭锁CountDownLatch与栅栏CyclicBarrier</span>
+            <span class="post-date" title="2018-02-28 15:10:33">2018/02/28</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/02/28/技术/JAVA线程-新特征-障碍器/"
+           data-tag="Java线程"
+           data-author="" >
+            <span class="post-title" title="JAVA线程-新特征-障碍器">JAVA线程-新特征-障碍器</span>
+            <span class="post-date" title="2018-02-28 15:07:29">2018/02/28</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/02/28/技术/JAVA线程-新特征-原子量/"
+           data-tag="Java线程"
+           data-author="" >
+            <span class="post-title" title="JAVA线程-新特征-原子量">JAVA线程-新特征-原子量</span>
+            <span class="post-date" title="2018-02-28 14:58:50">2018/02/28</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/02/28/技术/JAVA线程-新特征-条件变量/"
+           data-tag="Java线程"
+           data-author="" >
+            <span class="post-title" title="JAVA线程-新特征-条件变量">JAVA线程-新特征-条件变量</span>
+            <span class="post-date" title="2018-02-28 14:55:12">2018/02/28</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/02/28/技术/JAVA线程-新特征-阻塞栈/"
+           data-tag="Java线程"
+           data-author="" >
+            <span class="post-title" title="JAVA线程-新特征-阻塞栈">JAVA线程-新特征-阻塞栈</span>
+            <span class="post-date" title="2018-02-28 14:52:38">2018/02/28</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/02/28/技术/JAVA线程-新特征-阻塞队列/"
+           data-tag="Java线程"
+           data-author="" >
+            <span class="post-title" title="JAVA线程-新特征-阻塞队列">JAVA线程-新特征-阻塞队列</span>
+            <span class="post-date" title="2018-02-28 14:24:03">2018/02/28</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/02/28/技术/Java线程-新特征-信号量/"
+           data-tag="Java线程"
+           data-author="" >
+            <span class="post-title" title="Java线程-新特征-信号量">Java线程-新特征-信号量</span>
+            <span class="post-date" title="2018-02-28 14:20:07">2018/02/28</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/02/28/技术/JAVA线程-新特征-锁-下/"
+           data-tag="Java线程"
+           data-author="" >
+            <span class="post-title" title="JAVA线程-新特征-锁-下">JAVA线程-新特征-锁-下</span>
+            <span class="post-date" title="2018-02-28 14:18:26">2018/02/28</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/02/28/技术/JAVA线程-新特征-锁-上/"
+           data-tag="Java线程"
+           data-author="" >
+            <span class="post-title" title="JAVA线程-新特征-锁-上">JAVA线程-新特征-锁-上</span>
+            <span class="post-date" title="2018-02-28 14:17:05">2018/02/28</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/02/28/技术/JAVA线程-新特征-有返回值的线程/"
+           data-tag="Java线程"
+           data-author="" >
+            <span class="post-title" title="JAVA线程-新特征-有返回值的线程">JAVA线程-新特征-有返回值的线程</span>
+            <span class="post-date" title="2018-02-28 14:15:15">2018/02/28</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/02/28/技术/JAVA线程-新特征-线程池/"
+           data-tag="Java线程"
+           data-author="" >
+            <span class="post-title" title="JAVA线程-新特征-线程池">JAVA线程-新特征-线程池</span>
+            <span class="post-date" title="2018-02-28 14:12:24">2018/02/28</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/02/28/技术/JAVA线程-并发协作-死锁/"
+           data-tag="Java线程"
+           data-author="" >
+            <span class="post-title" title="JAVA线程-并发协作-死锁">JAVA线程-并发协作-死锁</span>
+            <span class="post-date" title="2018-02-28 13:06:17">2018/02/28</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/02/28/技术/JAVA线程-并发协作-生产者消费者模型/"
+           data-tag="Java线程"
+           data-author="" >
+            <span class="post-title" title="JAVA线程-并发协作-生产者消费者模型">JAVA线程-并发协作-生产者消费者模型</span>
+            <span class="post-date" title="2018-02-28 12:26:33">2018/02/28</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/02/28/技术/JAVA线程-线程的同步-同步块/"
+           data-tag="Java线程"
+           data-author="" >
+            <span class="post-title" title="JAVA线程-线程的同步-同步块">JAVA线程-线程的同步-同步块</span>
+            <span class="post-date" title="2018-02-28 12:24:02">2018/02/28</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/02/28/技术/JAVA线程-线程的同步-同步方法/"
+           data-tag="Java线程"
+           data-author="" >
+            <span class="post-title" title="JAVA线程-线程的同步-同步方法">JAVA线程-线程的同步-同步方法</span>
+            <span class="post-date" title="2018-02-28 12:21:17">2018/02/28</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/02/28/技术/JAVA线程-线程的调度-守护线程/"
+           data-tag="Java线程"
+           data-author="" >
+            <span class="post-title" title="JAVA线程-线程的调度-守护线程">JAVA线程-线程的调度-守护线程</span>
+            <span class="post-date" title="2018-02-28 12:15:57">2018/02/28</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/02/28/技术/Java线程-线程的调度-合并/"
+           data-tag="Java线程"
+           data-author="" >
+            <span class="post-title" title="Java线程-线程的调度-合并">Java线程-线程的调度-合并</span>
+            <span class="post-date" title="2018-02-28 11:51:39">2018/02/28</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/02/28/技术/JAVA线程-线程的调度-让步/"
+           data-tag="Java线程"
+           data-author="" >
+            <span class="post-title" title="JAVA线程-线程的调度-让步">JAVA线程-线程的调度-让步</span>
+            <span class="post-date" title="2018-02-28 11:49:34">2018/02/28</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/02/28/技术/JAVA线程-线程的调度-优先级/"
+           data-tag="Java线程"
+           data-author="" >
+            <span class="post-title" title="JAVA线程-线程的调度-优先级">JAVA线程-线程的调度-优先级</span>
+            <span class="post-date" title="2018-02-28 11:45:44">2018/02/28</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/02/28/技术/JAVA线程-线程的调度-休眠/"
+           data-tag="Java线程"
+           data-author="" >
+            <span class="post-title" title="JAVA线程-线程的调度-休眠">JAVA线程-线程的调度-休眠</span>
+            <span class="post-date" title="2018-02-28 11:44:17">2018/02/28</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/02/28/技术/JAVA线程-线程的交互/"
+           data-tag="Java线程"
+           data-author="" >
+            <span class="post-title" title="JAVA线程-线程的交互">JAVA线程-线程的交互</span>
+            <span class="post-date" title="2018-02-28 11:25:48">2018/02/28</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/02/27/技术/JAVA线程-线程的同步与锁/"
+           data-tag="Java线程"
+           data-author="" >
+            <span class="post-title" title="JAVA线程-线程的同步与锁">JAVA线程-线程的同步与锁</span>
+            <span class="post-date" title="2018-02-27 11:53:38">2018/02/27</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/02/11/技术/JAVA线程-线程状态的转换四/"
+           data-tag="Java线程"
+           data-author="" >
+            <span class="post-title" title="JAVA线程-线程状态的转换四">JAVA线程-线程状态的转换四</span>
+            <span class="post-date" title="2018-02-11 16:48:17">2018/02/11</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/02/11/技术/JAVA线程-线程栈模型与线程的变量三/"
+           data-tag="Java线程"
+           data-author="" >
+            <span class="post-title" title="JAVA线程-线程栈模型与线程的变量三">JAVA线程-线程栈模型与线程的变量三</span>
+            <span class="post-date" title="2018-02-11 16:43:37">2018/02/11</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/02/11/技术/JAVA线程-创建与启动二/"
+           data-tag="Java线程"
+           data-author="" >
+            <span class="post-title" title="JAVA线程-创建与启动">JAVA线程-创建与启动</span>
+            <span class="post-date" title="2018-02-11 16:33:22">2018/02/11</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/02/11/技术/JAVA线程-概念与原理一/"
+           data-tag="Java线程"
+           data-author="" >
+            <span class="post-title" title="JAVA线程-概念与原理一">JAVA线程-概念与原理一</span>
+            <span class="post-date" title="2018-02-11 16:30:47">2018/02/11</span>
+        </a>
+        
+        <a  class="商业 "
+           href="/2018/02/11/商业/30福利经济-你支持政府给所有公民发钱吗/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="30福利经济-你支持政府给所有公民发钱吗">30福利经济-你支持政府给所有公民发钱吗</span>
+            <span class="post-date" title="2018-02-11 14:59:09">2018/02/11</span>
+        </a>
+        
+        <a  class="商业 "
+           href="/2018/02/11/商业/29泡沫经济-疯狂的郁金香/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="29泡沫经济-疯狂的郁金香">29泡沫经济-疯狂的郁金香</span>
+            <span class="post-date" title="2018-02-11 14:55:14">2018/02/11</span>
+        </a>
+        
+        <a  class="商业 "
+           href="/2018/02/11/商业/28人口减少我们能做什么/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="28人口减少我们能做什么">28人口减少我们能做什么</span>
+            <span class="post-date" title="2018-02-11 14:52:13">2018/02/11</span>
+        </a>
+        
+        <a  class="商业 "
+           href="/2018/02/11/商业/27市场调控-市场与政府的定价权/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="27市场调控-市场与政府的定价权">27市场调控-市场与政府的定价权</span>
+            <span class="post-date" title="2018-02-11 14:39:45">2018/02/11</span>
+        </a>
+        
+        <a  class="商业 "
+           href="/2018/02/11/商业/26节约悖论-居民越节约，国家越贫穷吗/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="26节约悖论-居民越节约，国家越贫穷吗">26节约悖论-居民越节约，国家越贫穷吗</span>
+            <span class="post-date" title="2018-02-11 14:34:44">2018/02/11</span>
+        </a>
+        
+        <a  class="商业 "
+           href="/2018/02/11/商业/时间是上帝创造的最有意思的东西/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="时间是上帝创造的最有意思的东西">时间是上帝创造的最有意思的东西</span>
+            <span class="post-date" title="2018-02-11 14:09:37">2018/02/11</span>
+        </a>
+        
+        <a  class="商业 "
+           href="/2018/02/11/商业/25交易成本-企业的边界在哪里/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="25交易成本-企业的边界在哪里">25交易成本-企业的边界在哪里</span>
+            <span class="post-date" title="2018-02-11 14:06:03">2018/02/11</span>
+        </a>
+        
+        <a  class="商业 "
+           href="/2018/02/11/商业/24激励相容-自私是共同获益的原动力/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="24激励相容-自私是共同获益的原动力">24激励相容-自私是共同获益的原动力</span>
+            <span class="post-date" title="2018-02-11 14:02:18">2018/02/11</span>
+        </a>
+        
+        <a  class="商业 "
+           href="/2018/02/11/商业/23机会成本-你到底是赚了还是亏了/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="23机会成本-你到底是赚了还是亏了">23机会成本-你到底是赚了还是亏了</span>
+            <span class="post-date" title="2018-02-11 13:58:48">2018/02/11</span>
+        </a>
+        
+        <a  class="商业 "
+           href="/2018/02/11/商业/22边际效应-七个同样的馒头为什么味道不一样/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="22边际效应-七个同样的馒头为什么味道不一样">22边际效应-七个同样的馒头为什么味道不一样</span>
+            <span class="post-date" title="2018-02-11 13:55:14">2018/02/11</span>
+        </a>
+        
+        <a  class="商业 "
+           href="/2018/02/11/商业/21供需理论-那双看不见的手/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="21供需理论-那双看不见的手">21供需理论-那双看不见的手</span>
+            <span class="post-date" title="2018-02-11 13:51:42">2018/02/11</span>
+        </a>
+        
+        <a  class="商业 "
+           href="/2018/02/11/商业/我对流量的分析以及看法/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="我对流量的分析以及看法">我对流量的分析以及看法</span>
+            <span class="post-date" title="2018-02-11 13:47:18">2018/02/11</span>
+        </a>
+        
+        <a  class="商业 "
+           href="/2018/02/11/商业/做人箴言/"
+           data-tag="技术体系"
+           data-author="" >
+            <span class="post-title" title="做人箴言">做人箴言</span>
+            <span class="post-date" title="2018-02-11 13:43:54">2018/02/11</span>
+        </a>
+        
+        <a  class="哲学 "
+           href="/2018/02/11/哲学/陈果我自风情万种与世无争/"
+           data-tag="技术体系"
+           data-author="" >
+            <span class="post-title" title="陈果我自风情万种与世无争">陈果我自风情万种与世无争</span>
+            <span class="post-date" title="2018-02-11 13:37:14">2018/02/11</span>
+        </a>
+        
+        <a  class="产品 "
+           href="/2018/02/05/产品/从零开始构建数据化运营体系/"
+           data-tag="技术体系"
+           data-author="" >
+            <span class="post-title" title="从零开始构建数据化运营体系">从零开始构建数据化运营体系</span>
+            <span class="post-date" title="2018-02-05 20:49:03">2018/02/05</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/01/29/技术/REST架构该怎么理解/"
+           data-tag="技术体系"
+           data-author="" >
+            <span class="post-title" title="REST架构该怎么理解">REST架构该怎么理解</span>
+            <span class="post-date" title="2018-01-29 21:04:37">2018/01/29</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/01/29/技术/APP架构设计经验谈-展示层的设计/"
+           data-tag="技术体系"
+           data-author="" >
+            <span class="post-title" title="APP架构设计经验谈:展示层的设计">APP架构设计经验谈:展示层的设计</span>
+            <span class="post-date" title="2018-01-29 20:20:00">2018/01/29</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/01/29/技术/APP架构设计经验谈-业务层的设计/"
+           data-tag="技术体系"
+           data-author="" >
+            <span class="post-title" title="APP架构设计经验谈:业务层的设计">APP架构设计经验谈:业务层的设计</span>
+            <span class="post-date" title="2018-01-29 20:18:46">2018/01/29</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/01/29/技术/APP架构设计经验谈-数据层的设计/"
+           data-tag="技术体系"
+           data-author="" >
+            <span class="post-title" title="APP架构设计经验谈:数据层的设计">APP架构设计经验谈:数据层的设计</span>
+            <span class="post-date" title="2018-01-29 20:17:32">2018/01/29</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/01/29/技术/App架构设计经验谈-技术选型/"
+           data-tag="技术体系"
+           data-author="" >
+            <span class="post-title" title="App架构设计经验谈:技术选型">App架构设计经验谈:技术选型</span>
+            <span class="post-date" title="2018-01-29 20:15:46">2018/01/29</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/01/29/技术/App架构设计经验谈:接口的设计/"
+           data-tag="技术体系"
+           data-author="" >
+            <span class="post-title" title="App架构设计经验谈:接口的设计">App架构设计经验谈:接口的设计</span>
+            <span class="post-date" title="2018-01-29 19:32:09">2018/01/29</span>
+        </a>
+        
+        <a  class="哲学 "
+           href="/2018/01/29/哲学/亘古不变的八个字/"
+           data-tag="哲学"
+           data-author="" >
+            <span class="post-title" title="亘古不变的八个字">亘古不变的八个字</span>
+            <span class="post-date" title="2018-01-29 13:02:09">2018/01/29</span>
+        </a>
+        
+        <a  class="商业 "
+           href="/2018/01/29/商业/线下O2O趋势升级/"
+           data-tag="技术体系"
+           data-author="" >
+            <span class="post-title" title="线下O2O趋势升级">线下O2O趋势升级</span>
+            <span class="post-date" title="2018-01-29 10:54:48">2018/01/29</span>
+        </a>
+        
+        <a  class="思维 "
+           href="/2018/01/27/思维/刻意训练的思维/"
+           data-tag="思维"
+           data-author="" >
+            <span class="post-title" title="刻意训练的思维">刻意训练的思维</span>
+            <span class="post-date" title="2018-01-27 20:43:12">2018/01/27</span>
+        </a>
+        
+        <a  class="思维 "
+           href="/2018/01/27/思维/核心思维模型/"
+           data-tag="思维"
+           data-author="" >
+            <span class="post-title" title="核心思维模型">核心思维模型</span>
+            <span class="post-date" title="2018-01-27 20:13:29">2018/01/27</span>
+        </a>
+        
+        <a  class="思维 "
+           href="/2018/01/25/思维/富含洞见的文章/"
+           data-tag="技术体系"
+           data-author="" >
+            <span class="post-title" title="富含洞见的文章">富含洞见的文章</span>
+            <span class="post-date" title="2018-01-25 18:35:16">2018/01/25</span>
+        </a>
+        
+        <a  class="思维 "
+           href="/2018/01/25/思维/傅盛：生物学思维给我的四个启示/"
+           data-tag="技术体系"
+           data-author="" >
+            <span class="post-title" title="傅盛：生物学思维给我的四个启示">傅盛：生物学思维给我的四个启示</span>
+            <span class="post-date" title="2018-01-25 18:31:38">2018/01/25</span>
+        </a>
+        
+        <a  class="哲学 "
+           href="/2018/01/23/哲学/在任何领域做到顶尖的人都谨记十六字/"
+           data-tag="哲学体系"
+           data-author="" >
+            <span class="post-title" title="在任何领域做到顶尖的人都谨记十六字">在任何领域做到顶尖的人都谨记十六字</span>
+            <span class="post-date" title="2018-01-23 14:06:30">2018/01/23</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/01/23/技术/27种神经网络模型简明图解/"
+           data-tag="技术体系"
+           data-author="" >
+            <span class="post-title" title="27种神经网络模型简明图解">27种神经网络模型简明图解</span>
+            <span class="post-date" title="2018-01-23 13:36:01">2018/01/23</span>
+        </a>
+        
+        <a  class="管理 "
+           href="/2018/01/19/管理/知识与岗位模型/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="知识与岗位模型">知识与岗位模型</span>
+            <span class="post-date" title="2018-01-19 14:27:30">2018/01/19</span>
+        </a>
+        
+        <a  class="工具 "
+           href="/2018/01/19/工具/Chrome插件-cVim更强大的VIM插件/"
+           data-tag="插件体系"
+           data-author="" >
+            <span class="post-title" title="chrome插件-cVim更强大的VIM插件">chrome插件-cVim更强大的VIM插件</span>
+            <span class="post-date" title="2018-01-19 11:43:15">2018/01/19</span>
+        </a>
+        
+        <a  class="工具 "
+           href="/2018/01/19/工具/Chrome插件-cVim/"
+           data-tag="插件体系"
+           data-author="" >
+            <span class="post-title" title="chrome插件-cVim">chrome插件-cVim</span>
+            <span class="post-date" title="2018-01-19 11:37:28">2018/01/19</span>
+        </a>
+        
+        <a  class="产品 "
+           href="/2018/01/17/产品/B端产品的第一性原理思考/"
+           data-tag="产品体系"
+           data-author="" >
+            <span class="post-title" title="B端产品的第一性原理思考">B端产品的第一性原理思考</span>
+            <span class="post-date" title="2018-01-17 21:45:28">2018/01/17</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/01/17/技术/架构漫谈01-什么是架构/"
+           data-tag="技术体系"
+           data-author="" >
+            <span class="post-title" title="架构漫谈01-什么是架构">架构漫谈01-什么是架构</span>
+            <span class="post-date" title="2018-01-17 15:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/01/17/技术/架构漫谈02-认识概念是理解架构的基础/"
+           data-tag="技术体系"
+           data-author="" >
+            <span class="post-title" title="架构漫谈02-认识概念是理解架构的基础">架构漫谈02-认识概念是理解架构的基础</span>
+            <span class="post-date" title="2018-01-17 15:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/01/17/技术/架构漫谈03-如何做好架构之识别问题/"
+           data-tag="技术体系"
+           data-author="" >
+            <span class="post-title" title="架构漫谈03-如何做好架构之识别问题">架构漫谈03-如何做好架构之识别问题</span>
+            <span class="post-date" title="2018-01-17 15:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/01/17/技术/架构漫谈04-如何做好架构之架构切分/"
+           data-tag="技术体系"
+           data-author="" >
+            <span class="post-title" title="架构漫谈04-如何做好架构之架构切分">架构漫谈04-如何做好架构之架构切分</span>
+            <span class="post-date" title="2018-01-17 15:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/01/17/技术/架构漫谈05-什么是软件/"
+           data-tag="技术体系"
+           data-author="" >
+            <span class="post-title" title="架构漫谈05-什么是软件">架构漫谈05-什么是软件</span>
+            <span class="post-date" title="2018-01-17 15:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/01/17/技术/架构漫谈06-软件架构到底解决什么问题/"
+           data-tag="技术体系"
+           data-author="" >
+            <span class="post-title" title="架构漫谈06-软件架构到底解决什么问题">架构漫谈06-软件架构到底解决什么问题</span>
+            <span class="post-date" title="2018-01-17 15:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/01/17/技术/架构漫谈07-不要空设架构师这个职位/"
+           data-tag="技术体系"
+           data-author="" >
+            <span class="post-title" title="架构漫谈07-不要空设架构师这个职位">架构漫谈07-不要空设架构师这个职位</span>
+            <span class="post-date" title="2018-01-17 15:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/01/17/技术/架构漫谈08-从架构的角度看如何写好代码/"
+           data-tag="技术体系"
+           data-author="" >
+            <span class="post-title" title="架构漫谈08-从架构的角度看如何写好代码">架构漫谈08-从架构的角度看如何写好代码</span>
+            <span class="post-date" title="2018-01-17 15:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="商业 "
+           href="/2018/01/17/商业/08价量之称-卖得更多还是卖得便宜/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="08价量之称-卖得更多还是卖得便宜">08价量之称-卖得更多还是卖得便宜</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/01/17/技术/2016开源中国新增开源项目排行榜TOP100/"
+           data-tag="开源技术"
+           data-author="" >
+            <span class="post-title" title="2016开源中国新增开源项目排行榜TOP100">2016开源中国新增开源项目排行榜TOP100</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="商业 "
+           href="/2018/01/17/商业/09风险之眼-风险不是你想买就能买/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="09风险之眼-风险不是你想买就能买">09风险之眼-风险不是你想买就能买</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="商业 "
+           href="/2018/01/17/商业/10规则之缝-商业世界的黑客黄牛/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="10规则之缝-商业世界的黑客黄牛">10规则之缝-商业世界的黑客黄牛</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/01/17/技术/2017开源中国新增开源项目排行榜TOP100/"
+           data-tag="开源技术"
+           data-author="" >
+            <span class="post-title" title="2017开源中国新增开源项目排行榜TOP100">2017开源中国新增开源项目排行榜TOP100</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="商业 "
+           href="/2018/01/17/商业/11信息对称-信息对称是互联网改变商业世界的底层逻辑/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="11信息对称-信息对称是互联网改变商业世界的底层逻辑">11信息对称-信息对称是互联网改变商业世界的底层逻辑</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="商业 "
+           href="/2018/01/17/商业/12边际成本-理论上你可以服务全人类/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="12边际成本-理论上你可以服务全人类">12边际成本-理论上你可以服务全人类</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="商业 "
+           href="/2018/01/17/商业/13网络效应-互联网与生俱来的洪荒之力/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="13网络效应-互联网与生俱来的洪荒之力">13网络效应-互联网与生俱来的洪荒之力</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="商业 "
+           href="/2018/01/17/商业/14长尾理论-商业的未来是小众市场/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="14长尾理论-商业的未来是小众市场">14长尾理论-商业的未来是小众市场</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="商业 "
+           href="/2018/01/17/商业/15免费理论-天下没有免费的午餐/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="15免费理论-天下没有免费的午餐">15免费理论-天下没有免费的午餐</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="商业 "
+           href="/2018/01/17/商业/16结果偏见-抓住老鼠的不一定是好猫/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="16结果偏见-抓住老鼠的不一定是好猫">16结果偏见-抓住老鼠的不一定是好猫</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="商业 "
+           href="/2018/01/17/商业/17适应性偏见-人为什么总是会喜新厌旧/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="17适应性偏见-人为什么总是会喜新厌旧">17适应性偏见-人为什么总是会喜新厌旧</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="商业 "
+           href="/2018/01/17/商业/18鸡蛋理论-为什么妈妈们喜欢在朋友圈晒娃/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="18鸡蛋理论-为什么妈妈们喜欢在朋友圈晒娃">18鸡蛋理论-为什么妈妈们喜欢在朋友圈晒娃</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="商业 "
+           href="/2018/01/17/商业/19概率偏见-验证客观概率/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="19概率偏见-验证客观概率">19概率偏见-验证客观概率</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="商业 "
+           href="/2018/01/17/商业/20凡勃能效应-不买最好只卖最贵/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="20凡勃能效应-不买最好只卖最贵">20凡勃能效应-不买最好只卖最贵</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/01/17/技术/Hexo博客个性化及NexT主题配置/"
+           data-tag="Hexo"
+           data-author="" >
+            <span class="post-title" title="Hexo博客个性化及NexT主题配置">Hexo博客个性化及NexT主题配置</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="商业 "
+           href="/2018/01/17/商业/00成为自己的CEO/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="00成为自己的CEO">00成为自己的CEO</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/01/17/技术/Gitlab及github多账户下设置sshkeys/"
+           data-tag="技术"
+           data-author="" >
+            <span class="post-title" title="gitlab及github多账户下设置sshkeys">gitlab及github多账户下设置sshkeys</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/01/17/技术/Hexo主题配置/"
+           data-tag="hexo"
+           data-author="" >
+            <span class="post-title" title="3-hexo主题总结">3-hexo主题总结</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="商业 "
+           href="/2018/01/17/商业/01心理账户-让用户从最优钱的那个心理账户花钱/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="01心理账户-让用户从最优钱的那个心理账户花钱">01心理账户-让用户从最优钱的那个心理账户花钱</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/01/17/技术/Java面试常用问题/"
+           data-tag="技术体系"
+           data-author="" >
+            <span class="post-title" title="JAVA面试常用问题">JAVA面试常用问题</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/01/17/技术/MAC自带Apache及PHP环境/"
+           data-tag="资源管理"
+           data-author="" >
+            <span class="post-title" title="MAC自带Apache及PHP环境">MAC自带Apache及PHP环境</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/01/17/技术/Mac安装卸载JAVA9安装JAVA8/"
+           data-tag="技术"
+           data-author="" >
+            <span class="post-title" title="Mac安装卸载JAVA9安装JAVA8">Mac安装卸载JAVA9安装JAVA8</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/01/17/技术/Hexo如何生成一篇新的post/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hexo如何生成一篇新的post">Hexo如何生成一篇新的post</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/01/17/技术/hexo的工作原理/"
+           data-tag="Hexo"
+           data-author="" >
+            <span class="post-title" title="Hexo的工作原理">Hexo的工作原理</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/01/17/技术/常用搜索方法/"
+           data-tag="技术体系"
+           data-author="" >
+            <span class="post-title" title="常用搜索方法">常用搜索方法</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/01/17/技术/区分架构框架模式和平台/"
+           data-tag="技术体系"
+           data-author="" >
+            <span class="post-title" title="区分架构框架模式和平台">区分架构框架模式和平台</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/01/17/技术/常用的shell命令/"
+           data-tag="shell"
+           data-author="" >
+            <span class="post-title" title="常用的shell命令">常用的shell命令</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/01/17/技术/构建Uber端到端技术栈的十条经验/"
+           data-tag="技术体系"
+           data-author="" >
+            <span class="post-title" title="构建Uber端到端技术栈的十条经验">构建Uber端到端技术栈的十条经验</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/01/17/技术/Hexo搭建博客/"
+           data-tag="技术"
+           data-author="" >
+            <span class="post-title" title="Hexo搭建博客">Hexo搭建博客</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/01/17/技术/Hexo部署常见问题总结/"
+           data-tag="技术"
+           data-author="" >
+            <span class="post-title" title="Hexo部署常见问题总结">Hexo部署常见问题总结</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/01/17/技术/IDEA最新无法激活解决/"
+           data-tag="技术体系"
+           data-author="" >
+            <span class="post-title" title="IDEA最新无法激活解决">IDEA最新无法激活解决</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="商业 "
+           href="/2018/01/17/商业/02沉没成本-不要为打翻的牛奶哭泣/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="02沉没成本-不要为打翻的牛奶哭泣">02沉没成本-不要为打翻的牛奶哭泣</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="商业 "
+           href="/2018/01/17/商业/03比例偏见-贵和便宜是相对的/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="03比例偏见-贵和便宜是相对的">03比例偏见-贵和便宜是相对的</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="商业 "
+           href="/2018/01/17/商业/04损失规避-得到的快乐其实并没有办法缓解失去的痛苦/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="04损失规避-得到的快乐其实并没有办法缓解失去的痛苦">04损失规避-得到的快乐其实并没有办法缓解失去的痛苦</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="商业 "
+           href="/2018/01/17/商业/05价格锚点-拉个垫背的显示你便宜/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="05价格锚点-拉个垫背的显示你便宜">05价格锚点-拉个垫背的显示你便宜</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/01/17/技术/正则表达批量替换日期/"
+           data-tag="技术体系"
+           data-author="" >
+            <span class="post-title" title="正则表达批量替换日期">正则表达批量替换日期</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="商业 "
+           href="/2018/01/17/商业/06流量之河-用流量的逻辑来统一所有的零售方式/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="06流量之河-用流量的逻辑来统一所有的零售方式">06流量之河-用流量的逻辑来统一所有的零售方式</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/01/17/技术/生成markdown文档的内容索引/"
+           data-tag="技术"
+           data-author="" >
+            <span class="post-title" title="生成markdown文档的内容索引">生成markdown文档的内容索引</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/01/17/技术/用brew安装node遇到的问题/"
+           data-tag="技术"
+           data-author="" >
+            <span class="post-title" title="用brew安装node遇到的问题">用brew安装node遇到的问题</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/01/17/技术/领域模型/"
+           data-tag="技术体系"
+           data-author="" >
+            <span class="post-title" title="领域模型">领域模型</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="商业 "
+           href="/2018/01/17/商业/07定倍率-哪有什么一分钱一份货/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="07定倍率-哪有什么一分钱一份货">07定倍率-哪有什么一分钱一份货</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="技术 "
+           href="/2018/01/17/技术/领域模型演进过程/"
+           data-tag="技术体系"
+           data-author="" >
+            <span class="post-title" title="领域模型演进过程">领域模型演进过程</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="数据 "
+           href="/2018/01/15/数据/数据挖掘01-为什么进行数据挖掘/"
+           data-tag="数据体系"
+           data-author="" >
+            <span class="post-title" title="数据挖掘01-为什么进行数据挖掘">数据挖掘01-为什么进行数据挖掘</span>
+            <span class="post-date" title="2018-01-15 16:23:44">2018/01/15</span>
+        </a>
+        
+        <a  class="思维 "
+           href="/2018/01/11/思维/技术学习方法论/"
+           data-tag="方法论"
+           data-author="" >
+            <span class="post-title" title="技术学习方法论">技术学习方法论</span>
+            <span class="post-date" title="2018-01-11 15:34:42">2018/01/11</span>
+        </a>
+        
+        <a  class="思维 "
+           href="/2018/01/11/思维/什么才算是有价值的努力/"
+           data-tag="哲学体系"
+           data-author="" >
+            <span class="post-title" title="什么才算是有价值的努力">什么才算是有价值的努力</span>
+            <span class="post-date" title="2018-01-11 15:11:22">2018/01/11</span>
+        </a>
+        
+        <a  class="管理 "
+           href="/2018/01/11/管理/马老师2017年度讲话金句盘点/"
+           data-tag="哲学体系"
+           data-author="" >
+            <span class="post-title" title="马老师2017年度讲话金句盘点">马老师2017年度讲话金句盘点</span>
+            <span class="post-date" title="2018-01-11 14:41:38">2018/01/11</span>
+        </a>
+        
+        <a  class="理财 "
+           href="/2018/01/09/理财/上海二手房置换必备终极攻略/"
+           data-tag="资产体系"
+           data-author="" >
+            <span class="post-title" title="上海二手房置换必备终极攻略">上海二手房置换必备终极攻略</span>
+            <span class="post-date" title="2018-01-09 01:18:23">2018/01/09</span>
+        </a>
+        
+        <a  class="心理 "
+           href="/2018/01/09/心理/马斯洛需求层次理论/"
+           data-tag="心理学"
+           data-author="" >
+            <span class="post-title" title="马斯洛需求层次理论">马斯洛需求层次理论</span>
+            <span class="post-date" title="2018-01-09 00:44:09">2018/01/09</span>
+        </a>
+        
+        <a  class="思维 "
+           href="/2018/01/09/思维/点滴人生观念信条/"
+           data-tag="心理学"
+           data-author="" >
+            <span class="post-title" title="点滴人生观念信条">点滴人生观念信条</span>
+            <span class="post-date" title="2018-01-09 00:43:14">2018/01/09</span>
+        </a>
+        
+        <a  class="心理 "
+           href="/2018/01/09/心理/DISC行为风格理论/"
+           data-tag="心理学"
+           data-author="" >
+            <span class="post-title" title="DISC行为风格理论">DISC行为风格理论</span>
+            <span class="post-date" title="2018-01-09 00:41:33">2018/01/09</span>
+        </a>
+        
+        <a  class="思维 "
+           href="/2018/01/08/思维/思维体系02-芒格让我一生受用的思维方式/"
+           data-tag="思维体系"
+           data-author="" >
+            <span class="post-title" title="思维体系02-芒格让我一生受用的思维方式">思维体系02-芒格让我一生受用的思维方式</span>
+            <span class="post-date" title="2018-01-08 00:25:37">2018/01/08</span>
+        </a>
+        
+        <a  class="哲学 "
+           href="/2018/01/07/哲学/三观体系02-价值观是如何形成的/"
+           data-tag="三观体系"
+           data-author="" >
+            <span class="post-title" title="三观体系02-价值观是如何形成的">三观体系02-价值观是如何形成的</span>
+            <span class="post-date" title="2018-01-07 23:54:06">2018/01/07</span>
+        </a>
+        
+        <a  class="思维 "
+           href="/2018/01/07/思维/思维体系01-个人思维模型构建/"
+           data-tag="思维体系"
+           data-author="" >
+            <span class="post-title" title="思维体系01-个人思维模型构建">思维体系01-个人思维模型构建</span>
+            <span class="post-date" title="2018-01-07 23:37:32">2018/01/07</span>
+        </a>
+        
+        <a  class="哲学 "
+           href="/2018/01/07/哲学/三观体系-01三观及其关系/"
+           data-tag="三观体系"
+           data-author="" >
+            <span class="post-title" title="三观体系-01三观及其关系">三观体系-01三观及其关系</span>
+            <span class="post-date" title="2018-01-07 23:07:43">2018/01/07</span>
+        </a>
+        
+        <a  class="工具 "
+           href="/2018/01/06/工具/ExcelTk转换Excel表格到MarkDown/"
+           data-tag="工具体系"
+           data-author="" >
+            <span class="post-title" title="exceltk转换Excel表格到MarkDown">exceltk转换Excel表格到MarkDown</span>
+            <span class="post-date" title="2018-01-06 21:48:36">2018/01/06</span>
+        </a>
+        
+        <a  class="个人 "
+           href="/2018/01/06/个人/2018周历表/"
+           data-tag="成长体系"
+           data-author="" >
+            <span class="post-title" title="2018周历表">2018周历表</span>
+            <span class="post-date" title="2018-01-06 20:41:02">2018/01/06</span>
+        </a>
+        
+        <a  class="育儿 "
+           href="/2017/12/31/育儿/婴儿护理0至1岁/"
+           data-tag="育儿"
+           data-author="" >
+            <span class="post-title" title="婴儿护理0至1岁">婴儿护理0至1岁</span>
+            <span class="post-date" title="2017-12-31 23:17:54">2017/12/31</span>
+        </a>
+        
+        <a  class="育儿 "
+           href="/2017/12/31/育儿/剖宫产护理/"
+           data-tag="育儿"
+           data-author="" >
+            <span class="post-title" title="剖宫产护理">剖宫产护理</span>
+            <span class="post-date" title="2017-12-31 21:12:52">2017/12/31</span>
+        </a>
+        
+        <a  class="育儿 "
+           href="/2017/12/29/育儿/爱如冬阳/"
+           data-tag="文学"
+           data-author="" >
+            <span class="post-title" title="爱如冬阳">爱如冬阳</span>
+            <span class="post-date" title="2017-12-29 13:38:36">2017/12/29</span>
+        </a>
+        
+        <a  class="育儿 "
+           href="/2017/12/28/育儿/知名儿科医生的护理总结/"
+           data-tag="育儿"
+           data-author="" >
+            <span class="post-title" title="知名儿科医生的护理总结">知名儿科医生的护理总结</span>
+            <span class="post-date" title="2017-12-28 21:52:01">2017/12/28</span>
+        </a>
+        
+        <a  class="哲学 "
+           href="/2017/12/21/哲学/如果一辈子无法赚大钱成大业那我为什么还活着/"
+           data-tag="哲学"
+           data-author="" >
+            <span class="post-title" title="如果一辈子无法赚大钱成大业那我为什么还活着">如果一辈子无法赚大钱成大业那我为什么还活着</span>
+            <span class="post-date" title="2017-12-21 17:36:38">2017/12/21</span>
+        </a>
+        
+        <a  class="思维 "
+           href="/2017/12/21/思维/互联网公司沉淀方法论/"
+           data-tag="方法论"
+           data-author="" >
+            <span class="post-title" title="互联网公司沉淀方法论">互联网公司沉淀方法论</span>
+            <span class="post-date" title="2017-12-21 16:57:35">2017/12/21</span>
+        </a>
+        
+        <a  class="管理 "
+           href="/2017/12/21/管理/支付宝国际化战略解读/"
+           data-tag="企业管理"
+           data-author="" >
+            <span class="post-title" title="支付宝国际化战略解读">支付宝国际化战略解读</span>
+            <span class="post-date" title="2017-12-21 16:28:36">2017/12/21</span>
+        </a>
+        
+        <a  class="管理 "
+           href="/2017/12/21/管理/战略是一种观念/"
+           data-tag="企业管理"
+           data-author="" >
+            <span class="post-title" title="战略是一种观念">战略是一种观念</span>
+            <span class="post-date" title="2017-12-21 15:46:28">2017/12/21</span>
+        </a>
+        
+        <a  class="个人 "
+           href="/2017/12/21/个人/面试时的自我介绍/"
+           data-tag="职场方法论"
+           data-author="" >
+            <span class="post-title" title="面试时的自我介绍">面试时的自我介绍</span>
+            <span class="post-date" title="2017-12-21 14:26:16">2017/12/21</span>
+        </a>
+        
+        <a  class="思维 "
+           href="/2017/12/21/思维/工作才是最好的学习/"
+           data-tag="方法论"
+           data-author="" >
+            <span class="post-title" title="工作才是最好的学习">工作才是最好的学习</span>
+            <span class="post-date" title="2017-12-21 12:01:37">2017/12/21</span>
+        </a>
+        
+        <a  class="思维 "
+           href="/2017/12/21/思维/彭蕾从前台到CEO的职场方法论/"
+           data-tag="方法论"
+           data-author="" >
+            <span class="post-title" title="彭蕾从前台到CEO的职场方法论">彭蕾从前台到CEO的职场方法论</span>
+            <span class="post-date" title="2017-12-21 11:01:51">2017/12/21</span>
+        </a>
+        
+        <a  class="哲学 "
+           href="/2017/12/21/哲学/道德经的概念体系和逻辑结构/"
+           data-tag="哲学"
+           data-author="" >
+            <span class="post-title" title="道德经的概念体系和逻辑结构">道德经的概念体系和逻辑结构</span>
+            <span class="post-date" title="2017-12-21 09:31:06">2017/12/21</span>
+        </a>
+        
+        <a  class="思维 "
+           href="/2017/12/20/思维/有效的总结的三个层次/"
+           data-tag="方法论"
+           data-author="" >
+            <span class="post-title" title="有效的总结的三个层次">有效的总结的三个层次</span>
+            <span class="post-date" title="2017-12-20 18:26:09">2017/12/20</span>
+        </a>
+        
+        <a  class="工具 "
+           href="/2017/12/20/工具/Typora据说是最好的MarkDown编辑器/"
+           data-tag="工具管理"
+           data-author="" >
+            <span class="post-title" title="Typora据说是最好的MarkDown编辑器">Typora据说是最好的MarkDown编辑器</span>
+            <span class="post-date" title="2017-12-20 13:15:46">2017/12/20</span>
+        </a>
+        
+        <a  class="思维 "
+           href="/2017/12/20/思维/从碎片化到知识体系构建/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="从碎片化到知识体系构建">从碎片化到知识体系构建</span>
+            <span class="post-date" title="2017-12-20 09:13:00">2017/12/20</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-数据/数据挖掘01-为什么进行数据挖掘" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">数据挖掘01-为什么进行数据挖掘</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+            <a href="javascript:" data-rel="数据">数据</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color5">数据体系</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2018-04-01 18:52:23'>2018-01-15 16:23</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:7,158</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1、为什么进行数据挖掘"><span class="toc-text">1、为什么进行数据挖掘</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-迈向信息时代"><span class="toc-text">1.1  迈向信息时代</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-数据挖掘是信息技术的进化"><span class="toc-text">1.2  数据挖掘是信息技术的进化</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2、什么是数据挖掘"><span class="toc-text">2、什么是数据挖掘</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3、可以挖掘什么类型的数据"><span class="toc-text">3、可以挖掘什么类型的数据</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-数据库数据"><span class="toc-text">3.1  数据库数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-数据仓库"><span class="toc-text">3.2  数据仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-事务数据库"><span class="toc-text">3.3  事务数据库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4-其他类型的数据"><span class="toc-text">3.4  其他类型的数据</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4、可以挖掘什么类型的模式"><span class="toc-text">4、可以挖掘什么类型的模式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-类-概念：特征化与区分"><span class="toc-text">4.1  类/概念：特征化与区分</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-挖掘频繁模式、关联和相关性"><span class="toc-text">4.2  挖掘频繁模式、关联和相关性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3-用于预测分析的分类与回归"><span class="toc-text">4.3  用于预测分析的分类与回归</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-4-聚类分析"><span class="toc-text">4.4  聚类分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-5-离群点分析"><span class="toc-text">4.5  离群点分析</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5、所有模式都是有趣的吗"><span class="toc-text">5、所有模式都是有趣的吗</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6、使用什么技术"><span class="toc-text">6、使用什么技术</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#6-1-统计学"><span class="toc-text">6.1 统计学</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-2-机器学习"><span class="toc-text">6.2 机器学习</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-3-数据库系统与数据仓库"><span class="toc-text">6.3 数据库系统与数据仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-4-信息检索"><span class="toc-text">6.4 信息检索</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7、面向什么类型的应用"><span class="toc-text">7、面向什么类型的应用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#7-1-商务智能"><span class="toc-text">7.1 商务智能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-2-Web搜索引擎"><span class="toc-text">7.2 Web搜索引擎</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8、数据挖掘的主要问题"><span class="toc-text">8、数据挖掘的主要问题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#8-1-挖掘方法"><span class="toc-text">8.1 挖掘方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-2-用户界面"><span class="toc-text">8.2 用户界面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-3-有效性和可伸缩性"><span class="toc-text">8.3 有效性和可伸缩性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-4-数据库类型的多样性"><span class="toc-text">8.4 数据库类型的多样性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-5-数据挖掘与社会"><span class="toc-text">8.5 数据挖掘与社会</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1、为什么进行数据挖掘"><a href="#1、为什么进行数据挖掘" class="headerlink" title="1、为什么进行数据挖掘"></a>1、为什么进行数据挖掘</h1><p>​        我们生活在大量数据日积月累的年代。分析这些数据是一种重要需求。</p>
+<h2 id="1-1-迈向信息时代"><a href="#1-1-迈向信息时代" class="headerlink" title="1.1  迈向信息时代"></a><strong>1.1  迈向信息时代</strong></h2><p>​        一种流行的说法是“我们生活在信息时代”。然而，实际上我们生活在数据时代。数据的爆炸式增长、广泛可用和巨大数量使得我们的时代成为真正的数据时代。</p>
+<p>​        急需功能强大和通用的工具，以便从这些海量数据中发现有价值的信息，把这些数据转化成有组织的知识。这种需求导致了数据挖掘的诞生。</p>
+<h2 id="1-2-数据挖掘是信息技术的进化"><a href="#1-2-数据挖掘是信息技术的进化" class="headerlink" title="1.2  数据挖掘是信息技术的进化"></a><strong>1.2  数据挖掘是信息技术的进化</strong></h2><p>​        数据挖掘可以看作信息技术自然进化的结果。数据库和数据管理产业在一些关键功能的开发上不断发展：数据收集和数据库创建、数据管理（包括数据存储和检索、数据库事务处理）和高级数据分析（包括数据仓库和数据挖掘）。</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fp1qmku8foj30dx0fg0vg.jpg" alt="img"></p>
+<p>图1.1 数据库系统技术的演变</p>
+<p>​        数据收集和数据库创建机制的早期开发已经成为稍后数据存储和检索以及查询和事务处理的有效机制开发的必备基础。</p>
+<p>​        自20世纪60年代以来，数据库和信息技术已经系统地从原始的文件处理演变成复杂的、功能强大的数据库系统。</p>
+<p>​        自20世纪70年代以来，数据库系统的研究和开发已经从开发层次和网状数据库发展到开发关系数据库系统、数据建模工具、索引和存取方法。</p>
+<p>​        数据库管理系统建立之后，数据库技术就转向高级数据库系统、支持高级数据分析的数据仓库和数据挖掘、基于Web的数据库。</p>
+<p>高级数据分析源于20世纪80年代后期。</p>
+<p>​        最近出现的一种数据存储结构式数据仓库。这是一种多个异构数据源在单个站点以统一的模式组织的存储，以支持管理决策。数据仓库技术包括数据清理、数据集成和联机分析处理（OLAP）。OLAP是一种分析技术，具有汇总、合并和聚集以及从不同的角度观察信息的能力。</p>
+<p>​        总之，丰富的数据以及对强有力的数据分析工具的需求，这种情况被描述为“数据丰富，但信息贫乏”。数据和信息之间的鸿沟越来越宽，这就要求必须系统地开发数据挖掘工具，将数据坟墓转换成知识“金块”。</p>
+<h1 id="2、什么是数据挖掘"><a href="#2、什么是数据挖掘" class="headerlink" title="2、什么是数据挖掘"></a><strong>2、什么是数据挖掘</strong></h1><p>​        简单地说，数据挖掘是指从大量数据中提取或“挖掘”知识。该术语实际上有点用词不当。还有一些术语具有和数据挖掘类似但稍微不同的含义，如从数据中挖掘知识、知识提取、数据/模式分析、数据考古和数据捕捞。</p>
+<p>​        许多人把数据挖掘视为另一个常用的术语数据中的知识发现或KDD（Knowledge Discovery in Data）的同义词，而另一些人只是把数据挖掘视为知识发现过程的一个基本步骤。知识发现过程如下图所示，由以下步骤的迭代序列组成：</p>
+<p>​      （1）数据清理（消除噪声和删除不一致数据）。</p>
+<p>​      （2）数据集成（多种数据源可以组合在一起）</p>
+<p>​      （3）数据选择（从数据库中提取与分析任务相关的数据）</p>
+<p>​      （4）数据变换（通过汇总或或聚集操作，数据变换或统一成适合挖掘的形式）</p>
+<p>​      （5）数据挖掘（基本步骤，使用智能方法提取数据模式）</p>
+<p>​      （6）模式评估（根据某种兴趣度度量，识别代表知识的真正有趣的模式）</p>
+<p>​      （7）知识表示（使用可视化和知识表示技术，向用户提供挖掘的知识）</p>
+<p>​        步骤1-4是数据预处理的不同形式，为挖掘准备数据。数据挖掘步骤可能与用户或知识库交互。有趣的模式提供给用户，或作为新的知识存放在知识库中。</p>
+<p>​        这种观点把数据挖掘看作知识发现过程中的一个步骤，尽管是最重要的一个步骤，因为它发现用来评估的隐藏模式。然而，在产业界、媒体和研究界，“数据挖掘”通常用来表示整个知识发现过程。因此，我们采用广义的数据挖掘功能的观点：数据挖掘是从大量数据中挖掘有趣模式和知识的过程。数据源包括数据库、数据仓库、Web、其他信息存储库或动态地流入系统的数据。</p>
+<p> <img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fp1qmn3al7j30aw09ojs6.jpg" alt="img"></p>
+<p>图1.2 数据挖掘视为知识发现过程的一个步骤</p>
+<h1 id="3、可以挖掘什么类型的数据"><a href="#3、可以挖掘什么类型的数据" class="headerlink" title="3、可以挖掘什么类型的数据"></a><strong>3、可以挖掘什么类型的数据</strong></h1><p>​        作为一种通用技术，数据挖掘可以用于任何类型的数据，只要数据对目标应用是有意义的。对于挖掘的应用，数据的最基本形式是数据库数据、数据仓库数据和事务数据。数据挖掘也可以用于其他类型的数据（例如，数据流、有序/序列数据、图或网络数据、空间数据、文本数据、多媒体数据和万维网）。</p>
+<h2 id="3-1-数据库数据"><a href="#3-1-数据库数据" class="headerlink" title="3.1  数据库数据"></a><strong>3.1  数据库数据</strong></h2><p>​        数据库系统，也称数据库管理系统（DBMS），有一组内部相关的数据（称作数据库）和一组管理和存取数据的软件程序组成。软件程序提供如下机制：定义数据库结构和数据存储，说明和管理并发、共享或分布式数据访问。面对系统瘫痪或未授权的访问，确保存储信息的一致性和安全性。</p>
+<p>​        关系数据库是表的汇集，每个表都被赋予一个唯一的名字。每个表都包含一组属性（列或字段），并且通常存放大量元祖（记录或行）。</p>
+<p>​        虚构的AllElectronics商店用于解释概念。该公司用下列关系表描述：customer，item，employee和branch。这些表的表头显示在下图中</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fp1qmtfn8qj30fi05c0t7.jpg" alt="img"></p>
+<p>图1.3  AllElectronics关系数据库的关系模式</p>
+<p>​        当数据挖掘用于关系数据库时，你可以进一步搜索趋势或数据模式。例如，数据挖掘系统可以分析顾客数据，根据顾客的收入、年龄和以前的信用信息预测新顾客的信用风险。数据挖掘也可以检测偏差：例如，与以前的年份相比，哪些商品的销售出人意料。可以进一步考察这种偏差：例如，数据挖掘可能发现这些商品的包装的变化，或价格的大幅度提高。</p>
+<p>​        关系数据库是数据挖掘的最常见、最丰富的信息源，因此它是我们数据挖掘研究的一种主要数据形式。</p>
+<h2 id="3-2-数据仓库"><a href="#3-2-数据仓库" class="headerlink" title="3.2  数据仓库"></a><strong>3.2  数据仓库</strong></h2><p>​        数据仓库是一个从多个数据源收集的信息存储库，存放在一致的模式下，并且通常驻留在单个站点上。数据仓库通过数据清理、数据变换、数据集成、数据装入和定期数据刷新来构造。下图给出了AllElectronics的数据仓库构造和使用的典型框架。</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fp1qn1ackej30cx06ct8w.jpg" alt="img"></p>
+<p>图1.4  AllElectronics数据仓库的典型框架</p>
+<p>​        通常，数据仓库用称作数据立方体的多维数据结构建模。其中，每个维对应于模式中的一个或一组属性，而每个单元存放某种聚集度量值，如count或sum（sale_amount）。数据立方体提供数据的多维视图，并允许预计算和快速访汇总数据。</p>
+<p>​        AllElectronics的数据立方体。如下图：</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fp1qn2yw1lj30ag07tmxi.jpg" alt="img"></p>
+<p>图1.5 <img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fp1qn4h3syj30fi0133yk.jpg" alt="img"></p>
+<p>​        通过提供多维数据视图和汇总数据的预计算，数据仓库非常适合联机分析处理。OLAP操作使用所研究的数据的领域背景知识，允许在不同的抽象层提供数据。这些操作适合不同的用户角度。OLAP操作的例子包括下钻和上卷，它们允许用户在不同的汇总级别观察数据。</p>
+<h2 id="3-3-事务数据库"><a href="#3-3-事务数据库" class="headerlink" title="3.3  事务数据库"></a><strong>3.3  事务数据库</strong></h2><p>​        一般地说，事务数据库的每个记录代表一个事务，如顾客的一次购物。通常，一个事务包括一个唯一的事务标识符（trans_ID），以及一个组成事务的项（如，交易中购买的商品）的列表。事务数据库可能有一些与之相关联的附加表，包含关于事务的其他信息，如商品描述信息。</p>
+<p>​        AllElectronics的事务数据库。</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fp1qn6gwfdj30az0360sr.jpg" alt="img"></p>
+<p>图1.6  AllElectronics销售事务数据库的片段</p>
+<p>​        事务数据上的数据挖掘可以通过挖掘频繁项集来做商品捆绑销售这件事。频繁项集是频繁地一起销售的商品的集合。</p>
+<h2 id="3-4-其他类型的数据"><a href="#3-4-其他类型的数据" class="headerlink" title="3.4  其他类型的数据"></a><strong>3.4  其他类型的数据</strong></h2><p><strong>        </strong>除关系数据库数据、数据仓库数据和事务数据外，还有许多其他类型的数据，它们具有各种各样的形式和结构，具有很不相同的语义。这样的数据类型在许多应用中都可以看到，如时间相关或序列数据（例如历史记录、股票交易数据、时间序列和生物学序列数据）、数据流（例如视频监控和传感器数据，它们连续播送）、空间数据（如地图）、工程设计数据（如建筑数据、系统部件或集成电路）、超文本和多媒体数据（包括文本、图像、视频和音频数据）、图和网状数据（如社会和信息网络）和万维网（由Internet提供的巨型、广泛分布的信息存储库）。这些应用带来了新的挑战。</p>
+<h1 id="4、可以挖掘什么类型的模式"><a href="#4、可以挖掘什么类型的模式" class="headerlink" title="4、可以挖掘什么类型的模式"></a><strong>4、可以挖掘什么类型的模式</strong></h1><p>​        数据挖掘功能：特征化与区分、频繁模式、关联和相关性挖掘、分类与回归、聚类分析、离群点分析。</p>
+<p>​        数据挖掘功能用于指定数据挖掘任务发现的模式。一般而言，这些任务可以分为两类：描述性和预测性。描述性挖掘任务刻画目标数据中数据的一般性质。预测性挖掘任务在当前数据上进行归纳，以便做出预测。</p>
+<h2 id="4-1-类-概念：特征化与区分"><a href="#4-1-类-概念：特征化与区分" class="headerlink" title="4.1  类/概念：特征化与区分"></a><strong>4.1  类/概念：特征化与区分</strong></h2><p>​        数据可以与类或概念相关联。例如，在AllElectronics商店，销售的商品类包括计算机和打印机，顾客概念包括bigSpenders和budgetSpenders。用汇总的、简洁的、精确的表达方式描述每个类和概念是有用的。这种类或概念的描述称为类/概念描述。这种描述可以通过方法得到：（1）数据特征化，一般地汇总所研究类（通常称为目标类）的数据；（2）数据区分，将目标类与一个或多个可比较类（通常称为对比类）进行比较；（3）数据特征化和区分。</p>
+<p>​        数据特征化是目标类数据的一般特征或特征的汇总。通常，通过查询来收集对应于用户指定类的数据。例如，为研究上一年销售增加10%的软件产品的特征，可以通过在销售数据库上执行一个SQL查询来收集关于这些产品的数据。</p>
+<p>​        数据特征化的输出可以用多种形式提供，例如饼图、条图、曲线、多维数据立方体和包括交叉表在内的多维表。结果描述也可以用广义关系或规则（称作特征规则）形式提供。</p>
+<p>​        数据特征化（例子）。AllElectronics的客户关系经理可能提出如下数据挖掘任务：“汇总一年之内在AllElectronics花费5000美元以上的顾客特征。“结果可能是顾客的概况，如年龄在40—50岁，有工作、有很好的信用等级。</p>
+<p>​        数据区分是将目标类数据对象的一般特性与一个或多个对比类对象的一般特性进行比较。目标类和对比类可以由用户指定，而对应的数据对象可以通过数据库查询检索。例如，用户可能希望将上一年销售增加10%的软件产品与同一时期销售至少下降30%的软件产品进行比较。用于数据区分的方法与用于数据特征化的方法类似。</p>
+<p>​        数据区分（例子）。AllElectronics的客户关系经理可能想比较两组顾客—定期（例如，每月多于2次）购买计算机产品的顾客和不经常（例如，每年少于3次）购买这种产品的顾客。结果描述提供这些顾客比较的概况，例如，频繁购买计算机产品的顾客80%在20—40岁之间，受过大学教育；而不经常购买这种产品的顾客60%或者年龄太大或者太年轻，没有大学学位。</p>
+<h2 id="4-2-挖掘频繁模式、关联和相关性"><a href="#4-2-挖掘频繁模式、关联和相关性" class="headerlink" title="4.2  挖掘频繁模式、关联和相关性"></a><strong>4.2  挖掘频繁模式、关联和相关性</strong></h2><p>​        频繁模式是在数据中频繁出现的模式。存在多种类型的频繁模式，包括频繁项集、频繁子序列（又称序列模式）和频繁子结构。</p>
+<p>​        频繁项集一般是指频繁地在事务数据集中一起出现的商品的集合，如小卖部中被许多顾客频繁地一起购买的牛奶和面包。频繁出现的子序列，如顾客倾向于先购买便携机，再购买数码相机，然后再购买内存卡这样的模式就是一个（频繁）序列模式。子结构可能涉及不同的结构形式（例如，图、树或格），可以与项集或子序列结合在一起。如果一个子结构频繁地出现，则称它为（频繁）结构模式。</p>
+<p>​        挖掘频繁模式导致发现数据中有趣的关联和相关性。</p>
+<p>​        关联分析（例子）。假设作为AllElectronics的市场部经理，你想知道哪些商品经常一块被购买（即，在相同的事务中）。从AllElectronics的事务数据库中挖掘出来的这种规则的一个例子是       <img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fp1qn7ai31j30ak00p0sk.jpg" alt="img"></p>
+<p>其中，X是变量，代表顾客。这个关联规则涉及单个重复的属性或谓词（即buys）。包含单个谓词的关联规则称作单维关联规则。</p>
+<p>​        假设给定涉及购买的AllElectronics关系数据库。数据挖掘系统还可以发现如下形式的规则</p>
+<p>​                                       <img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fp1qn8mtzbj30d000nwec.jpg" alt="img"></p>
+<p>​        这是涉及多个属性或谓词（即age，income和buys）的关联。采用多维数据库使用的术语，每个属性称作一个维，上面的规则可以称作多维关联规则。</p>
+<p>​        通常，一个关联规则被认为是无趣的而被丢弃，如果它不能同时满足最小支持度阈值和最小置信度阈值。</p>
+<p>​        频繁项集挖掘是频繁模式挖掘的基础。</p>
+<h2 id="4-3-用于预测分析的分类与回归"><a href="#4-3-用于预测分析的分类与回归" class="headerlink" title="4.3  用于预测分析的分类与回归"></a><strong>4.3  用于预测分析的分类与回归</strong></h2><p>​        分类是这样的过程，它找出描述和区分数据类或概念的模型（或函数），以便能够使用模型预测类标号未知的对象的类标号。导出模型是基于对训练数据集（即，类标号已知的数据对象）的分析。该模型用来预测类标号未知的对象的类标号。</p>
+<p>​        “如何提供导出的模型？”导出的模型可以用多种形式表示，如分类规则（即IF-THEN规则）、决策树、数学公式或神经网络。</p>
+<p>​        决策树是一种类似于流程图的树结构，其中每个结点代表在一个属性指上的测试，每个分支代表测试的一个结果，而树叶代表类或类分布。容易把决策树转换成分类规则。</p>
+<p>当用于分类时，神经网络是一组类似于神经元的处理单元，单元之间加权连接。还有许多构造分类模型的其他方法，如朴素贝叶斯粉类、支持向量机和k最近邻分类。   </p>
+<p><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fp1qn9q68hj30du07x0t6.jpg" alt="img"></p>
+<p>​                                      图1.7 分类模型可以用不同的形式表示：a）IF-THEN规则；b）决策树；c）神经网络</p>
+<p>​        分类预测类别（离散的、无序的）标号，而回归建立连续值函数模型。也就是说，回归用来预测缺失的或难以获得的数值数据值，而不是（离散的）类标号。回归分析是一种最常用的数值预测的统计学方法。</p>
+<h2 id="4-4-聚类分析"><a href="#4-4-聚类分析" class="headerlink" title="4.4  聚类分析"></a><strong>4.4  聚类分析</strong></h2><p>​        不像分类和回归分析标记类的（训练）数据集，聚类分析数据对象，而不考虑类标号。在许多情况下，开始并不存在标记类的数据。可以使用聚类产生数据组群的类标号。</p>
+<p>​        对象根据最大化类内相似性、最小化类间相似性的原则进行聚类或分组。</p>
+<p>​        聚类也便于分类法形成，即将观测组织成类分层结构，把类似的事件组织在一起。</p>
+<p>​        聚类分析（例子）。可以在AllElectronics的顾客数据上进行聚类分析，识别顾客的同类子群。这些簇可以表示每个购物目标群。下图显示一个城市内顾客位置的二维图。数据点的三个簇是显而易见的。</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fp1qna51i8j30cg07dglu.jpg" alt="img"></p>
+<p>​                                             图1.8 关于一个城市内顾客位置的二维图，显示了3个数据簇</p>
+<h2 id="4-5-离群点分析"><a href="#4-5-离群点分析" class="headerlink" title="4.5  离群点分析"></a><strong>4.5  离群点分析</strong></h2><p>​        数据集中可能包含一些数据对象，它们与数据的一般行为或模型不一致。这些数据对象是离群点。</p>
+<p>​        大部分数据挖掘方法都将离群点视为噪声或异常而丢弃。然而，在一些应用中（例如，欺诈检测），罕见的事件可能比正常出现的事件更令人感兴趣。</p>
+<p>​        离群点数据分析称作离群点分析或异常挖掘。</p>
+<p>​        可以假定一个数据分布或概率模型，使用统计检验来检测离群点；或者使用距离度量，将远距离任何簇的对象视为离群点。不使用统计或距离度量，基于密度的方法也可以识别局部区域中的离群点。</p>
+<p>​        离群点分析（例子）。通过检测一个给定账号与正常的付费相比付款数额特别大，离群点分析可以发现信用卡欺骗性使用。离群点还可以通过购物地点和类型或购物频率来检测。</p>
+<h1 id="5、所有模式都是有趣的吗"><a href="#5、所有模式都是有趣的吗" class="headerlink" title="5、所有模式都是有趣的吗"></a><strong>5、所有模式都是有趣的吗</strong></h1><p>​        三个问题：（1）“什么样的模式是有趣的？”（2）“数据挖掘系统能够产生所有有趣的模式吗？”（3）“数据挖掘系统能够仅产生有趣的模式吗？”。</p>
+<p>​        对于<strong>第一个问题</strong>，一个模式是有趣的，如果它：（1）易于被人理解；（2）在某种确信度上，对于新的或检验数据是有效的；（3）是潜在有用的；（4）是新颖的。如果一个模式证实了用户寻求证实的某种假设，则它也是有趣的。有趣的模式代表知识。</p>
+<p>​        存在一些模式兴趣度的客观度量。这些度量基于所发现模式的结构和关于它们的统计量。如关联规则中的支持和置信度。一般地，每个兴趣度度量都与一个阈值相关联，该阈值可以由用户控制。其他兴趣度度量包括分类（IF-THEN）规则的准确率与覆盖率。</p>
+<p>​        尽管客观度量有助于识别有趣的模式，但是仅有这些还不够，还要结合反映特定用户需要和兴趣的主观度量。</p>
+<p>​        主观兴趣度度量基于用户对数据的信念。这种度量发现模式是有趣的，如果它们是出乎意料的（与用户的信念相矛盾），或者根据用户可以采取行动的至关重要的信息。在后一种情况下，这样的模式成为可行动的。意料之内的模式也可能是有趣的，如果它们证实了用户希望证实的假设，与用户的预感相似。</p>
+<p><strong>        第二个问题</strong>——涉及数据挖掘算法的完全性。期望数据挖掘系统产生所有可能的模式通常是不现实的和低效的。</p>
+<p><strong>        第三个问题</strong>——是数据挖掘的优化问题。对于数据挖掘系统，仅产生有趣的模式是非常期望的。在这方面已经有了一些进展。然而，在数据挖掘中，这种优化仍然是个挑战。</p>
+<h1 id="6、使用什么技术"><a href="#6、使用什么技术" class="headerlink" title="6、使用什么技术"></a><strong>6、使用什么技术</strong></h1><p><strong>        </strong>作为一个应用驱动的领域，数据挖掘吸纳了诸如统计学、机器学习、模式识别、数据库和数据仓库、信息检索、可视化、算法、高性能计算和许多应用领域的大量技术。</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fp1qnayhq2j30bt03vt8u.jpg" alt="img"></p>
+<p>1.9 数据挖掘从其他许多领域吸纳技术</p>
+<h2 id="6-1-统计学"><a href="#6-1-统计学" class="headerlink" title="6.1 统计学"></a><strong>6.1 统计学</strong></h2><p>​        统计学研究数据的收集、分析、解释和表示。</p>
+<p>​        统计模型是一组数学函数，它们用随机变量及其概率分布刻画目标类对象的行为。统计模型广泛用于对数据和数据类建模。</p>
+<p>​        统计学研究开发一些使用数据和统计模型进行预测和预报的工具。统计学方法可以用来汇总或描述数据集。</p>
+<p>​        统计学方法也可以用来验证数据挖掘结果。</p>
+<h2 id="6-2-机器学习"><a href="#6-2-机器学习" class="headerlink" title="6.2 机器学习"></a><strong>6.2 机器学习</strong></h2><p>​        机器学习考察计算机如何基于数据学习（或提高它们的性能）。其主要研究领域之一是，计算机程序基于数据自动地学习识别复杂的模式，并作出智能的决断。</p>
+<p>​        机器学习是一个快速成长的学科。（1）监督学习基本上是分类的同义词。学习中的监督来自训练数据集中标记的实例。（2）无监督学习本质上是聚类的同义词。学习过程是无监督的，因为输入实例没有类标记。（3）半监督学习是一类机器学习技术，在学习模型时，它使用标记的和未标记的实例。在一种方法中，标记的实例用来学习类模型，而未标记的实例用来进一步改进类边界。（4）主动学习是一种机器学习方法，它让用户在学习过程中扮演主动角色。</p>
+<h2 id="6-3-数据库系统与数据仓库"><a href="#6-3-数据库系统与数据仓库" class="headerlink" title="6.3 数据库系统与数据仓库"></a><strong>6.3 数据库系统与数据仓库</strong></h2><p>​        数据库系统研究关注为单位和最终用户创建、维护和使用数据库。数据库系统因其在处理非常大的、相对结构化的数据集方面的高度可伸缩性而闻名。</p>
+<p>​        数据仓库集成来自多种数据源和各个时间段的数据。它在多维空间合并数据，形成部分物化的数据立方体。数据立方体不仅有利于多维数据库的OLAP，而且推动了多维数据挖掘。</p>
+<h2 id="6-4-信息检索"><a href="#6-4-信息检索" class="headerlink" title="6.4 信息检索"></a><strong>6.4 信息检索</strong></h2><p>​        信息检索是搜索文档或文档中信息的科学。</p>
+<p>​        信息检索的典型方法采用概率模型。</p>
+<h1 id="7、面向什么类型的应用"><a href="#7、面向什么类型的应用" class="headerlink" title="7、面向什么类型的应用"></a><strong>7、面向什么类型的应用</strong></h1><p>​        作为一个应用驱动的学科，数据挖掘已经在许多应用中获得巨大成功。在此，我们简略讨论两个数据挖掘非常成功和流行的应用例子：商务智能和搜索引擎。</p>
+<h2 id="7-1-商务智能"><a href="#7-1-商务智能" class="headerlink" title="7.1 商务智能"></a><strong>7.1 商务智能</strong></h2><p>​        对于商务而言，较好地理解它的诸如顾客、市场、供应和资源以及竞争对手等商务背景是至关重要的。</p>
+<p>​        “商务智能有多么重要？”没有数据挖掘，许多工商企业都不能进行有效的市场分析，比较类似产品的顾客反馈，发现其竞争对手的优势和缺点，留住具有高价值的顾客，做出聪明的商务决策。</p>
+<p>​        显然，数据挖掘是商务智能的核心。商务智能的联机分析处理工具依赖于数据仓库和多维数据挖掘。分类和预测技术是商务智能预测分析的核心，在分析市场、供应和销售方面存在许多应用。此外，在客户关系管理方面，聚类起主要作用，它根据顾客的相似性把顾客分组。使用特征挖掘技术，可以更好地理解每组顾客的特征，并开发定制顾客奖励计划。</p>
+<h2 id="7-2-Web搜索引擎"><a href="#7-2-Web搜索引擎" class="headerlink" title="7.2 Web搜索引擎"></a><strong>7.2 Web搜索引擎</strong></h2><p><strong>        </strong>Web搜索引擎是一种专门的计算机服务器，在Web上搜索信息。Web搜索引擎本质上是大型数据挖掘的应用。搜索引擎全方位地使用各种数据挖掘技术，包括爬行（例如，决定应该爬行哪些方面和爬行频率）、索引（例如，选择被索引的页面和决定构建索引的范围）和搜索（例如，确定如何安排各个页面、加载何种广告、如何把搜索结果个性化或使之“环境敏感”）。</p>
+<p>​        搜索引擎对数据挖掘提出了巨大挑战。（1）它们必须处理大量并且不断增加的数据。（2）Web搜索引擎通常需要处理在线数据。（3）Web搜索引擎常常需要处理出现次数不多的查询。</p>
+<h1 id="8、数据挖掘的主要问题"><a href="#8、数据挖掘的主要问题" class="headerlink" title="8、数据挖掘的主要问题"></a><strong>8、数据挖掘的主要问题</strong></h1><p>​        数据挖掘是一个动态的、强势快速扩展的领域。这里，我们需要概述数据挖掘研究的主要问题，把它们划分成五组：挖掘方法、用户交互、有效性与可伸缩性、数据类型的多样性、数据挖掘与社会。</p>
+<h2 id="8-1-挖掘方法"><a href="#8-1-挖掘方法" class="headerlink" title="8.1 挖掘方法"></a><strong>8.1 挖掘方法</strong></h2><p>​      （1）挖掘各种新的知识类型（2）挖掘多维空间中的知识（3）数据挖掘——跨学科的努力（4）提升网络环境下的发现能力（5）处理不确定性、噪声或不完全数据（6）模式评估和模式或约束指导的挖掘。</p>
+<h2 id="8-2-用户界面"><a href="#8-2-用户界面" class="headerlink" title="8.2 用户界面"></a><strong>8.2 用户界面</strong></h2><p>​       （1）交互挖掘（2）结合背景知识（3）特定的数据挖掘和数据挖掘查询语言（4）数据挖掘结果的表示和可视化</p>
+<h2 id="8-3-有效性和可伸缩性"><a href="#8-3-有效性和可伸缩性" class="headerlink" title="8.3 有效性和可伸缩性"></a><strong>8.3 有效性和可伸缩性</strong></h2><p>​        在比较数据挖掘算法时，总是需要考虑有效性与可伸缩性。随着数据量持续增加，这两个因素尤其重要。</p>
+<p>​      （1）数据挖掘算法的有效性和可伸缩性（2）并行、分布式和增量挖掘算法</p>
+<p>​        云计算和集群计算使用分布和协同的计算机处理超大规模计算任务，它们也是并行数据挖掘研究的活跃主题。此外，有些数据挖掘过程的高开销和输入的增量特点推动了增量数据挖掘。增量挖掘与新的数据更新结合在一起，而不必“从头开始”挖掘全部数据。这种算法增量地进行知识修改，修正和加强先前业已发现的知识。</p>
+<h2 id="8-4-数据库类型的多样性"><a href="#8-4-数据库类型的多样性" class="headerlink" title="8.4 数据库类型的多样性"></a><strong>8.4 数据库类型的多样性</strong></h2><p>​        数据库类型的多样性为数据挖掘带来了一些挑战，这些挑战包括：（1）处理复杂的数据类型（2）挖掘动态的、网络的、全球的数据库。</p>
+<h2 id="8-5-数据挖掘与社会"><a href="#8-5-数据挖掘与社会" class="headerlink" title="8.5 数据挖掘与社会"></a><strong>8.5 数据挖掘与社会</strong></h2><p>​        数据挖掘对社会有何影响？数据挖掘可以采取什么步骤来保护个人隐私？我们可以甚至不知道在做什么，而在日常生活中使用数据挖掘吗？这些问题提出以下议题：</p>
+<p>​     （1）数据挖掘的社会影响（2）保护隐私的数据挖掘（3）无形的数据挖掘。</p>
+<p>参考<a href="http://blog.csdn.net/sjpz0124/article/details/45980315" target="_blank" rel="noopener">http://blog.csdn.net/sjpz0124/article/details/45980315</a></p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 walterhost@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span>文章标题:</span>数据挖掘01-为什么进行数据挖掘</p>
+    <p><span>文章字数:</span><span class="post-count">7,158</span></p>
+    <p><span>本文作者:</span><a href="javascript:void(0)" title="令狐冲">令狐冲</a></p>
+    <p><span>发布时间:</span>2018-01-15, 16:23:44</p>
+    <p><span>最后更新:</span>2018-04-01, 18:52:23</p>
+    <span>原始链接:</span><a class="post-url" href="/2018/01/15/数据/数据挖掘01-为什么进行数据挖掘/" title="数据挖掘01-为什么进行数据挖掘">https://walterhost.github.io/2018/01/15/数据/数据挖掘01-为什么进行数据挖掘/</a>
+    <p>
+        <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+    
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2017 令狐冲</p><!--
+<p class="footer-entry">Buit with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+-->
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" href="javascript:void(0)"></a>
+    </div>
+</div>
+<div class="acParent"></div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+</body>
+<script src="//cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
+
+<script src="//cdn.bootcss.com/photoswipe/4.1.2/photoswipe.min.js"></script>
+<script src="//cdn.bootcss.com/photoswipe/4.1.2/photoswipe-ui-default.min.js"></script>
+
+<script src="/js/script.js"></script>
+<script>
+    var img_resize = 'photoSwipe';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#BookNote','#成长体系','#产品体系','#职场方法论','#技术体系','#三观体系','#哲学','#哲学体系','#插件体系','#工具体系','#工具管理','#商业体系','#心理学','#方法论','#思维','#思维体系','#数据体系','#资产体系','#开源技术','#技术','#hexo','#Hexo','#Java线程','#资源管理','#shell','#企业管理','#育儿','#文学',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().split('\n').length - 1;
+            var $numbering = $('<ul/>').addClass('pre-numbering').attr("unselectable","on");
+            $(this).addClass('has-numbering')
+                    .parent()
+                    .append($numbering);
+            for(i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+
+        // PhotoSwipe
+        $('article').each(function(i){
+            $(this).find('img').each(function(){
+                if ($(this).closest('figure').hasClass('article-gallery-img')) {
+                    return;
+                }
+                var alt = this.alt;
+                $(this)
+                    .wrap('<figure class="article-gallery-img" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject"></figure>')
+                    .wrap('<a href="' + this.src + '" title="' + alt + '"></a>');
+                $(this).after('<div class="img_alt"><span>' + (alt || '') + '</span></div>');
+            });
+        });
+
+        var pswpElement = document.querySelectorAll('.pswp')[0];
+        if (pswpElement) {
+            var gallerySelector = '.article-gallery, article';
+
+            var initPhotoSwipeFromDOM = function(gallerySelector) {
+
+                // parse slide data (url, title, size ...) from DOM elements
+                // (children of gallerySelector)
+                var parseThumbnailElements = function(el) {
+                    var thumbElements = $(el).find('figure.article-gallery-img').toArray(),
+                        numNodes = thumbElements.length,
+                        items = [],
+                        figureEl,
+                        linkEl,
+                        size,
+                        imgEl,
+                        item;
+
+                    for (var i = 0; i < numNodes; i++) {
+
+                        figureEl = thumbElements[i]; // <figure> element
+
+                        // include only element nodes
+                        if (figureEl.nodeType !== 1) {
+                            continue;
+                        }
+
+                        linkEl = figureEl.children[0]; // <a> element
+                        imgEl = linkEl.children[0]; // <img>
+
+                        size = linkEl.getAttribute('data-size');
+                        size = size && size.split('x');
+
+                        // create slide object
+                        item = {
+                            src: linkEl.getAttribute('href'),
+                            w: size && parseInt(size[0], 10) || imgEl.width,
+                            h: size && parseInt(size[1], 10) || imgEl.height
+                        };
+
+                        if (figureEl.children.length > 1) {
+                            // <figcaption> content
+                            item.title = figureEl.children[1].innerHTML;
+                        }
+
+                        if (linkEl.children.length > 0) {
+                            // <img> thumbnail element, retrieving thumbnail url
+                            item.msrc = linkEl.children[0].getAttribute('src');
+                        }
+
+                        item.el = figureEl; // save link to element for getThumbBoundsFn
+                        items.push(item);
+                    }
+
+                    return items;
+                };
+
+                // find nearest parent element
+                var closest = function closest(el, fn) {
+                    return el && (fn(el) ? el : closest(el.parentNode, fn));
+                };
+
+                // triggers when user clicks on thumbnail
+                var onThumbnailsClick = function(e) {
+                    e = e || window.event;
+
+                    var eTarget = e.target || e.srcElement;
+
+                    // find root element of slide
+                    var clickedListItem = closest(eTarget, function(el) {
+                        return (el.tagName && el.tagName.toUpperCase() === 'FIGURE');
+                    });
+
+                    if (!clickedListItem) {
+                        return;
+                    }
+
+                    if (e.preventDefault) {
+                        e.preventDefault();
+                    } else {
+                        e.returnValue = false;
+                    }
+
+                    // find index of clicked item by looping through all child nodes
+                    // alternatively, you may define index via data- attribute
+                    var clickedGallery = $(clickedListItem).closest(gallerySelector)[0],
+                        childNodes = $(clickedGallery).find('figure.article-gallery-img').toArray(),
+                        numChildNodes = childNodes.length,
+                        nodeIndex = 0,
+                        index;
+
+                    for (var i = 0; i < numChildNodes; i++) {
+                        if (childNodes[i].nodeType !== 1) {
+                            continue;
+                        }
+
+                        if (childNodes[i] === clickedListItem) {
+                            index = nodeIndex;
+                            break;
+                        }
+                        nodeIndex++;
+                    }
+
+
+
+                    if (index >= 0) {
+                        // open PhotoSwipe if valid index found
+                        openPhotoSwipe(index, clickedGallery);
+                    }
+                    return false;
+                };
+
+                // parse picture index and gallery index from URL (#&pid=1&gid=2)
+                var photoswipeParseHash = function() {
+                    var hash = window.location.hash.substring(1),
+                        params = {};
+
+                    if (hash.length < 5) {
+                        return params;
+                    }
+
+                    var vars = hash.split('&');
+                    for (var i = 0; i < vars.length; i++) {
+                        if (!vars[i]) {
+                            continue;
+                        }
+                        var pair = vars[i].split('=');
+                        if (pair.length < 2) {
+                            continue;
+                        }
+                        params[pair[0]] = pair[1];
+                    }
+
+                    if (params.gid) {
+                        params.gid = parseInt(params.gid, 10);
+                    }
+
+                    return params;
+                };
+
+                var openPhotoSwipe = function(index, galleryElement, disableAnimation, fromURL) {
+                    var pswpElement = document.querySelectorAll('.pswp')[0],
+                        gallery,
+                        options,
+                        items;
+
+                    items = parseThumbnailElements(galleryElement);
+
+                    // define options (if needed)
+                    options = {
+
+                        // define gallery index (for URL)
+                        galleryUID: galleryElement.getAttribute('data-pswp-uid'),
+
+                        getThumbBoundsFn: function(index) {
+                            // See Options -> getThumbBoundsFn section of documentation for more info
+                            var thumbnail = items[index].el.getElementsByTagName('img')[0], // find thumbnail
+                                pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
+                                rect = thumbnail.getBoundingClientRect();
+
+                            return {
+                                x: rect.left,
+                                y: rect.top + pageYScroll,
+                                w: rect.width
+                            };
+                        }
+                    };
+
+                    // PhotoSwipe opened from URL
+                    if (fromURL) {
+                        if (options.galleryPIDs) {
+                            // parse real index when custom PIDs are used
+                            // http://photoswipe.com/documentation/faq.html#custom-pid-in-url
+                            for (var j = 0; j < items.length; j++) {
+                                if (items[j].pid == index) {
+                                    options.index = j;
+                                    break;
+                                }
+                            }
+                        } else {
+                            // in URL indexes start from 1
+                            options.index = parseInt(index, 10) - 1;
+                        }
+                    } else {
+                        options.index = parseInt(index, 10);
+                    }
+
+                    // exit if index not found
+                    if (isNaN(options.index)) {
+                        return;
+                    }
+
+                    if (disableAnimation) {
+                        options.showAnimationDuration = 0;
+                    }
+
+                    // Pass data to PhotoSwipe and initialize it
+                    gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
+
+                    gallery.listen('imageLoadComplete', function(index, item) {
+                        var linkEl = item.el.children[0];
+                        var img = item.container.children[0];
+                        if (!linkEl.getAttribute('data-size')) {
+                            linkEl.setAttribute('data-size', img.naturalWidth + 'x' + img.naturalHeight);
+                            item.w = img.naturalWidth;
+                            item.h = img.naturalHeight;
+                            gallery.invalidateCurrItems();
+                            gallery.updateSize(true);
+                        }
+                    });
+
+                    gallery.init();
+                };
+
+                // loop through all gallery elements and bind events
+                var galleryElements = document.querySelectorAll(gallerySelector);
+
+                for (var i = 0, l = galleryElements.length; i < l; i++) {
+                    galleryElements[i].setAttribute('data-pswp-uid', i + 1);
+                    galleryElements[i].onclick = onThumbnailsClick;
+                }
+
+                // Parse URL and open gallery if it contains #&pid=3&gid=1
+                var hashData = photoswipeParseHash();
+                if (hashData.pid && hashData.gid) {
+                    openPhotoSwipe(hashData.pid, galleryElements[hashData.gid - 1], true, true);
+                }
+            };
+
+            // execute above function
+            initPhotoSwipeFromDOM(gallerySelector);
+        }
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 2px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    .pre-numbering{
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: ;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #2eb695;
+    }
+    
+    
+    .nav-right nav a.hover > span{
+        color: #999;
+    }
+    
+
+    /*列表样式*/
+    
+
+    /*引用块样式*/
+    
+    .post .pjax article blockquote {
+        padding: 10px 20px;
+        background-color: white;
+        border: none;
+        border-left: 4px solid #42b983;
+        border-right: 4px solid #42b983;
+        border-radius: 10px;
+    }
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.1;
+        background: url("");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+</style>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+         It's a separate element, as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
+        <!-- don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+<div class="mobile-menus-out" >
+
+</div>
+<div class="mobile-menus">
+    
+    
+    
+    <a class="dynamic-menu " target="_self"   href="https://walterhost.github.io/">令狐冲</a>
+    
+    
+    <a class="dynamic-menu " target="_blank"  href="https://github.com/walterhost">github</a>
+    
+</div>
+
+</html>
