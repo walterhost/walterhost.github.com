@@ -1,0 +1,3118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>27种神经网络模型简明图解 | 令狐冲</title>
+  <meta name="keywords" content=" 技术体系 ">
+  <meta name="description" content="27种神经网络模型简明图解 | 令狐冲">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="“古人之观于天地、山川、草木、虫鱼、鸟兽，往往有得，以其求思之深而无不在也。夫夷以近，则游者众；险以远，则至者少。而世之奇伟、瑰怪，非常之观，常在于险远，而人之所罕至焉，故非有志者不能至也。有志矣，不随以止也，然力不足者，亦不能至也。有志与力，而又不随以怠，至于幽暗昏惑而无物以相之，亦不能至也。然力足以至焉，于人为可讥，而在己为有悔；尽吾志也而不能至者，可以无悔矣，其孰能讥之乎？” —— 《游">
+<meta property="og:type" content="website">
+<meta property="og:title" content="关于我">
+<meta property="og:url" content="https://walterhost.github.io/about/index.html">
+<meta property="og:site_name" content="令狐冲">
+<meta property="og:description" content="“古人之观于天地、山川、草木、虫鱼、鸟兽，往往有得，以其求思之深而无不在也。夫夷以近，则游者众；险以远，则至者少。而世之奇伟、瑰怪，非常之观，常在于险远，而人之所罕至焉，故非有志者不能至也。有志矣，不随以止也，然力不足者，亦不能至也。有志与力，而又不随以怠，至于幽暗昏惑而无物以相之，亦不能至也。然力足以至焉，于人为可讥，而在己为有悔；尽吾志也而不能至者，可以无悔矣，其孰能讥之乎？” —— 《游">
+<meta property="og:image" content="http://zhwhong.ml/images/about_img.png">
+<meta property="og:updated_time" content="2018-04-01T10:52:23.901Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="关于我">
+<meta name="twitter:description" content="“古人之观于天地、山川、草木、虫鱼、鸟兽，往往有得，以其求思之深而无不在也。夫夷以近，则游者众；险以远，则至者少。而世之奇伟、瑰怪，非常之观，常在于险远，而人之所罕至焉，故非有志者不能至也。有志矣，不随以止也，然力不足者，亦不能至也。有志与力，而又不随以怠，至于幽暗昏惑而无物以相之，亦不能至也。然力足以至焉，于人为可讥，而在己为有悔；尽吾志也而不能至者，可以无悔矣，其孰能讥之乎？” —— 《游">
+<meta name="twitter:image" content="http://zhwhong.ml/images/about_img.png">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link rel="stylesheet" href="/css/style.css">
+
+<link rel="stylesheet" href="/css/hl_theme/sublime.css">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/photoswipe/4.1.2/photoswipe.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/photoswipe/4.1.2/default-skin/default-skin.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="" ></script>
+
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+</div>
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>令狐冲</span>
+</div>
+
+<div class="icon">
+    
+    <a class="rss" title="rss" href="/atom.xml" target="_blank"></a>
+    
+    
+    <a class="github" title="github" href="https://github.com/walterhost" target="_blank"></a>
+    
+    
+    
+    
+    
+    
+    
+    <a class="weibo" title="weibo" href="http://weibo.com/u/2104012700" target="_blank"></a>
+    
+    
+    <a class="email" title="email" href="mailto:walterhost@qq.com"></a>
+    
+</div>
+
+
+
+<a class="more-menus">更多菜单</a>
+
+<ul>
+    <li class="all active">全部</li>
+    
+    <li data-rel="专业能力"> 专业能力 </li>
+    
+    <li data-rel="核心素质"> 核心素质 </li>
+    
+    <li data-rel="必备知识"> 必备知识 </li>
+    
+    <li data-rel="通用能力"> 通用能力 </li>
+    
+    <li data-rel="产品"> 产品 </li>
+    
+    <li data-rel="工具"> 工具 </li>
+    
+    <li data-rel="商业"> 商业 </li>
+    
+    <li data-rel="数据"> 数据 </li>
+    
+    <li data-rel="理财"> 理财 </li>
+    
+    <li data-rel="育儿"> 育儿 </li>
+    
+    <li data-rel="哲学"> 哲学 </li>
+    
+    <li data-rel="管理"> 管理 </li>
+    
+    <li data-rel="读书"> 读书 </li>
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    <a class="dynamic-menu " target="_self"   href="https://walterhost.github.io/">令狐冲</a>
+    
+    
+    <a class="dynamic-menu " target="_blank"  href="https://github.com/walterhost">github</a>
+    
+    </div>
+    <div><a style="border-right: 1px solid #fff; width: 49%"  class="about site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="259">
+<input type="hidden" id="yelog_site_word_count" value="461.7k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="https://walterhost.github.io/">令狐冲</a></li>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+            <li><a target="_blank" href="http://www.gitnavi.com/">GitNav</a></li>
+            
+            <li><a target="_blank" href="http://youmeek.com">YouMeek</a></li>
+            
+            <li><a target="_blank" href="http://vinnyxiong.cn/">熊远文</a></li>
+            
+            <li><a target="_blank" href="https://post.zz173.com/">青枫浦</a></li>
+            
+            <li><a target="_blank" href="http://zhwhong.ml/">zhwhong</a></li>
+            
+            <li><a target="_blank" href="http://keeganlee.me/archive">Keegan小钢</a></li>
+            
+            <li><a target="_blank" href="http://lucida.me/">璟鸿</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode==13){return false;}">
+        <input class="search" type="text" placeholder="Search..." autocomplete="off"id="local-search-input" >
+        <i class="cross"></i>
+        <span>
+        <label for="tagswitch" style="color: #757575;">Tags:</label>
+        <input id="tagswitch" type="checkbox">
+    </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">开源技术</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">技术体系</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">BookNote</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">Hexo</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">hexo</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">技术</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">Java线程</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">资源管理</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">shell</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">心理学</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">成长体系</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">职场方法论</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">方法论</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">哲学体系</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">思维</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">思维体系</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">产品体系</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">插件体系</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">工具管理</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">商业体系</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">工具体系</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">数据体系</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">资产体系</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">育儿</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">文学</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">三观体系</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">哲学</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">企业管理</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class="通用能力 "
+           href="/2018/04/21/通用能力/子髯工作周报20180421/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="子髯工作周报20180421">子髯工作周报20180421</span>
+            <span class="post-date" title="2018-04-21 10:53:45">2018/04/21</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/09/通用能力/VisualParadigm方法论/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="VisualParadigm方法论">VisualParadigm方法论</span>
+            <span class="post-date" title="2018-04-09 23:14:24">2018/04/09</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/09/通用能力/AI时代产品经理的思考/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="AI时代产品经理的思考">AI时代产品经理的思考</span>
+            <span class="post-date" title="2018-04-09 17:29:38">2018/04/09</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/09/通用能力/活法-可能性即未来的能力/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="活法-可能性即未来的能力">活法-可能性即未来的能力</span>
+            <span class="post-date" title="2018-04-09 15:47:28">2018/04/09</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/09/通用能力/2018新商业展望合集/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="2018新商业展望合集">2018新商业展望合集</span>
+            <span class="post-date" title="2018-04-09 15:02:20">2018/04/09</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/09/通用能力/核心竞争力分析/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="核心竞争力分析">核心竞争力分析</span>
+            <span class="post-date" title="2018-04-09 11:50:14">2018/04/09</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/08/通用能力/上海各区小学梯队/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="上海各区小学梯队">上海各区小学梯队</span>
+            <span class="post-date" title="2018-04-08 19:58:27">2018/04/08</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/08/通用能力/学区房调研/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="学区房调研">学区房调研</span>
+            <span class="post-date" title="2018-04-08 14:14:46">2018/04/08</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/08/通用能力/马云-数据是新一轮革命最重要的生产资料/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="马云-数据是新一轮革命最重要的生产资料">马云-数据是新一轮革命最重要的生产资料</span>
+            <span class="post-date" title="2018-04-08 12:00:04">2018/04/08</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/08/通用能力/傅盛-后互联网时代的商业机会和创新出路/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="傅盛-后互联网时代的商业机会和创新出路">傅盛-后互联网时代的商业机会和创新出路</span>
+            <span class="post-date" title="2018-04-08 09:41:41">2018/04/08</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/04/通用能力/行动性思维/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="行动性思维">行动性思维</span>
+            <span class="post-date" title="2018-04-04 01:06:29">2018/04/04</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/04/通用能力/思维模型-本位价值标准/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-本位价值标准">思维模型-本位价值标准</span>
+            <span class="post-date" title="2018-04-04 01:01:01">2018/04/04</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/04/通用能力/思维模型-不要做任何假设/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-不要做任何假设">思维模型-不要做任何假设</span>
+            <span class="post-date" title="2018-04-04 00:54:54">2018/04/04</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/04/通用能力/思维模型-系统思考/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-系统思考">思维模型-系统思考</span>
+            <span class="post-date" title="2018-04-04 00:51:14">2018/04/04</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/04/通用能力/思维模型-平和的状态/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-平和的状态">思维模型-平和的状态</span>
+            <span class="post-date" title="2018-04-04 00:49:03">2018/04/04</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/04/通用能力/思维模型-想象并坚信自己所处某种角色/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-想象并坚信自己所处某种角色">思维模型-想象并坚信自己所处某种角色</span>
+            <span class="post-date" title="2018-04-04 00:47:25">2018/04/04</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/04/通用能力/思维模型-元认知/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-元认知">思维模型-元认知</span>
+            <span class="post-date" title="2018-04-04 00:45:22">2018/04/04</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/04/通用能力/思维模型-一切以成长为目标/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-一切以成长为目标">思维模型-一切以成长为目标</span>
+            <span class="post-date" title="2018-04-04 00:44:27">2018/04/04</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/04/通用能力/思维模型-实验心态/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-实验心态">思维模型-实验心态</span>
+            <span class="post-date" title="2018-04-04 00:43:38">2018/04/04</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/04/通用能力/思维模型-信息量思考/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-信息量思考">思维模型-信息量思考</span>
+            <span class="post-date" title="2018-04-04 00:42:42">2018/04/04</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/04/通用能力/思维模型-效用边际递减为负时阻止不理智行为/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-效用边际递减为负时阻止不理智行为">思维模型-效用边际递减为负时阻止不理智行为</span>
+            <span class="post-date" title="2018-04-04 00:41:19">2018/04/04</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/04/通用能力/思维模型-比周到多一点用心/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-比周到多一点用心">思维模型-比周到多一点用心</span>
+            <span class="post-date" title="2018-04-04 00:36:25">2018/04/04</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/04/通用能力/思维模型-不断对自己系统升级/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-不断对自己系统升级">思维模型-不断对自己系统升级</span>
+            <span class="post-date" title="2018-04-04 00:34:45">2018/04/04</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/04/通用能力/思维模型-有始有终/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-有始有终">思维模型-有始有终</span>
+            <span class="post-date" title="2018-04-04 00:33:59">2018/04/04</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/04/通用能力/思维模型-注意细节永远不嫌多/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-注意细节永远不嫌多">思维模型-注意细节永远不嫌多</span>
+            <span class="post-date" title="2018-04-04 00:33:30">2018/04/04</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/04/通用能力/思维模型-解放思想实事求是/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-解放思想实事求是">思维模型-解放思想实事求是</span>
+            <span class="post-date" title="2018-04-04 00:31:42">2018/04/04</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/04/通用能力/思维模型-创意简报/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-创意简报">思维模型-创意简报</span>
+            <span class="post-date" title="2018-04-04 00:26:53">2018/04/04</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/04/通用能力/思维模型-定义式思维/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-定义式思维">思维模型-定义式思维</span>
+            <span class="post-date" title="2018-04-04 00:25:13">2018/04/04</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/04/通用能力/思维模型-路标式思维/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-路标式思维">思维模型-路标式思维</span>
+            <span class="post-date" title="2018-04-04 00:23:14">2018/04/04</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/04/通用能力/思维模型-左右手互搏/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-左右手互搏">思维模型-左右手互搏</span>
+            <span class="post-date" title="2018-04-04 00:19:38">2018/04/04</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/04/通用能力/思维模型-正视认知失调/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-正视认知失调">思维模型-正视认知失调</span>
+            <span class="post-date" title="2018-04-04 00:10:02">2018/04/04</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/04/通用能力/思维模型-马上去做/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-马上去做">思维模型-马上去做</span>
+            <span class="post-date" title="2018-04-04 00:04:50">2018/04/04</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/04/通用能力/思维模型-认命不认怂/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-认命不认怂">思维模型-认命不认怂</span>
+            <span class="post-date" title="2018-04-04 00:03:27">2018/04/04</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/04/通用能力/思维模型-结构化思维比你想象得重要一万倍/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-结构化思维比你想象得重要一万倍">思维模型-结构化思维比你想象得重要一万倍</span>
+            <span class="post-date" title="2018-04-04 00:00:36">2018/04/04</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/03/通用能力/思维模型-80-的成功源自出席/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-80%的成功源自出席">思维模型-80%的成功源自出席</span>
+            <span class="post-date" title="2018-04-03 23:59:38">2018/04/03</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/02/通用能力/思维模型-聊胜于无/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-聊胜于无">思维模型-聊胜于无</span>
+            <span class="post-date" title="2018-04-02 23:46:02">2018/04/02</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/02/通用能力/思维模型-混乱是一种常态/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-混乱是一种常态">思维模型-混乱是一种常态</span>
+            <span class="post-date" title="2018-04-02 23:45:40">2018/04/02</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/02/通用能力/思维模型-温柔的坚持代替激烈的反抗/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-温柔的坚持代替激烈的反抗">思维模型-温柔的坚持代替激烈的反抗</span>
+            <span class="post-date" title="2018-04-02 23:36:54">2018/04/02</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/02/通用能力/思维模型-我帮你解决问题代替我替你打工卖命/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-我帮你解决问题代替我替你打工卖命">思维模型-我帮你解决问题代替我替你打工卖命</span>
+            <span class="post-date" title="2018-04-02 23:36:20">2018/04/02</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/02/通用能力/思维模型-往前走走看代替在原地纠结/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-往前走走看代替在原地纠结">思维模型-往前走走看代替在原地纠结</span>
+            <span class="post-date" title="2018-04-02 23:30:20">2018/04/02</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/02/通用能力/思维模型-高配版的自己代替低配版的自已/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-高配版的自己代替低配版的自已">思维模型-高配版的自己代替低配版的自已</span>
+            <span class="post-date" title="2018-04-02 23:29:43">2018/04/02</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/02/通用能力/思维模型-把比赛当成练习代替等练好了再参赛/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-把比赛当成练习代替等练好了再参赛">思维模型-把比赛当成练习代替等练好了再参赛</span>
+            <span class="post-date" title="2018-04-02 23:29:08">2018/04/02</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/02/通用能力/思维模型-我选择我负责代替我恐惧我逃避/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-我选择我负责代替我恐惧我逃避">思维模型-我选择我负责代替我恐惧我逃避</span>
+            <span class="post-date" title="2018-04-02 23:27:28">2018/04/02</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/02/通用能力/思维模型-时刻关注事实是什么的意识/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-时刻关注事实是什么的意识">思维模型-时刻关注事实是什么的意识</span>
+            <span class="post-date" title="2018-04-02 23:21:00">2018/04/02</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/02/通用能力/思维模型-保持好奇心的意识/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-保持好奇心的意识">思维模型-保持好奇心的意识</span>
+            <span class="post-date" title="2018-04-02 23:19:46">2018/04/02</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/02/通用能力/思维模型-自我觉察的意识/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-自我觉察的意识">思维模型-自我觉察的意识</span>
+            <span class="post-date" title="2018-04-02 23:18:55">2018/04/02</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/02/通用能力/思维模型-后果如何反作用于前因/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-后果如何反作用于前因">思维模型-后果如何反作用于前因</span>
+            <span class="post-date" title="2018-04-02 23:17:06">2018/04/02</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/02/通用能力/思维模型-做第三方认证或第三方调查的思维/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-做第三方认证或第三方调查的思维">思维模型-做第三方认证或第三方调查的思维</span>
+            <span class="post-date" title="2018-04-02 23:15:21">2018/04/02</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/02/通用能力/思维模型-安全第一/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-安全第一">思维模型-安全第一</span>
+            <span class="post-date" title="2018-04-02 23:15:01">2018/04/02</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/02/通用能力/思维模型-不要把临时方案当作永久方案去使用/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-不要把临时方案当作永久方案去使用">思维模型-不要把临时方案当作永久方案去使用</span>
+            <span class="post-date" title="2018-04-02 23:14:42">2018/04/02</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/02/通用能力/思维模型-思维导图/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-思维导图">思维模型-思维导图</span>
+            <span class="post-date" title="2018-04-02 23:14:04">2018/04/02</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/02/通用能力/思维模型-备用/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-备用">思维模型-备用</span>
+            <span class="post-date" title="2018-04-02 23:13:19">2018/04/02</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/02/通用能力/思维模型-备份/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-备份">思维模型-备份</span>
+            <span class="post-date" title="2018-04-02 23:12:52">2018/04/02</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/02/通用能力/思维模型-系统化/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-系统化">思维模型-系统化</span>
+            <span class="post-date" title="2018-04-02 23:12:20">2018/04/02</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/02/通用能力/思维模型-流程制度化/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-流程制度化">思维模型-流程制度化</span>
+            <span class="post-date" title="2018-04-02 23:12:00">2018/04/02</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/02/通用能力/思维模型-模型思维/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-模型思维">思维模型-模型思维</span>
+            <span class="post-date" title="2018-04-02 23:06:57">2018/04/02</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/02/通用能力/思维模型-控制理论系统和反馈/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-控制理论系统和反馈">思维模型-控制理论系统和反馈</span>
+            <span class="post-date" title="2018-04-02 23:03:43">2018/04/02</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/02/通用能力/思维模型-函数系统/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-函数系统">思维模型-函数系统</span>
+            <span class="post-date" title="2018-04-02 23:02:04">2018/04/02</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/02/通用能力/思维模型-反差效用/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-反差效用">思维模型-反差效用</span>
+            <span class="post-date" title="2018-04-02 23:01:40">2018/04/02</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/02/通用能力/思维模型-吕氏春秋之观人模型/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-吕氏春秋之观人模型">思维模型-吕氏春秋之观人模型</span>
+            <span class="post-date" title="2018-04-02 23:00:56">2018/04/02</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/02/通用能力/思维模型-效用曲线模型/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-效用曲线模型">思维模型-效用曲线模型</span>
+            <span class="post-date" title="2018-04-02 22:57:50">2018/04/02</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/02/通用能力/思维模型-倒U模型/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-倒U模型">思维模型-倒U模型</span>
+            <span class="post-date" title="2018-04-02 22:56:36">2018/04/02</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/02/通用能力/思维模型-小马过河决策模型/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-小马过河决策模型">思维模型-小马过河决策模型</span>
+            <span class="post-date" title="2018-04-02 22:53:35">2018/04/02</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/02/通用能力/思维模型-正合奇胜/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-正合奇胜">思维模型-正合奇胜</span>
+            <span class="post-date" title="2018-04-02 22:51:21">2018/04/02</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/02/通用能力/思维模型-标准化和模块化/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-标准化和模块化">思维模型-标准化和模块化</span>
+            <span class="post-date" title="2018-04-02 22:49:57">2018/04/02</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/02/通用能力/思维模型-生态圈/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-生态圈">思维模型-生态圈</span>
+            <span class="post-date" title="2018-04-02 22:49:28">2018/04/02</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/02/通用能力/思维模型-生命周期/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-生命周期">思维模型-生命周期</span>
+            <span class="post-date" title="2018-04-02 22:49:01">2018/04/02</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/02/通用能力/思维模型-倾听决策交流/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-倾听决策交流">思维模型-倾听决策交流</span>
+            <span class="post-date" title="2018-04-02 22:40:57">2018/04/02</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/02/通用能力/思维模型-彻底坦诚/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-彻底坦诚">思维模型-彻底坦诚</span>
+            <span class="post-date" title="2018-04-02 22:40:17">2018/04/02</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/02/通用能力/思维模型-团队中的团队/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-团队中的团队">思维模型-团队中的团队</span>
+            <span class="post-date" title="2018-04-02 22:39:44">2018/04/02</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/02/通用能力/思维模型-直接责任人DRI/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-直接责任人DRI">思维模型-直接责任人DRI</span>
+            <span class="post-date" title="2018-04-02 22:39:15">2018/04/02</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/02/通用能力/思维模型-99-50-1框架/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-99/50/1框架">思维模型-99/50/1框架</span>
+            <span class="post-date" title="2018-04-02 22:38:20">2018/04/02</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/02/通用能力/思维模型-金字塔原理/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-金字塔原理">思维模型-金字塔原理</span>
+            <span class="post-date" title="2018-04-02 22:37:57">2018/04/02</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/02/通用能力/思维模型-规模经济/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-规模经济">思维模型-规模经济</span>
+            <span class="post-date" title="2018-04-02 22:36:40">2018/04/02</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/02/通用能力/思维模型-博弈论/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-博弈论">思维模型-博弈论</span>
+            <span class="post-date" title="2018-04-02 22:36:21">2018/04/02</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/02/通用能力/思维模型-集中式分散式分布式/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-集中式分散式分布式">思维模型-集中式分散式分布式</span>
+            <span class="post-date" title="2018-04-02 22:35:43">2018/04/02</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/02/通用能力/思维模型-网络效应和临界规模/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-网络效应和临界规模">思维模型-网络效应和临界规模</span>
+            <span class="post-date" title="2018-04-02 22:34:55">2018/04/02</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/02/通用能力/思维模型-有竞争力的护城河/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-有竞争力的护城河">思维模型-有竞争力的护城河</span>
+            <span class="post-date" title="2018-04-02 22:34:13">2018/04/02</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/02/通用能力/思维模型-3的法则/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-3的法则">思维模型-3的法则</span>
+            <span class="post-date" title="2018-04-02 22:32:26">2018/04/02</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/02/通用能力/思维模型-正确与非共识/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-正确与非共识">思维模型-正确与非共识</span>
+            <span class="post-date" title="2018-04-02 22:31:18">2018/04/02</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/02/通用能力/思维模型-忽略结果（不根据结果判断决策的正确与否）/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-忽略结果（不根据结果判断决策的正确与否）">思维模型-忽略结果（不根据结果判断决策的正确与否）</span>
+            <span class="post-date" title="2018-04-02 22:30:39">2018/04/02</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/02/通用能力/思维模型-10-10-10原则/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-10/10/10原则">思维模型-10/10/10原则</span>
+            <span class="post-date" title="2018-04-02 22:29:42">2018/04/02</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/02/通用能力/思维模型-沃伦·巴菲特的双目标清单系统TWO-LIST-SYSTEM/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-沃伦·巴菲特的双目标清单系统TWO_LIST_SYSTEM">思维模型-沃伦·巴菲特的双目标清单系统TWO_LIST_SYSTEM</span>
+            <span class="post-date" title="2018-04-02 22:28:31">2018/04/02</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/02/通用能力/思维模型-经营公司管理团队16种顶级思维模型概述/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-经营公司管理团队16种顶级思维模型概述">思维模型-经营公司管理团队16种顶级思维模型概述</span>
+            <span class="post-date" title="2018-04-02 22:27:38">2018/04/02</span>
+        </a>
+        
+        <a  class="核心素质 "
+           href="/2018/04/01/核心素质/为什么要写博客/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="为什么要写博客">为什么要写博客</span>
+            <span class="post-date" title="2018-04-01 18:52:23">2018/04/01</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/04/01/通用能力/思维模型-结构化知识/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="思维模型-结构化知识">思维模型-结构化知识</span>
+            <span class="post-date" title="2018-04-01 17:39:14">2018/04/01</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/03/28/通用能力/我别无选择/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="我别无选择">我别无选择</span>
+            <span class="post-date" title="2018-03-28 22:46:41">2018/03/28</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/03/28/通用能力/IDEA注册/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="IDEA注册">IDEA注册</span>
+            <span class="post-date" title="2018-03-28 11:33:23">2018/03/28</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/03/23/通用能力/得到-汤君健-有效提升你的职场说服力/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="得到-汤君健-有效提升你的职场说服力">得到-汤君健-有效提升你的职场说服力</span>
+            <span class="post-date" title="2018-03-23 19:25:04">2018/03/23</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/03/12/通用能力/吴辉-大学前致女儿的一封信/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="吴辉-大学前致女儿的一封信">吴辉-大学前致女儿的一封信</span>
+            <span class="post-date" title="2018-03-12 12:49:32">2018/03/12</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/03/07/专业能力/Diamond-开发接口/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="Diamond-开发接口">Diamond-开发接口</span>
+            <span class="post-date" title="2018-03-07 19:27:19">2018/03/07</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/03/07/专业能力/Diamond-快速接入/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="Diamond-快速接入">Diamond-快速接入</span>
+            <span class="post-date" title="2018-03-07 19:25:14">2018/03/07</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/03/07/专业能力/Diamond-配置中心数据发布命名规范/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="Diamond-配置中心数据发布命名规范">Diamond-配置中心数据发布命名规范</span>
+            <span class="post-date" title="2018-03-07 19:24:13">2018/03/07</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/03/07/专业能力/Diamond-核心功能和用例/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="Diamond-核心功能和用例">Diamond-核心功能和用例</span>
+            <span class="post-date" title="2018-03-07 19:21:50">2018/03/07</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/03/07/专业能力/Diamond-使用约束/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="Diamond-使用约束">Diamond-使用约束</span>
+            <span class="post-date" title="2018-03-07 19:20:33">2018/03/07</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/03/07/专业能力/Diamond-数据获取模型/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="Diamond-数据获取模型">Diamond-数据获取模型</span>
+            <span class="post-date" title="2018-03-07 19:18:50">2018/03/07</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/03/07/专业能力/Diamond-容灾机制/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="Diamond-容灾机制">Diamond-容灾机制</span>
+            <span class="post-date" title="2018-03-07 19:16:56">2018/03/07</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/03/06/专业能力/Diamond基本实现-简介/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="Diamond基本实现-简介">Diamond基本实现-简介</span>
+            <span class="post-date" title="2018-03-06 17:10:27">2018/03/06</span>
+        </a>
+        
+        <a  class="通用能力 读书 "
+           href="/2018/03/05/通用能力/读书/读书-坚毅grit-释放激情与坚持的力量/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="读书-坚毅grit-释放激情与坚持的力量">读书-坚毅grit-释放激情与坚持的力量</span>
+            <span class="post-date" title="2018-03-05 17:17:31">2018/03/05</span>
+        </a>
+        
+        <a  class="通用能力 读书 "
+           href="/2018/03/05/通用能力/读书/读书-A-TOUR-OF-CPP-学习使用技术的四种层次/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="读书-A-TOUR-OF-CPP-学习使用技术的四种层次">读书-A-TOUR-OF-CPP-学习使用技术的四种层次</span>
+            <span class="post-date" title="2018-03-05 17:12:03">2018/03/05</span>
+        </a>
+        
+        <a  class="通用能力 读书 "
+           href="/2018/03/05/通用能力/读书/读书-活法-可能性即未来的能力/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="读书-活法-可能性即未来的能力">读书-活法-可能性即未来的能力</span>
+            <span class="post-date" title="2018-03-05 15:36:28">2018/03/05</span>
+        </a>
+        
+        <a  class="通用能力 读书 "
+           href="/2018/03/05/通用能力/读书/读书-干法-稻盛和夫/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="读书-干法-稻盛和夫">读书-干法-稻盛和夫</span>
+            <span class="post-date" title="2018-03-05 15:03:35">2018/03/05</span>
+        </a>
+        
+        <a  class="通用能力 读书 "
+           href="/2018/03/05/通用能力/读书/读书-浪潮之巅-永远不可高枕无忧/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="读书-浪潮之巅-永远不可高枕无忧">读书-浪潮之巅-永远不可高枕无忧</span>
+            <span class="post-date" title="2018-03-05 13:23:52">2018/03/05</span>
+        </a>
+        
+        <a  class="通用能力 读书 "
+           href="/2018/03/05/通用能力/读书/读书-少有人走的路-走向心智成熟之路/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="读书-少有人走的路-走向心智成熟之路">读书-少有人走的路-走向心智成熟之路</span>
+            <span class="post-date" title="2018-03-05 12:46:06">2018/03/05</span>
+        </a>
+        
+        <a  class="通用能力 读书 "
+           href="/2018/03/05/通用能力/读书/读书-思考的技术-分析假设证明结论/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="读书-思考的技术-分析假设证明结论">读书-思考的技术-分析假设证明结论</span>
+            <span class="post-date" title="2018-03-05 12:42:47">2018/03/05</span>
+        </a>
+        
+        <a  class="通用能力 读书 "
+           href="/2018/03/03/通用能力/读书/读书-思考的技术-培养具有竞争力的思维方式/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="读书-思考的技术-培养具有竞争力的思维方式">读书-思考的技术-培养具有竞争力的思维方式</span>
+            <span class="post-date" title="2018-03-03 12:14:00">2018/03/03</span>
+        </a>
+        
+        <a  class="通用能力 读书 "
+           href="/2018/03/03/通用能力/读书/读书-我看电商-成本效益看电商行业发展/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="读书-我看电商-成本效益看电商行业发展">读书-我看电商-成本效益看电商行业发展</span>
+            <span class="post-date" title="2018-03-03 08:56:38">2018/03/03</span>
+        </a>
+        
+        <a  class="通用能力 读书 "
+           href="/2018/03/03/通用能力/读书/读书-痛点挖掘小数据满足用户需求-7C/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="读书-痛点挖掘小数据满足用户需求-7C">读书-痛点挖掘小数据满足用户需求-7C</span>
+            <span class="post-date" title="2018-03-03 08:07:35">2018/03/03</span>
+        </a>
+        
+        <a  class="通用能力 读书 "
+           href="/2018/03/03/通用能力/读书/读书-说服力-通过逻辑化和视觉化做好PPT/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="读书-说服力-通过逻辑化和视觉化做好PPT">读书-说服力-通过逻辑化和视觉化做好PPT</span>
+            <span class="post-date" title="2018-03-03 07:34:03">2018/03/03</span>
+        </a>
+        
+        <a  class="通用能力 读书 "
+           href="/2018/03/03/通用能力/读书/读书-学会学习-与其做学习方法的搬运工不如做解剖者/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="读书-学会学习-与其做学习方法的搬运工不如做解剖者">读书-学会学习-与其做学习方法的搬运工不如做解剖者</span>
+            <span class="post-date" title="2018-03-03 01:06:54">2018/03/03</span>
+        </a>
+        
+        <a  class="通用能力 读书 "
+           href="/2018/03/03/通用能力/读书/读书-好好学习-植入临界知识的芯片/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="读书-好好学习-植入临界知识的芯片">读书-好好学习-植入临界知识的芯片</span>
+            <span class="post-date" title="2018-03-03 01:02:45">2018/03/03</span>
+        </a>
+        
+        <a  class="通用能力 读书 "
+           href="/2018/03/02/通用能力/读书/读书-好好学习-解决低水平勤奋二/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="读书-好好学习-解决低水平勤奋二">读书-好好学习-解决低水平勤奋二</span>
+            <span class="post-date" title="2018-03-02 15:41:27">2018/03/02</span>
+        </a>
+        
+        <a  class="通用能力 读书 "
+           href="/2018/03/02/通用能力/读书/读书-好好学习-解决低水平勤奋一/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="读书-好好学习-解决低水平勤奋一">读书-好好学习-解决低水平勤奋一</span>
+            <span class="post-date" title="2018-03-02 11:30:46">2018/03/02</span>
+        </a>
+        
+        <a  class="通用能力 读书 "
+           href="/2018/03/01/通用能力/读书/读书-把时间当作朋友-其实要管理的不是时间而是自己/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="读书-把时间当作朋友-其实要管理的不是时间而是自己">读书-把时间当作朋友-其实要管理的不是时间而是自己</span>
+            <span class="post-date" title="2018-03-01 19:55:47">2018/03/01</span>
+        </a>
+        
+        <a  class="通用能力 读书 "
+           href="/2018/03/01/通用能力/读书/读书-自来水哲学-把大众需要的东西变得像自来水一样便宜/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="读书-自来水哲学-把大众需要的东西变得像自来水一样便宜">读书-自来水哲学-把大众需要的东西变得像自来水一样便宜</span>
+            <span class="post-date" title="2018-03-01 17:32:30">2018/03/01</span>
+        </a>
+        
+        <a  class="通用能力 读书 "
+           href="/2018/03/01/通用能力/读书/读书-思维改变生活-观念和行为能够相互影响/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="读书-思维改变生活-观念和行为能够相互影响">读书-思维改变生活-观念和行为能够相互影响</span>
+            <span class="post-date" title="2018-03-01 17:30:28">2018/03/01</span>
+        </a>
+        
+        <a  class="通用能力 读书 "
+           href="/2018/03/01/通用能力/读书/读书-暗时间-通过推理深入理解事物/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="读书-暗时间-通过推理深入理解事物">读书-暗时间-通过推理深入理解事物</span>
+            <span class="post-date" title="2018-03-01 17:16:53">2018/03/01</span>
+        </a>
+        
+        <a  class="通用能力 读书 "
+           href="/2018/03/01/通用能力/读书/读书-人类简史-从动物到上帝-回应问题/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="读书-人类简史-从动物到上帝-回应问题">读书-人类简史-从动物到上帝-回应问题</span>
+            <span class="post-date" title="2018-03-01 15:17:59">2018/03/01</span>
+        </a>
+        
+        <a  class="通用能力 读书 "
+           href="/2018/03/01/通用能力/读书/读书-人类简史-读书笔记/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="读书-人类简史-读书笔记">读书-人类简史-读书笔记</span>
+            <span class="post-date" title="2018-03-01 13:49:18">2018/03/01</span>
+        </a>
+        
+        <a  class="通用能力 管理 "
+           href="/2018/03/01/通用能力/管理/课程-组织行为学-重点/"
+           data-tag="BookNote"
+           data-author="" >
+            <span class="post-title" title="课程-组织行为学-重点">课程-组织行为学-重点</span>
+            <span class="post-date" title="2018-03-01 07:26:38">2018/03/01</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/02/28/专业能力/JAVA线程-新特征-闭锁CountDownLatch与栅栏CyclicBarrier/"
+           data-tag="Java线程"
+           data-author="" >
+            <span class="post-title" title="JAVA线程-新特征-闭锁CountDownLatch与栅栏CyclicBarrier">JAVA线程-新特征-闭锁CountDownLatch与栅栏CyclicBarrier</span>
+            <span class="post-date" title="2018-02-28 15:10:33">2018/02/28</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/02/28/专业能力/JAVA线程-新特征-障碍器/"
+           data-tag="Java线程"
+           data-author="" >
+            <span class="post-title" title="JAVA线程-新特征-障碍器">JAVA线程-新特征-障碍器</span>
+            <span class="post-date" title="2018-02-28 15:07:29">2018/02/28</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/02/28/专业能力/JAVA线程-新特征-原子量/"
+           data-tag="Java线程"
+           data-author="" >
+            <span class="post-title" title="JAVA线程-新特征-原子量">JAVA线程-新特征-原子量</span>
+            <span class="post-date" title="2018-02-28 14:58:50">2018/02/28</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/02/28/专业能力/JAVA线程-新特征-条件变量/"
+           data-tag="Java线程"
+           data-author="" >
+            <span class="post-title" title="JAVA线程-新特征-条件变量">JAVA线程-新特征-条件变量</span>
+            <span class="post-date" title="2018-02-28 14:55:12">2018/02/28</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/02/28/专业能力/JAVA线程-新特征-阻塞栈/"
+           data-tag="Java线程"
+           data-author="" >
+            <span class="post-title" title="JAVA线程-新特征-阻塞栈">JAVA线程-新特征-阻塞栈</span>
+            <span class="post-date" title="2018-02-28 14:52:38">2018/02/28</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/02/28/专业能力/JAVA线程-新特征-阻塞队列/"
+           data-tag="Java线程"
+           data-author="" >
+            <span class="post-title" title="JAVA线程-新特征-阻塞队列">JAVA线程-新特征-阻塞队列</span>
+            <span class="post-date" title="2018-02-28 14:24:03">2018/02/28</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/02/28/专业能力/Java线程-新特征-信号量/"
+           data-tag="Java线程"
+           data-author="" >
+            <span class="post-title" title="Java线程-新特征-信号量">Java线程-新特征-信号量</span>
+            <span class="post-date" title="2018-02-28 14:20:07">2018/02/28</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/02/28/专业能力/JAVA线程-新特征-锁-下/"
+           data-tag="Java线程"
+           data-author="" >
+            <span class="post-title" title="JAVA线程-新特征-锁-下">JAVA线程-新特征-锁-下</span>
+            <span class="post-date" title="2018-02-28 14:18:26">2018/02/28</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/02/28/专业能力/JAVA线程-新特征-锁-上/"
+           data-tag="Java线程"
+           data-author="" >
+            <span class="post-title" title="JAVA线程-新特征-锁-上">JAVA线程-新特征-锁-上</span>
+            <span class="post-date" title="2018-02-28 14:17:05">2018/02/28</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/02/28/专业能力/JAVA线程-新特征-有返回值的线程/"
+           data-tag="Java线程"
+           data-author="" >
+            <span class="post-title" title="JAVA线程-新特征-有返回值的线程">JAVA线程-新特征-有返回值的线程</span>
+            <span class="post-date" title="2018-02-28 14:15:15">2018/02/28</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/02/28/专业能力/JAVA线程-新特征-线程池/"
+           data-tag="Java线程"
+           data-author="" >
+            <span class="post-title" title="JAVA线程-新特征-线程池">JAVA线程-新特征-线程池</span>
+            <span class="post-date" title="2018-02-28 14:12:24">2018/02/28</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/02/28/专业能力/JAVA线程-并发协作-死锁/"
+           data-tag="Java线程"
+           data-author="" >
+            <span class="post-title" title="JAVA线程-并发协作-死锁">JAVA线程-并发协作-死锁</span>
+            <span class="post-date" title="2018-02-28 13:06:17">2018/02/28</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/02/28/专业能力/JAVA线程-并发协作-生产者消费者模型/"
+           data-tag="Java线程"
+           data-author="" >
+            <span class="post-title" title="JAVA线程-并发协作-生产者消费者模型">JAVA线程-并发协作-生产者消费者模型</span>
+            <span class="post-date" title="2018-02-28 12:26:33">2018/02/28</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/02/28/专业能力/JAVA线程-线程的同步-同步块/"
+           data-tag="Java线程"
+           data-author="" >
+            <span class="post-title" title="JAVA线程-线程的同步-同步块">JAVA线程-线程的同步-同步块</span>
+            <span class="post-date" title="2018-02-28 12:24:02">2018/02/28</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/02/28/专业能力/JAVA线程-线程的同步-同步方法/"
+           data-tag="Java线程"
+           data-author="" >
+            <span class="post-title" title="JAVA线程-线程的同步-同步方法">JAVA线程-线程的同步-同步方法</span>
+            <span class="post-date" title="2018-02-28 12:21:17">2018/02/28</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/02/28/专业能力/JAVA线程-线程的调度-守护线程/"
+           data-tag="Java线程"
+           data-author="" >
+            <span class="post-title" title="JAVA线程-线程的调度-守护线程">JAVA线程-线程的调度-守护线程</span>
+            <span class="post-date" title="2018-02-28 12:15:57">2018/02/28</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/02/28/专业能力/Java线程-线程的调度-合并/"
+           data-tag="Java线程"
+           data-author="" >
+            <span class="post-title" title="Java线程-线程的调度-合并">Java线程-线程的调度-合并</span>
+            <span class="post-date" title="2018-02-28 11:51:39">2018/02/28</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/02/28/专业能力/JAVA线程-线程的调度-让步/"
+           data-tag="Java线程"
+           data-author="" >
+            <span class="post-title" title="JAVA线程-线程的调度-让步">JAVA线程-线程的调度-让步</span>
+            <span class="post-date" title="2018-02-28 11:49:34">2018/02/28</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/02/28/专业能力/JAVA线程-线程的调度-优先级/"
+           data-tag="Java线程"
+           data-author="" >
+            <span class="post-title" title="JAVA线程-线程的调度-优先级">JAVA线程-线程的调度-优先级</span>
+            <span class="post-date" title="2018-02-28 11:45:44">2018/02/28</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/02/28/专业能力/JAVA线程-线程的调度-休眠/"
+           data-tag="Java线程"
+           data-author="" >
+            <span class="post-title" title="JAVA线程-线程的调度-休眠">JAVA线程-线程的调度-休眠</span>
+            <span class="post-date" title="2018-02-28 11:44:17">2018/02/28</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/02/28/专业能力/JAVA线程-线程的交互/"
+           data-tag="Java线程"
+           data-author="" >
+            <span class="post-title" title="JAVA线程-线程的交互">JAVA线程-线程的交互</span>
+            <span class="post-date" title="2018-02-28 11:25:48">2018/02/28</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/02/27/专业能力/JAVA线程-线程的同步与锁/"
+           data-tag="Java线程"
+           data-author="" >
+            <span class="post-title" title="JAVA线程-线程的同步与锁">JAVA线程-线程的同步与锁</span>
+            <span class="post-date" title="2018-02-27 11:53:38">2018/02/27</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/02/11/专业能力/JAVA线程-线程状态的转换四/"
+           data-tag="Java线程"
+           data-author="" >
+            <span class="post-title" title="JAVA线程-线程状态的转换四">JAVA线程-线程状态的转换四</span>
+            <span class="post-date" title="2018-02-11 16:48:17">2018/02/11</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/02/11/专业能力/JAVA线程-线程栈模型与线程的变量三/"
+           data-tag="Java线程"
+           data-author="" >
+            <span class="post-title" title="JAVA线程-线程栈模型与线程的变量三">JAVA线程-线程栈模型与线程的变量三</span>
+            <span class="post-date" title="2018-02-11 16:43:37">2018/02/11</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/02/11/专业能力/JAVA线程-创建与启动二/"
+           data-tag="Java线程"
+           data-author="" >
+            <span class="post-title" title="JAVA线程-创建与启动">JAVA线程-创建与启动</span>
+            <span class="post-date" title="2018-02-11 16:33:22">2018/02/11</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/02/11/专业能力/JAVA线程-概念与原理一/"
+           data-tag="Java线程"
+           data-author="" >
+            <span class="post-title" title="JAVA线程-概念与原理一">JAVA线程-概念与原理一</span>
+            <span class="post-date" title="2018-02-11 16:30:47">2018/02/11</span>
+        </a>
+        
+        <a  class="专业能力 商业 "
+           href="/2018/02/11/专业能力/商业/30福利经济-你支持政府给所有公民发钱吗/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="30福利经济-你支持政府给所有公民发钱吗">30福利经济-你支持政府给所有公民发钱吗</span>
+            <span class="post-date" title="2018-02-11 14:59:09">2018/02/11</span>
+        </a>
+        
+        <a  class="专业能力 商业 "
+           href="/2018/02/11/专业能力/商业/29泡沫经济-疯狂的郁金香/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="29泡沫经济-疯狂的郁金香">29泡沫经济-疯狂的郁金香</span>
+            <span class="post-date" title="2018-02-11 14:55:14">2018/02/11</span>
+        </a>
+        
+        <a  class="专业能力 商业 "
+           href="/2018/02/11/专业能力/商业/28人口减少我们能做什么/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="28人口减少我们能做什么">28人口减少我们能做什么</span>
+            <span class="post-date" title="2018-02-11 14:52:13">2018/02/11</span>
+        </a>
+        
+        <a  class="专业能力 商业 "
+           href="/2018/02/11/专业能力/商业/27市场调控-市场与政府的定价权/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="27市场调控-市场与政府的定价权">27市场调控-市场与政府的定价权</span>
+            <span class="post-date" title="2018-02-11 14:39:45">2018/02/11</span>
+        </a>
+        
+        <a  class="专业能力 商业 "
+           href="/2018/02/11/专业能力/商业/26节约悖论-居民越节约，国家越贫穷吗/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="26节约悖论-居民越节约，国家越贫穷吗">26节约悖论-居民越节约，国家越贫穷吗</span>
+            <span class="post-date" title="2018-02-11 14:34:44">2018/02/11</span>
+        </a>
+        
+        <a  class="专业能力 商业 "
+           href="/2018/02/11/专业能力/商业/时间是上帝创造的最有意思的东西/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="时间是上帝创造的最有意思的东西">时间是上帝创造的最有意思的东西</span>
+            <span class="post-date" title="2018-02-11 14:09:37">2018/02/11</span>
+        </a>
+        
+        <a  class="专业能力 商业 "
+           href="/2018/02/11/专业能力/商业/25交易成本-企业的边界在哪里/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="25交易成本-企业的边界在哪里">25交易成本-企业的边界在哪里</span>
+            <span class="post-date" title="2018-02-11 14:06:03">2018/02/11</span>
+        </a>
+        
+        <a  class="专业能力 商业 "
+           href="/2018/02/11/专业能力/商业/24激励相容-自私是共同获益的原动力/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="24激励相容-自私是共同获益的原动力">24激励相容-自私是共同获益的原动力</span>
+            <span class="post-date" title="2018-02-11 14:02:18">2018/02/11</span>
+        </a>
+        
+        <a  class="专业能力 商业 "
+           href="/2018/02/11/专业能力/商业/23机会成本-你到底是赚了还是亏了/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="23机会成本-你到底是赚了还是亏了">23机会成本-你到底是赚了还是亏了</span>
+            <span class="post-date" title="2018-02-11 13:58:48">2018/02/11</span>
+        </a>
+        
+        <a  class="专业能力 商业 "
+           href="/2018/02/11/专业能力/商业/22边际效应-七个同样的馒头为什么味道不一样/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="22边际效应-七个同样的馒头为什么味道不一样">22边际效应-七个同样的馒头为什么味道不一样</span>
+            <span class="post-date" title="2018-02-11 13:55:14">2018/02/11</span>
+        </a>
+        
+        <a  class="专业能力 商业 "
+           href="/2018/02/11/专业能力/商业/21供需理论-那双看不见的手/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="21供需理论-那双看不见的手">21供需理论-那双看不见的手</span>
+            <span class="post-date" title="2018-02-11 13:51:42">2018/02/11</span>
+        </a>
+        
+        <a  class="专业能力 商业 "
+           href="/2018/02/11/专业能力/商业/我对流量的分析以及看法/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="我对流量的分析以及看法">我对流量的分析以及看法</span>
+            <span class="post-date" title="2018-02-11 13:47:18">2018/02/11</span>
+        </a>
+        
+        <a  class="专业能力 商业 "
+           href="/2018/02/11/专业能力/商业/做人箴言/"
+           data-tag="技术体系"
+           data-author="" >
+            <span class="post-title" title="做人箴言">做人箴言</span>
+            <span class="post-date" title="2018-02-11 13:43:54">2018/02/11</span>
+        </a>
+        
+        <a  class="通用能力 哲学 "
+           href="/2018/02/11/通用能力/哲学/陈果我自风情万种与世无争/"
+           data-tag="技术体系"
+           data-author="" >
+            <span class="post-title" title="陈果我自风情万种与世无争">陈果我自风情万种与世无争</span>
+            <span class="post-date" title="2018-02-11 13:37:14">2018/02/11</span>
+        </a>
+        
+        <a  class="专业能力 产品 "
+           href="/2018/02/05/专业能力/产品/从零开始构建数据化运营体系/"
+           data-tag="技术体系"
+           data-author="" >
+            <span class="post-title" title="从零开始构建数据化运营体系">从零开始构建数据化运营体系</span>
+            <span class="post-date" title="2018-02-05 20:49:03">2018/02/05</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/01/29/专业能力/REST架构该怎么理解/"
+           data-tag="技术体系"
+           data-author="" >
+            <span class="post-title" title="REST架构该怎么理解">REST架构该怎么理解</span>
+            <span class="post-date" title="2018-01-29 21:04:37">2018/01/29</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/01/29/专业能力/APP架构设计经验谈-展示层的设计/"
+           data-tag="技术体系"
+           data-author="" >
+            <span class="post-title" title="APP架构设计经验谈:展示层的设计">APP架构设计经验谈:展示层的设计</span>
+            <span class="post-date" title="2018-01-29 20:20:00">2018/01/29</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/01/29/专业能力/APP架构设计经验谈-业务层的设计/"
+           data-tag="技术体系"
+           data-author="" >
+            <span class="post-title" title="APP架构设计经验谈:业务层的设计">APP架构设计经验谈:业务层的设计</span>
+            <span class="post-date" title="2018-01-29 20:18:46">2018/01/29</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/01/29/专业能力/APP架构设计经验谈-数据层的设计/"
+           data-tag="技术体系"
+           data-author="" >
+            <span class="post-title" title="APP架构设计经验谈:数据层的设计">APP架构设计经验谈:数据层的设计</span>
+            <span class="post-date" title="2018-01-29 20:17:32">2018/01/29</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/01/29/专业能力/App架构设计经验谈-技术选型/"
+           data-tag="技术体系"
+           data-author="" >
+            <span class="post-title" title="App架构设计经验谈:技术选型">App架构设计经验谈:技术选型</span>
+            <span class="post-date" title="2018-01-29 20:15:46">2018/01/29</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/01/29/专业能力/App架构设计经验谈:接口的设计/"
+           data-tag="技术体系"
+           data-author="" >
+            <span class="post-title" title="App架构设计经验谈:接口的设计">App架构设计经验谈:接口的设计</span>
+            <span class="post-date" title="2018-01-29 19:32:09">2018/01/29</span>
+        </a>
+        
+        <a  class="通用能力 哲学 "
+           href="/2018/01/29/通用能力/哲学/亘古不变的八个字/"
+           data-tag="哲学"
+           data-author="" >
+            <span class="post-title" title="亘古不变的八个字">亘古不变的八个字</span>
+            <span class="post-date" title="2018-01-29 13:02:09">2018/01/29</span>
+        </a>
+        
+        <a  class="专业能力 商业 "
+           href="/2018/01/29/专业能力/商业/线下O2O趋势升级/"
+           data-tag="技术体系"
+           data-author="" >
+            <span class="post-title" title="线下O2O趋势升级">线下O2O趋势升级</span>
+            <span class="post-date" title="2018-01-29 10:54:48">2018/01/29</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/01/27/通用能力/刻意训练的思维/"
+           data-tag="思维"
+           data-author="" >
+            <span class="post-title" title="刻意训练的思维">刻意训练的思维</span>
+            <span class="post-date" title="2018-01-27 20:43:12">2018/01/27</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/01/27/通用能力/核心思维模型/"
+           data-tag="思维"
+           data-author="" >
+            <span class="post-title" title="核心思维模型">核心思维模型</span>
+            <span class="post-date" title="2018-01-27 20:13:29">2018/01/27</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/01/25/通用能力/富含洞见的文章/"
+           data-tag="技术体系"
+           data-author="" >
+            <span class="post-title" title="富含洞见的文章">富含洞见的文章</span>
+            <span class="post-date" title="2018-01-25 18:35:16">2018/01/25</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/01/25/通用能力/傅盛：生物学思维给我的四个启示/"
+           data-tag="技术体系"
+           data-author="" >
+            <span class="post-title" title="傅盛：生物学思维给我的四个启示">傅盛：生物学思维给我的四个启示</span>
+            <span class="post-date" title="2018-01-25 18:31:38">2018/01/25</span>
+        </a>
+        
+        <a  class="通用能力 哲学 "
+           href="/2018/01/23/通用能力/哲学/在任何领域做到顶尖的人都谨记十六字/"
+           data-tag="哲学体系"
+           data-author="" >
+            <span class="post-title" title="在任何领域做到顶尖的人都谨记十六字">在任何领域做到顶尖的人都谨记十六字</span>
+            <span class="post-date" title="2018-01-23 14:06:30">2018/01/23</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/01/23/专业能力/27种神经网络模型简明图解/"
+           data-tag="技术体系"
+           data-author="" >
+            <span class="post-title" title="27种神经网络模型简明图解">27种神经网络模型简明图解</span>
+            <span class="post-date" title="2018-01-23 13:36:01">2018/01/23</span>
+        </a>
+        
+        <a  class="通用能力 管理 "
+           href="/2018/01/19/通用能力/管理/知识与岗位模型/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="知识与岗位模型">知识与岗位模型</span>
+            <span class="post-date" title="2018-01-19 14:27:30">2018/01/19</span>
+        </a>
+        
+        <a  class="专业能力 工具 "
+           href="/2018/01/19/专业能力/工具/Chrome插件-cVim更强大的VIM插件/"
+           data-tag="插件体系"
+           data-author="" >
+            <span class="post-title" title="chrome插件-cVim更强大的VIM插件">chrome插件-cVim更强大的VIM插件</span>
+            <span class="post-date" title="2018-01-19 11:43:15">2018/01/19</span>
+        </a>
+        
+        <a  class="专业能力 工具 "
+           href="/2018/01/19/专业能力/工具/Chrome插件-cVim/"
+           data-tag="插件体系"
+           data-author="" >
+            <span class="post-title" title="chrome插件-cVim">chrome插件-cVim</span>
+            <span class="post-date" title="2018-01-19 11:37:28">2018/01/19</span>
+        </a>
+        
+        <a  class="专业能力 产品 "
+           href="/2018/01/17/专业能力/产品/B端产品的第一性原理思考/"
+           data-tag="产品体系"
+           data-author="" >
+            <span class="post-title" title="B端产品的第一性原理思考">B端产品的第一性原理思考</span>
+            <span class="post-date" title="2018-01-17 21:45:28">2018/01/17</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/01/17/专业能力/架构漫谈02-认识概念是理解架构的基础/"
+           data-tag="技术体系"
+           data-author="" >
+            <span class="post-title" title="架构漫谈02-认识概念是理解架构的基础">架构漫谈02-认识概念是理解架构的基础</span>
+            <span class="post-date" title="2018-01-17 15:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/01/17/专业能力/架构漫谈04-如何做好架构之架构切分/"
+           data-tag="技术体系"
+           data-author="" >
+            <span class="post-title" title="架构漫谈04-如何做好架构之架构切分">架构漫谈04-如何做好架构之架构切分</span>
+            <span class="post-date" title="2018-01-17 15:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/01/17/专业能力/架构漫谈06-软件架构到底解决什么问题/"
+           data-tag="技术体系"
+           data-author="" >
+            <span class="post-title" title="架构漫谈06-软件架构到底解决什么问题">架构漫谈06-软件架构到底解决什么问题</span>
+            <span class="post-date" title="2018-01-17 15:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/01/17/专业能力/架构漫谈05-什么是软件/"
+           data-tag="技术体系"
+           data-author="" >
+            <span class="post-title" title="架构漫谈05-什么是软件">架构漫谈05-什么是软件</span>
+            <span class="post-date" title="2018-01-17 15:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/01/17/专业能力/架构漫谈07-不要空设架构师这个职位/"
+           data-tag="技术体系"
+           data-author="" >
+            <span class="post-title" title="架构漫谈07-不要空设架构师这个职位">架构漫谈07-不要空设架构师这个职位</span>
+            <span class="post-date" title="2018-01-17 15:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/01/17/专业能力/架构漫谈01-什么是架构/"
+           data-tag="技术体系"
+           data-author="" >
+            <span class="post-title" title="架构漫谈01-什么是架构">架构漫谈01-什么是架构</span>
+            <span class="post-date" title="2018-01-17 15:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/01/17/专业能力/架构漫谈08-从架构的角度看如何写好代码/"
+           data-tag="技术体系"
+           data-author="" >
+            <span class="post-title" title="架构漫谈08-从架构的角度看如何写好代码">架构漫谈08-从架构的角度看如何写好代码</span>
+            <span class="post-date" title="2018-01-17 15:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/01/17/专业能力/架构漫谈03-如何做好架构之识别问题/"
+           data-tag="技术体系"
+           data-author="" >
+            <span class="post-title" title="架构漫谈03-如何做好架构之识别问题">架构漫谈03-如何做好架构之识别问题</span>
+            <span class="post-date" title="2018-01-17 15:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="专业能力 商业 "
+           href="/2018/01/17/专业能力/商业/00成为自己的CEO/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="00成为自己的CEO">00成为自己的CEO</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="专业能力 商业 "
+           href="/2018/01/17/专业能力/商业/01心理账户-让用户从最优钱的那个心理账户花钱/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="01心理账户-让用户从最优钱的那个心理账户花钱">01心理账户-让用户从最优钱的那个心理账户花钱</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="专业能力 商业 "
+           href="/2018/01/17/专业能力/商业/04损失规避-得到的快乐其实并没有办法缓解失去的痛苦/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="04损失规避-得到的快乐其实并没有办法缓解失去的痛苦">04损失规避-得到的快乐其实并没有办法缓解失去的痛苦</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="专业能力 商业 "
+           href="/2018/01/17/专业能力/商业/05价格锚点-拉个垫背的显示你便宜/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="05价格锚点-拉个垫背的显示你便宜">05价格锚点-拉个垫背的显示你便宜</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="专业能力 商业 "
+           href="/2018/01/17/专业能力/商业/07定倍率-哪有什么一分钱一份货/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="07定倍率-哪有什么一分钱一份货">07定倍率-哪有什么一分钱一份货</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="专业能力 商业 "
+           href="/2018/01/17/专业能力/商业/06流量之河-用流量的逻辑来统一所有的零售方式/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="06流量之河-用流量的逻辑来统一所有的零售方式">06流量之河-用流量的逻辑来统一所有的零售方式</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="专业能力 商业 "
+           href="/2018/01/17/专业能力/商业/08价量之称-卖得更多还是卖得便宜/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="08价量之称-卖得更多还是卖得便宜">08价量之称-卖得更多还是卖得便宜</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="专业能力 商业 "
+           href="/2018/01/17/专业能力/商业/09风险之眼-风险不是你想买就能买/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="09风险之眼-风险不是你想买就能买">09风险之眼-风险不是你想买就能买</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="专业能力 商业 "
+           href="/2018/01/17/专业能力/商业/10规则之缝-商业世界的黑客黄牛/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="10规则之缝-商业世界的黑客黄牛">10规则之缝-商业世界的黑客黄牛</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="专业能力 商业 "
+           href="/2018/01/17/专业能力/商业/12边际成本-理论上你可以服务全人类/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="12边际成本-理论上你可以服务全人类">12边际成本-理论上你可以服务全人类</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="专业能力 商业 "
+           href="/2018/01/17/专业能力/商业/13网络效应-互联网与生俱来的洪荒之力/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="13网络效应-互联网与生俱来的洪荒之力">13网络效应-互联网与生俱来的洪荒之力</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="专业能力 商业 "
+           href="/2018/01/17/专业能力/商业/11信息对称-信息对称是互联网改变商业世界的底层逻辑/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="11信息对称-信息对称是互联网改变商业世界的底层逻辑">11信息对称-信息对称是互联网改变商业世界的底层逻辑</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="专业能力 商业 "
+           href="/2018/01/17/专业能力/商业/14长尾理论-商业的未来是小众市场/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="14长尾理论-商业的未来是小众市场">14长尾理论-商业的未来是小众市场</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="专业能力 商业 "
+           href="/2018/01/17/专业能力/商业/18鸡蛋理论-为什么妈妈们喜欢在朋友圈晒娃/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="18鸡蛋理论-为什么妈妈们喜欢在朋友圈晒娃">18鸡蛋理论-为什么妈妈们喜欢在朋友圈晒娃</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="专业能力 商业 "
+           href="/2018/01/17/专业能力/商业/17适应性偏见-人为什么总是会喜新厌旧/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="17适应性偏见-人为什么总是会喜新厌旧">17适应性偏见-人为什么总是会喜新厌旧</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="专业能力 商业 "
+           href="/2018/01/17/专业能力/商业/15免费理论-天下没有免费的午餐/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="15免费理论-天下没有免费的午餐">15免费理论-天下没有免费的午餐</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="专业能力 商业 "
+           href="/2018/01/17/专业能力/商业/16结果偏见-抓住老鼠的不一定是好猫/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="16结果偏见-抓住老鼠的不一定是好猫">16结果偏见-抓住老鼠的不一定是好猫</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="专业能力 商业 "
+           href="/2018/01/17/专业能力/商业/19概率偏见-验证客观概率/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="19概率偏见-验证客观概率">19概率偏见-验证客观概率</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="专业能力 商业 "
+           href="/2018/01/17/专业能力/商业/20凡勃能效应-不买最好只卖最贵/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="20凡勃能效应-不买最好只卖最贵">20凡勃能效应-不买最好只卖最贵</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/01/17/专业能力/2017开源中国新增开源项目排行榜TOP100/"
+           data-tag="开源技术"
+           data-author="" >
+            <span class="post-title" title="2017开源中国新增开源项目排行榜TOP100">2017开源中国新增开源项目排行榜TOP100</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/01/17/专业能力/构建Uber端到端技术栈的十条经验/"
+           data-tag="技术体系"
+           data-author="" >
+            <span class="post-title" title="构建Uber端到端技术栈的十条经验">构建Uber端到端技术栈的十条经验</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/01/17/专业能力/常用的shell命令/"
+           data-tag="shell"
+           data-author="" >
+            <span class="post-title" title="常用的shell命令">常用的shell命令</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/01/17/专业能力/常用搜索方法/"
+           data-tag="技术体系"
+           data-author="" >
+            <span class="post-title" title="常用搜索方法">常用搜索方法</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/01/17/专业能力/区分架构框架模式和平台/"
+           data-tag="技术体系"
+           data-author="" >
+            <span class="post-title" title="区分架构框架模式和平台">区分架构框架模式和平台</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/01/17/专业能力/hexo的工作原理/"
+           data-tag="Hexo"
+           data-author="" >
+            <span class="post-title" title="Hexo的工作原理">Hexo的工作原理</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/01/17/专业能力/Hexo搭建博客/"
+           data-tag="技术"
+           data-author="" >
+            <span class="post-title" title="Hexo搭建博客">Hexo搭建博客</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/01/17/专业能力/领域模型演进过程/"
+           data-tag="技术体系"
+           data-author="" >
+            <span class="post-title" title="领域模型演进过程">领域模型演进过程</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/01/17/专业能力/Hexo博客个性化及NexT主题配置/"
+           data-tag="Hexo"
+           data-author="" >
+            <span class="post-title" title="Hexo博客个性化及NexT主题配置">Hexo博客个性化及NexT主题配置</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/01/17/专业能力/Hexo主题配置/"
+           data-tag="hexo"
+           data-author="" >
+            <span class="post-title" title="3-hexo主题总结">3-hexo主题总结</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/01/17/专业能力/Mac安装卸载JAVA9安装JAVA8/"
+           data-tag="技术"
+           data-author="" >
+            <span class="post-title" title="Mac安装卸载JAVA9安装JAVA8">Mac安装卸载JAVA9安装JAVA8</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/01/17/专业能力/Hexo部署常见问题总结/"
+           data-tag="技术"
+           data-author="" >
+            <span class="post-title" title="Hexo部署常见问题总结">Hexo部署常见问题总结</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/01/17/专业能力/IDEA最新无法激活解决/"
+           data-tag="技术体系"
+           data-author="" >
+            <span class="post-title" title="IDEA最新无法激活解决">IDEA最新无法激活解决</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/01/17/专业能力/MAC自带Apache及PHP环境/"
+           data-tag="资源管理"
+           data-author="" >
+            <span class="post-title" title="MAC自带Apache及PHP环境">MAC自带Apache及PHP环境</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/01/17/专业能力/Java面试常用问题/"
+           data-tag="技术体系"
+           data-author="" >
+            <span class="post-title" title="JAVA面试常用问题">JAVA面试常用问题</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/01/17/专业能力/Gitlab及github多账户下设置sshkeys/"
+           data-tag="技术"
+           data-author="" >
+            <span class="post-title" title="gitlab及github多账户下设置sshkeys">gitlab及github多账户下设置sshkeys</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/01/17/专业能力/领域模型/"
+           data-tag="技术体系"
+           data-author="" >
+            <span class="post-title" title="领域模型">领域模型</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/01/17/专业能力/用brew安装node遇到的问题/"
+           data-tag="技术"
+           data-author="" >
+            <span class="post-title" title="用brew安装node遇到的问题">用brew安装node遇到的问题</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/01/17/专业能力/Hexo如何生成一篇新的post/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hexo如何生成一篇新的post">Hexo如何生成一篇新的post</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/01/17/专业能力/生成markdown文档的内容索引/"
+           data-tag="技术"
+           data-author="" >
+            <span class="post-title" title="生成markdown文档的内容索引">生成markdown文档的内容索引</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/01/17/专业能力/正则表达批量替换日期/"
+           data-tag="技术体系"
+           data-author="" >
+            <span class="post-title" title="正则表达批量替换日期">正则表达批量替换日期</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="专业能力 商业 "
+           href="/2018/01/17/专业能力/商业/02沉没成本-不要为打翻的牛奶哭泣/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="02沉没成本-不要为打翻的牛奶哭泣">02沉没成本-不要为打翻的牛奶哭泣</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="专业能力 "
+           href="/2018/01/17/专业能力/2016开源中国新增开源项目排行榜TOP100/"
+           data-tag="开源技术"
+           data-author="" >
+            <span class="post-title" title="2016开源中国新增开源项目排行榜TOP100">2016开源中国新增开源项目排行榜TOP100</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="专业能力 商业 "
+           href="/2018/01/17/专业能力/商业/03比例偏见-贵和便宜是相对的/"
+           data-tag="商业体系"
+           data-author="" >
+            <span class="post-title" title="03比例偏见-贵和便宜是相对的">03比例偏见-贵和便宜是相对的</span>
+            <span class="post-date" title="2018-01-17 14:19:53">2018/01/17</span>
+        </a>
+        
+        <a  class="专业能力 数据 "
+           href="/2018/01/15/专业能力/数据/数据挖掘01-为什么进行数据挖掘/"
+           data-tag="数据体系"
+           data-author="" >
+            <span class="post-title" title="数据挖掘01-为什么进行数据挖掘">数据挖掘01-为什么进行数据挖掘</span>
+            <span class="post-date" title="2018-01-15 16:23:44">2018/01/15</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/01/11/通用能力/技术学习方法论/"
+           data-tag="方法论"
+           data-author="" >
+            <span class="post-title" title="技术学习方法论">技术学习方法论</span>
+            <span class="post-date" title="2018-01-11 15:34:42">2018/01/11</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/01/11/通用能力/什么才算是有价值的努力/"
+           data-tag="哲学体系"
+           data-author="" >
+            <span class="post-title" title="什么才算是有价值的努力">什么才算是有价值的努力</span>
+            <span class="post-date" title="2018-01-11 15:11:22">2018/01/11</span>
+        </a>
+        
+        <a  class="通用能力 管理 "
+           href="/2018/01/11/通用能力/管理/马老师2017年度讲话金句盘点/"
+           data-tag="哲学体系"
+           data-author="" >
+            <span class="post-title" title="马老师2017年度讲话金句盘点">马老师2017年度讲话金句盘点</span>
+            <span class="post-date" title="2018-01-11 14:41:38">2018/01/11</span>
+        </a>
+        
+        <a  class="专业能力 理财 "
+           href="/2018/01/09/专业能力/理财/上海二手房置换必备终极攻略/"
+           data-tag="资产体系"
+           data-author="" >
+            <span class="post-title" title="上海二手房置换必备终极攻略">上海二手房置换必备终极攻略</span>
+            <span class="post-date" title="2018-01-09 01:18:23">2018/01/09</span>
+        </a>
+        
+        <a  class="必备知识 "
+           href="/2018/01/09/必备知识/马斯洛需求层次理论/"
+           data-tag="心理学"
+           data-author="" >
+            <span class="post-title" title="马斯洛需求层次理论">马斯洛需求层次理论</span>
+            <span class="post-date" title="2018-01-09 00:44:09">2018/01/09</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/01/09/通用能力/点滴人生观念信条/"
+           data-tag="心理学"
+           data-author="" >
+            <span class="post-title" title="点滴人生观念信条">点滴人生观念信条</span>
+            <span class="post-date" title="2018-01-09 00:43:14">2018/01/09</span>
+        </a>
+        
+        <a  class="必备知识 "
+           href="/2018/01/09/必备知识/DISC行为风格理论/"
+           data-tag="心理学"
+           data-author="" >
+            <span class="post-title" title="DISC行为风格理论">DISC行为风格理论</span>
+            <span class="post-date" title="2018-01-09 00:41:33">2018/01/09</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/01/08/通用能力/思维体系02-芒格让我一生受用的思维方式/"
+           data-tag="思维体系"
+           data-author="" >
+            <span class="post-title" title="思维体系02-芒格让我一生受用的思维方式">思维体系02-芒格让我一生受用的思维方式</span>
+            <span class="post-date" title="2018-01-08 00:25:37">2018/01/08</span>
+        </a>
+        
+        <a  class="通用能力 哲学 "
+           href="/2018/01/07/通用能力/哲学/三观体系02-价值观是如何形成的/"
+           data-tag="三观体系"
+           data-author="" >
+            <span class="post-title" title="三观体系02-价值观是如何形成的">三观体系02-价值观是如何形成的</span>
+            <span class="post-date" title="2018-01-07 23:54:06">2018/01/07</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2018/01/07/通用能力/思维体系01-个人思维模型构建/"
+           data-tag="思维体系"
+           data-author="" >
+            <span class="post-title" title="思维体系01-个人思维模型构建">思维体系01-个人思维模型构建</span>
+            <span class="post-date" title="2018-01-07 23:37:32">2018/01/07</span>
+        </a>
+        
+        <a  class="通用能力 哲学 "
+           href="/2018/01/07/通用能力/哲学/三观体系-01三观及其关系/"
+           data-tag="三观体系"
+           data-author="" >
+            <span class="post-title" title="三观体系-01三观及其关系">三观体系-01三观及其关系</span>
+            <span class="post-date" title="2018-01-07 23:07:43">2018/01/07</span>
+        </a>
+        
+        <a  class="专业能力 工具 "
+           href="/2018/01/06/专业能力/工具/ExcelTk转换Excel表格到MarkDown/"
+           data-tag="工具体系"
+           data-author="" >
+            <span class="post-title" title="exceltk转换Excel表格到MarkDown">exceltk转换Excel表格到MarkDown</span>
+            <span class="post-date" title="2018-01-06 21:48:36">2018/01/06</span>
+        </a>
+        
+        <a  class="核心素质 "
+           href="/2018/01/06/核心素质/2018周历表/"
+           data-tag="成长体系"
+           data-author="" >
+            <span class="post-title" title="2018周历表">2018周历表</span>
+            <span class="post-date" title="2018-01-06 20:41:02">2018/01/06</span>
+        </a>
+        
+        <a  class="专业能力 育儿 "
+           href="/2017/12/31/专业能力/育儿/婴儿护理0至1岁/"
+           data-tag="育儿"
+           data-author="" >
+            <span class="post-title" title="婴儿护理0至1岁">婴儿护理0至1岁</span>
+            <span class="post-date" title="2017-12-31 23:17:54">2017/12/31</span>
+        </a>
+        
+        <a  class="专业能力 育儿 "
+           href="/2017/12/31/专业能力/育儿/剖宫产护理/"
+           data-tag="育儿"
+           data-author="" >
+            <span class="post-title" title="剖宫产护理">剖宫产护理</span>
+            <span class="post-date" title="2017-12-31 21:12:52">2017/12/31</span>
+        </a>
+        
+        <a  class="专业能力 育儿 "
+           href="/2017/12/29/专业能力/育儿/爱如冬阳/"
+           data-tag="文学"
+           data-author="" >
+            <span class="post-title" title="爱如冬阳">爱如冬阳</span>
+            <span class="post-date" title="2017-12-29 13:38:36">2017/12/29</span>
+        </a>
+        
+        <a  class="专业能力 育儿 "
+           href="/2017/12/28/专业能力/育儿/知名儿科医生的护理总结/"
+           data-tag="育儿"
+           data-author="" >
+            <span class="post-title" title="知名儿科医生的护理总结">知名儿科医生的护理总结</span>
+            <span class="post-date" title="2017-12-28 21:52:01">2017/12/28</span>
+        </a>
+        
+        <a  class="通用能力 哲学 "
+           href="/2017/12/21/通用能力/哲学/如果一辈子无法赚大钱成大业那我为什么还活着/"
+           data-tag="哲学"
+           data-author="" >
+            <span class="post-title" title="如果一辈子无法赚大钱成大业那我为什么还活着">如果一辈子无法赚大钱成大业那我为什么还活着</span>
+            <span class="post-date" title="2017-12-21 17:36:38">2017/12/21</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2017/12/21/通用能力/互联网公司沉淀方法论/"
+           data-tag="方法论"
+           data-author="" >
+            <span class="post-title" title="互联网公司沉淀方法论">互联网公司沉淀方法论</span>
+            <span class="post-date" title="2017-12-21 16:57:35">2017/12/21</span>
+        </a>
+        
+        <a  class="通用能力 管理 "
+           href="/2017/12/21/通用能力/管理/支付宝国际化战略解读/"
+           data-tag="企业管理"
+           data-author="" >
+            <span class="post-title" title="支付宝国际化战略解读">支付宝国际化战略解读</span>
+            <span class="post-date" title="2017-12-21 16:28:36">2017/12/21</span>
+        </a>
+        
+        <a  class="通用能力 管理 "
+           href="/2017/12/21/通用能力/管理/战略是一种观念/"
+           data-tag="企业管理"
+           data-author="" >
+            <span class="post-title" title="战略是一种观念">战略是一种观念</span>
+            <span class="post-date" title="2017-12-21 15:46:28">2017/12/21</span>
+        </a>
+        
+        <a  class="核心素质 "
+           href="/2017/12/21/核心素质/面试时的自我介绍/"
+           data-tag="职场方法论"
+           data-author="" >
+            <span class="post-title" title="面试时的自我介绍">面试时的自我介绍</span>
+            <span class="post-date" title="2017-12-21 14:26:16">2017/12/21</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2017/12/21/通用能力/工作才是最好的学习/"
+           data-tag="方法论"
+           data-author="" >
+            <span class="post-title" title="工作才是最好的学习">工作才是最好的学习</span>
+            <span class="post-date" title="2017-12-21 12:01:37">2017/12/21</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2017/12/21/通用能力/彭蕾从前台到CEO的职场方法论/"
+           data-tag="方法论"
+           data-author="" >
+            <span class="post-title" title="彭蕾从前台到CEO的职场方法论">彭蕾从前台到CEO的职场方法论</span>
+            <span class="post-date" title="2017-12-21 11:01:51">2017/12/21</span>
+        </a>
+        
+        <a  class="通用能力 哲学 "
+           href="/2017/12/21/通用能力/哲学/道德经的概念体系和逻辑结构/"
+           data-tag="哲学"
+           data-author="" >
+            <span class="post-title" title="道德经的概念体系和逻辑结构">道德经的概念体系和逻辑结构</span>
+            <span class="post-date" title="2017-12-21 09:31:06">2017/12/21</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2017/12/20/通用能力/有效的总结的三个层次/"
+           data-tag="方法论"
+           data-author="" >
+            <span class="post-title" title="有效的总结的三个层次">有效的总结的三个层次</span>
+            <span class="post-date" title="2017-12-20 18:26:09">2017/12/20</span>
+        </a>
+        
+        <a  class="专业能力 工具 "
+           href="/2017/12/20/专业能力/工具/Typora据说是最好的MarkDown编辑器/"
+           data-tag="工具管理"
+           data-author="" >
+            <span class="post-title" title="Typora据说是最好的MarkDown编辑器">Typora据说是最好的MarkDown编辑器</span>
+            <span class="post-date" title="2017-12-20 13:15:46">2017/12/20</span>
+        </a>
+        
+        <a  class="通用能力 "
+           href="/2017/12/20/通用能力/从碎片化到知识体系构建/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="从碎片化到知识体系构建">从碎片化到知识体系构建</span>
+            <span class="post-date" title="2017-12-20 09:13:00">2017/12/20</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-专业能力/27种神经网络模型简明图解" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">27种神经网络模型简明图解</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+            <a href="javascript:" data-rel="专业能力">专业能力</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color5">技术体系</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2018-04-01 18:52:23'>2018-01-23 13:36</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:5,171</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+    
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>神经网络是一门重要的机器学习技术。它是目前最为火热的研究方向——深度学习的基础。在人工神经网络的研究热潮下，新的神经网络架构无时无刻不在涌现。近日，ASIMOV Institute 绘制了一张信息图，汇集了当前最流行的 27 种神经网络节点图，方便查阅。本文将结合下图，简要介绍每种神经网络的结构以及内部工作原理。参考<a href="http://mp.weixin.qq.com/s/8NYfGpCKIjtGwChWqt0t_w" target="_blank" rel="noopener">http://mp.weixin.qq.com/s/8NYfGpCKIjtGwChWqt0t_w</a></p>
+<p>先来看看这张全览图：</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fp1qjsxasnj30dw0kuwhz.jpg" alt="img"></p>
+<p>是不是感觉有好多神经网络没见过？别担心，下面我们就对图里的各种神经网络做一轮简单解析，让你在今后的学习过程中，见到任何神经网络都不会再慌张。</p>
+<p>虽然这些节点图不能显示各个模型的内部工作过程，但是这些节点图的汇总可以让我们在同一层面上对比不同神经网络的结构特点，从而对不同神经网络之间的关系有一个更为具象的理解。</p>
+<p>感知器（Perceptrons）</p>
+<p>前馈神经网络</p>
+<p>（Feed Forward Neural Networks）</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fp1qjwgnukj30ku062aaf.jpg" alt="img"></p>
+<p>单层感知器是最简单的神经网络。它仅包含输入层和输出层，而输入层和输出层是直接相连的。</p>
+<p>相对于单层感知器，前馈神经网络包含输入层、隐藏层和输出层。这一类网络通常使用反向传播算法（Backpropagation）进行训练，由于网络具有隐藏神经元，理论上可以对输入和输出之间的关系进行建模。但实际上该网络的应用是很有限的，通常要将它们与其他网络结合形成新的网络。</p>
+<p>径向基函数网络</p>
+<p>（Radial Basis Function，RBF）</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fp1qjzm6wwj309g060dfz.jpg" alt="img"></p>
+<p>径向基函数（RBF）网络是以径向基函数作为激活函数的前馈神经网络。径向基函数网络通常只有三层，输入层、中间层和输出层。中间层计算输入矢量与样本矢量欧式距离的径向基函数值，输出层计算它们的线性组合。</p>
+<p>径向基函数网络的基本思想是：用径向基函数作为隐单元的“基”构成隐含层空间，将低维空间的输入通过非线性函数映射到一个高维空间，而低维空间不可分的数据到了高维空间更有可能变得可分。</p>
+<p>Hopfield 神经网络</p>
+<p>（Hopfield Network，HN）</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fp1qk4a0gsj30cu0d0q3x.jpg" alt="img"></p>
+<p>1982 年，J.Hopfield 提出了可用作联想存储器的互连网络，这个网络被称为 Hopfield 网络模型。Hopfield 神经网络是一种循环神经网络，从输出到输入有反馈连接。反馈神经网络由于其输出端又反馈到其输入端，所以 Hopfield 网络在输入的激励下，会产生不断的状态变化。</p>
+<p>网络的每个节点在训练前接受输入，然后在训练期间隐藏并输出。可以通过将神经元的值设置为期望的模式来训练网络，此后权重不变。一旦训练了一个或多个模式，网络将收敛到一个学习模式，因为网络在这个状态中是稳定的。</p>
+<p>波尔兹曼机</p>
+<p>（Boltzmann Machines，BM）</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fp1qk5ds99j30cm0dawfg.jpg" alt="img"></p>
+<p>波尔兹曼机是一种随机神经网络。在这种网络中神经元只有两种输出状态，即二进制的０或１。状态的取值根据概率统计法则决定，由于这种概率统计法则的表达形式与著名统计力学家 L.Boltzmann 提出的玻尔兹曼分布类似，故将这种网络取名玻尔兹曼机。</p>
+<p>波尔兹曼机（BM）很像 Hopfield 神经网络，区别在于，它只有一些神经元被标记为输入神经元，而其他神经元保持“隐藏”。输入神经元在完整的网络更新结束时成为输出神经元。它从随机权重开始，通过反向传播（Backpropagation）学习或通过对比散度（Contrastive Divergence）算法训练模型。</p>
+<p>受限玻尔兹曼机</p>
+<p>（Restricted Boltzmann Machines，RBM）</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fp1qkcif66j306i0cqaah.jpg" alt="img"></p>
+<p>受限玻尔兹曼机是一种可通过输入数据集学习概率分布的随机生成神经网络。受限玻尔兹曼机由一个可见神经元层和一个隐神经元层组成。由于隐层神经元之间没有相互连接，并且隐层神经元独立于给定的训练样本，这让直接计算依赖数据的期望值变得更容易。可见层神经元之间也没有相互连接。</p>
+<p>网络通过在训练样本得到的隐层神经元状态上执行马尔可夫链抽样过程来估计独立于数据的期望值，并行交替更新所有可见层神经元和隐层神经元的值。</p>
+<p>马尔可夫链（Markov Chains，MC）</p>
+<p>离散时间马尔可夫链</p>
+<p>（Discrete Time Markov Chain，DTMC）</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fp1qkeqpbmj30co0d4758.jpg" alt="img"></p>
+<p>马尔可夫链是指数学中具有马尔可夫性质的离散事件随机过程。该过程中，在给定当前知识或信息的情况下，过去（历史状态）对于预测将来（未来状态）来说是没有关联的。马尔科夫链虽然不是真正的神经网络，但类似于神经网络，并且构成了波尔兹曼机和 Hopfield 神经网络的理论基础。</p>
+<p>自编码器（Autoencoders，AE）</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fp1qkg46whj309m0d0q3i.jpg" alt="img"></p>
+<p>自编码器的基本思想是自动编码信息。自编码器网络结构像一个漏斗：它的隐藏层单元比输入层和输出层少，并且关于中央层对称。最小的隐藏层总是处在中央层，这也是信息压缩程度最高的地方。从输入层到中央层叫做编码部分，从中央层到输出层叫做解码部分，中央层叫做编码（code）。</p>
+<p>可以使用反向传播算法来训练自编码器，将数据输入网络，将误差设置为输入数据与网络输出数据之间的差异。自编码器的权重也是对称的，即编码权重和解码权重是一样的。</p>
+<p>稀疏自编码器</p>
+<p>（Sparse Autoencoders，SAE）</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fp1qkhknb5j309c0cqmxl.jpg" alt="img"></p>
+<p>稀疏自编码器在某种程度上与自编码器相反。不同于以往训练一个网络在更低维的空间和结点上去表征信息，它尝试在更高维的空间上编码信息。所以在中间层，网络不是收敛的，而是扩张的。</p>
+<p>稀疏自编码器可以自动从无标注数据中学习特征，可以给出比原始数据更好的特征描述。在实际运用时可以用稀疏编码器提取的特征代替原始数据，这样往往能带来更好的结果。</p>
+<p>变分自编码器</p>
+<p>（Variational Autoencoders， VAE）</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fp1qkjt9brj309g0ci0tr.jpg" alt="img"></p>
+<p>变分自编码器和自编码器有相同的网络结构。不同点在于其隐藏代码来自于训练期间学习到的概率分布。</p>
+<p>在 90 年代，一些研究人员提出一种概率解释的神经网络模型。概率解释通过假设每个参数的概率分布来降低网络中每个参数的刚性约束，将输入、隐藏表示以及神经网络的输出转换为概率随机变量。网络学习的目标是找到上述分布的参数。在变分自动编码器中，仅在隐藏节点上假设这些分布。因此，编码器变成一个变分推理网络，而译码器则变成一个将隐藏代码映射回数据分布的生成网络。</p>
+<p>通过参数化隐藏分布，可以反向传播梯度得到编码器的参数，并用随机梯度下降训练整个网络。</p>
+<p>去噪自编码器</p>
+<p>（Denoising Autoencoders，DAE）</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fp1qkkxggbj309c0cu0tq.jpg" alt="img"></p>
+<p>去噪自编码器的训练方法和其他自编码器一样，但是输入不是原始数据，而是带噪声的数据。这样的网络不仅能够学习到细节，而且能学习到更泛化的特征。原因有两点：一是通过与非破损数据训练的对比，破损数据训练出来的权重噪声比较小，二是破损数据在一定程度上减轻了训练数据与测试数据之间的代沟。</p>
+<p>论文作者也从生物神经网络的角度进行了解释：人类具有认知被阻挡的破损图像能力，此源于我们的高等联想记忆感受机能。我们能以多种形式进行记忆（比如图像、声音，甚至如上图的词根记忆法），所以即便是数据破损丢失，我们也能回想起来。</p>
+<p>深度信念网络</p>
+<p>（Deep Belief Networks，DBN）</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fp1qklp2gfj30ku0bstaa.jpg" alt="img"></p>
+<p>深度信念网络是受限玻尔兹曼机（RBM）或者变分自编码器（VAE）的堆叠结构。深度信念网络是一种生成模型，通过训练其神经元间的权重，我们可以让整个神经网络按照最大概率来生成数据。深度信念网络由多层神经元构成，这些神经元又分为显性神经元和隐性神经元。显元用于接受输入，隐元用于提取特征。</p>
+<p>深度信念网络能够通过对比散度（contrastive divergence）或者反向传播来训练，并像常规的受限玻尔兹曼机或变分自编码器那样，学习将数据表示成概率模型。一旦模型通过无监督学习被训练或收敛到一个稳定的状态，它可以被用于生成新数据。</p>
+<p>卷积神经网络</p>
+<p>（Convolutional Neural Networks，CNN）</p>
+<p>深度卷积神经网络</p>
+<p>（Deep Convolutional Neural Networks，DCNN）</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fp1qkmm0dcj30ku0ctta8.jpg" alt="img"></p>
+<p>卷积神经网络由三部分构成。第一部分是输入层。第二部分由 n 个卷积层和池化层的组合而组成的。第三部分由一个全连结的多层感知机分类器构成。</p>
+<p>卷积神经网络主要用于图像处理，但也可用于其他类型的输入，如音频。它是一种特殊的深层神经网络模型，它的特殊性体现在两个方面：一方面神经元间的连接是非全连接的，另一方面同一层中某些神经元之间的连接的权重是共享的。它的非全连接和权值共享的网络结构使之更接近于生物神经网络，降低了网络模型的复杂度，减少了权值的数量。</p>
+<p>卷积神经网络的卷积运算过程如下：输入图像通过可训练的滤波器组进行非线性卷积，卷积后在每一层产生特征映射图，然后特征映射图中每组的四个像素再进行求和、加权值、加偏置，在此过程中这些像素在池化层被池化，最终得到输出值。</p>
+<p>反卷积神经网络</p>
+<p>（Deconvolutional Networks，DN）</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fp1qkni322j30fw0g2ab5.jpg" alt="img"></p>
+<p>反卷积神经网络是和卷积神经网络对应的。在 CNN 中，是由输入图像与特征滤波器进行卷积，得到特征图，而在反卷积神经网络中，是由特征图与特征滤波器卷积，得到输入图像。反卷积神经网络主要用于图像重构和卷积网络可视化。</p>
+<p>从结构中可以看出，网络首先进行前向计算，在前向计算中收集一些数据，然后将这些数据放入反向网络中进行反向计算，从而得到最终的反卷积结果。</p>
+<p>深度卷积逆向图网络</p>
+<p>（Deep Convolutional Inverse Graphics Networks，DCIGN）</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fp1qkp207uj30ku0bgmyq.jpg" alt="img"></p>
+<p>深度卷积逆向图网络实质上是变分自编码器（VAE），只是在编码器和解码器中分别采用卷积神经网络（CNN）和反卷积神经网络（DNN）结构。这些网络尝试在编码的过程中对“特征”进行概率建模。该网络大部分用于图像处理。网络可以处理未训练的图像，也可以从图像中移除物体、置换目标，或者进行图像风格转换。</p>
+<p>生成式对抗网络</p>
+<p>（Generative Adversarial Networks，GAN）</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fp1qkqskdmj30ku08ijss.jpg" alt="img"></p>
+<p>生成式对抗网络由判别网络和生成网络组成。生成网络负责生成内容，判别网络负责对内容进行判别。判别网络同时接收训练数据和生成网络生成的数据。判别网络能够正确地预测数据源，然后被用作生成网络的误差部分。这形成了一种对抗：判别器努力分辨真实数据与生成数据，而生成器努力生成判别器难以辨识的数据。</p>
+<p>生成式对抗网络很难训练，因为不仅仅要训练两个网络，而且还要考虑两个网络的动态平衡。如果判别或者生成网络变得比另一个好，那么网络最终不会收敛。</p>
+<p>循环神经网络</p>
+<p>（Recurrent Neural Networks，RNN）</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fp1qkrao1kj30cs09yjs7.jpg" alt="img"></p>
+<p>循环神经网络是基于时间的前馈神经网络，循环神经网络的目的是用来处理序列数据。在传统的神经网络模型中，从输入层到隐含层再到输出层，层与层之间是全连接的，每层之间的节点是无连接的。但是这种普通的神经网络对于很多问题却无能无力。例如，你要预测句子的下一个单词是什么，一般需要用到前面的单词，因为一个句子中前后单词并不是独立的。</p>
+<p>在循环神经网路中，一个序列当前的输出与前面的输出也有关。具体的表现形式为网络会对前面的信息进行记忆，并应用于当前输出的计算中，即隐藏层之间的节点不再是无连接的，而是有连接的。并且隐藏层的输入不仅包括输入层的输出，还包括上一时刻隐藏层的输出。</p>
+<p>循环神经网络最大的问题是梯度消失 (或者梯度爆炸)，这取决于使用的激活函数。在这种情况下，随着时间增加，梯度会快速消失，正如随着前馈神经网络的深度增加，信息也会丢失。</p>
+<p>长短时记忆网络</p>
+<p>（Long Short Term Memory，LSTM）</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fp1qksvcq2j30ck09ymy5.jpg" alt="img"></p>
+<p>长短时记忆网络是一种特殊的循环神经网络，能够学习长期依赖关系。网络通过引入门结构 (gate) 和一个明确定义的记忆单元 (memory cell) 来尝试克服梯度消失或者梯度爆炸的问题。长短时记忆网络有能力向单元状态中移除或添加信息，通过门限结构对信息进行管理。门限有选择地让信息通过。它们由一个 sigmoid 神经网络层和逐点乘法运算组成。</p>
+<p>每个神经元有一个记忆单元和三个门结构：输入、输出和忘记。这些门结构的功能是通过禁止或允许信息的流动来保护信息。输入门结构决定了有多少来自上一层的信息存储于当前记忆单元。输出门结构承担了另一端的工作：决定下一层可以了解到多少这一层的信息。忘记门结构初看很奇怪，但是有时候忘记是必要的：如果网络正在学习一本书，并开始了新的章节，那么忘记前一章的一些人物角色是有必要的。</p>
+<p>门控循环单元</p>
+<p>（Gated Recurrent Units，GRU）</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fp1qktjzz9j30da0a4aaz.jpg" alt="img"></p>
+<p>门控循环单元是长短时记忆网络的一种变体。不同之处在于，没有输入门、输出门、忘记门，它只有一个更新门。该更新门确定了从上一个状态保留多少信息，以及有多少来自上一层的信息得以保留。在大多数情况下，它们与 LSTM 的功能非常相似，最大的区别在于 GRU 稍快，运行容易，但表达能力更差。</p>
+<p>在实践中，这些往往会相互抵消，因为当我们需要一个更大的网络来获得更强的表现力时，表现力往往会抵消性能优势。在不需要额外表现力的情况下，GRU 可能优于 LSTM。</p>
+<p>神经图灵机</p>
+<p>（Neural Turing Machines，NTM）</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fp1qkukjp5j30hw0cw3zf.jpg" alt="img"></p>
+<p>神经图灵机包含两个基本组成部分：神经网络控制器和记忆库。传统的神经网络是一个黑箱模型，而神经图灵机尝试解决这一问题。</p>
+<p>像大多数神经网络一样，控制器通过输入输出向量与外界交互，但不同于标准网络的是，它还与一个带有选择性读写操作的内存矩阵进行交互。它试图将常规数字存储的效率和永久性以及神经网络的效率和表达力结合起来。这种想法的实现基于一个有内容寻址的记忆库，神经网络可以从中进行读写。</p>
+<p>深度残差网络</p>
+<p>（Deep Residual Networks，DRN）</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fp1qkwfimlj30ku05b0t8.jpg" alt="img"></p>
+<p>深度网络容易造成梯度在反向传播的过程中消失，导致训练效果很差，而深度残差网络将基本的单元改成了这样：</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fp1qkxef8vj30c3062wev.jpg" alt="img"></p>
+<p>它在神经网络的结构层面解决了这一问题，就算网络很深，梯度也不会消失。</p>
+<p>回声状态网络</p>
+<p>（Echo State Networks，ESN）</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fp1qkxvrjrj30g20cugmm.jpg" alt="img"></p>
+<p>回声状态网络是另外一种不同类型的循环网络。传统的多层神经网络的中间层是一层一层的全连接神经元，回声状态网络把中间的全连接部分变成了一个随机连接的存储池，学习过程就是学习存储池中的连接。它们的训练方式也不一样。</p>
+<p>与循环神经网路的不同之处是网络将输入到隐藏层，隐藏层到隐藏层的连接权值随机初始化，然后固定不变，只训练输出连接权值。由于只训练输出层，不需要反向传播误差，训练过程就变成求线性回归，速度非常快。</p>
+<p>极限学习机</p>
+<p>（Extreme Learning Machines，ELM）</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fp1qkyrk60j30ga0d0dgq.jpg" alt="img"></p>
+<p>极限学习机是一种新型的快速学习算法，它们随机初始化权重，并通过最小二乘拟合一步训练权重。这使得模型表现力稍弱，但是在速度上比反向传播快很多。</p>
+<p>液体状态机</p>
+<p>（Liquid State Machines，LSM）</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fp1ql02sxtj30g20cyjsk.jpg" alt="img"></p>
+<p>液体状态机是一种脉冲神经网络：sigmoid 激活函数被阈值函数所取代，每个神经元是一个累积记忆单元（memory cell）。所以当更新神经元的时候，其值并不是邻近神经元的累加，而是它自身的累加。一旦达到阈值，它会将它的能量传递到其他神经元。这就产生了一种类似脉冲的模式，即在突然达到阈值之前什么也不会发生。</p>
+<p>支持向量机</p>
+<p>（Support Vector Machines，SVM）</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fp1ql1l34zj30ck09k3z4.jpg" alt="img"></p>
+<p>支持向量机是分类问题的最佳解决方式。支持向量机通过核函数，将低维空间不可分的数据映射到高维空间，使数据变得线性可分。支持向量机能够学习出一个分类超平面，对数据进行分类，但一般不认为支持向量机是神经网络。</p>
+<p>Kohonen 网络（Kohonen Networks，KN）</p>
+<p>自组织映射</p>
+<p>（Self-Organizing Map，SOM）</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fp1ql2g7f0j30cm09mt98.jpg" alt="img"></p>
+<p>Kohonen 网络是自组织竞争型神经网络的一种，该网络为无监督学习网络，能够识别环境特征并自动聚类。Kohonen 网络神经元通过无监督竞争学习，令不同的神经元对不同的输入模式敏感，从而特定的神经元在模式识别中可以充当某一输入模式的检测器。</p>
+<p>Kohonen 神经网络算法工作机理为：网络学习过程中，当样本输入网络时，竞争层上的神经元计算输入样本与竞争层神经元权值之间的欧几里德距离，距离最小的神经元为获胜神经元。调整获胜神经元和相邻神经元权值，使获得神经元及周边权值靠近该输入样本。</p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 walterhost@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span>文章标题:</span>27种神经网络模型简明图解</p>
+    <p><span>文章字数:</span><span class="post-count">5,171</span></p>
+    <p><span>本文作者:</span><a href="javascript:void(0)" title="令狐冲">令狐冲</a></p>
+    <p><span>发布时间:</span>2018-01-23, 13:36:01</p>
+    <p><span>最后更新:</span>2018-04-01, 18:52:23</p>
+    <span>原始链接:</span><a class="post-url" href="/2018/01/23/专业能力/27种神经网络模型简明图解/" title="27种神经网络模型简明图解">https://walterhost.github.io/2018/01/23/专业能力/27种神经网络模型简明图解/</a>
+    <p>
+        <span>版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+    
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2017 令狐冲</p><!--
+<p class="footer-entry">Buit with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+-->
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" href="javascript:void(0)"></a>
+    </div>
+</div>
+<div class="acParent"></div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+</body>
+<script src="//cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
+
+<script src="//cdn.bootcss.com/photoswipe/4.1.2/photoswipe.min.js"></script>
+<script src="//cdn.bootcss.com/photoswipe/4.1.2/photoswipe-ui-default.min.js"></script>
+
+<script src="/js/script.js"></script>
+<script>
+    var img_resize = 'photoSwipe';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#开源技术','#技术体系','#BookNote','#Hexo','#hexo','#技术','#Java线程','#资源管理','#shell','#心理学','#成长体系','#职场方法论','#方法论','#哲学体系','#思维','#思维体系','#产品体系','#插件体系','#工具管理','#商业体系','#工具体系','#数据体系','#资产体系','#育儿','#文学','#三观体系','#哲学','#企业管理',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().split('\n').length - 1;
+            var $numbering = $('<ul/>').addClass('pre-numbering').attr("unselectable","on");
+            $(this).addClass('has-numbering')
+                    .parent()
+                    .append($numbering);
+            for(i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+
+        // PhotoSwipe
+        $('article').each(function(i){
+            $(this).find('img').each(function(){
+                if ($(this).closest('figure').hasClass('article-gallery-img')) {
+                    return;
+                }
+                var alt = this.alt;
+                $(this)
+                    .wrap('<figure class="article-gallery-img" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject"></figure>')
+                    .wrap('<a href="' + this.src + '" title="' + alt + '"></a>');
+                $(this).after('<div class="img_alt"><span>' + (alt || '') + '</span></div>');
+            });
+        });
+
+        var pswpElement = document.querySelectorAll('.pswp')[0];
+        if (pswpElement) {
+            var gallerySelector = '.article-gallery, article';
+
+            var initPhotoSwipeFromDOM = function(gallerySelector) {
+
+                // parse slide data (url, title, size ...) from DOM elements
+                // (children of gallerySelector)
+                var parseThumbnailElements = function(el) {
+                    var thumbElements = $(el).find('figure.article-gallery-img').toArray(),
+                        numNodes = thumbElements.length,
+                        items = [],
+                        figureEl,
+                        linkEl,
+                        size,
+                        imgEl,
+                        item;
+
+                    for (var i = 0; i < numNodes; i++) {
+
+                        figureEl = thumbElements[i]; // <figure> element
+
+                        // include only element nodes
+                        if (figureEl.nodeType !== 1) {
+                            continue;
+                        }
+
+                        linkEl = figureEl.children[0]; // <a> element
+                        imgEl = linkEl.children[0]; // <img>
+
+                        size = linkEl.getAttribute('data-size');
+                        size = size && size.split('x');
+
+                        // create slide object
+                        item = {
+                            src: linkEl.getAttribute('href'),
+                            w: size && parseInt(size[0], 10) || imgEl.width,
+                            h: size && parseInt(size[1], 10) || imgEl.height
+                        };
+
+                        if (figureEl.children.length > 1) {
+                            // <figcaption> content
+                            item.title = figureEl.children[1].innerHTML;
+                        }
+
+                        if (linkEl.children.length > 0) {
+                            // <img> thumbnail element, retrieving thumbnail url
+                            item.msrc = linkEl.children[0].getAttribute('src');
+                        }
+
+                        item.el = figureEl; // save link to element for getThumbBoundsFn
+                        items.push(item);
+                    }
+
+                    return items;
+                };
+
+                // find nearest parent element
+                var closest = function closest(el, fn) {
+                    return el && (fn(el) ? el : closest(el.parentNode, fn));
+                };
+
+                // triggers when user clicks on thumbnail
+                var onThumbnailsClick = function(e) {
+                    e = e || window.event;
+
+                    var eTarget = e.target || e.srcElement;
+
+                    // find root element of slide
+                    var clickedListItem = closest(eTarget, function(el) {
+                        return (el.tagName && el.tagName.toUpperCase() === 'FIGURE');
+                    });
+
+                    if (!clickedListItem) {
+                        return;
+                    }
+
+                    if (e.preventDefault) {
+                        e.preventDefault();
+                    } else {
+                        e.returnValue = false;
+                    }
+
+                    // find index of clicked item by looping through all child nodes
+                    // alternatively, you may define index via data- attribute
+                    var clickedGallery = $(clickedListItem).closest(gallerySelector)[0],
+                        childNodes = $(clickedGallery).find('figure.article-gallery-img').toArray(),
+                        numChildNodes = childNodes.length,
+                        nodeIndex = 0,
+                        index;
+
+                    for (var i = 0; i < numChildNodes; i++) {
+                        if (childNodes[i].nodeType !== 1) {
+                            continue;
+                        }
+
+                        if (childNodes[i] === clickedListItem) {
+                            index = nodeIndex;
+                            break;
+                        }
+                        nodeIndex++;
+                    }
+
+
+
+                    if (index >= 0) {
+                        // open PhotoSwipe if valid index found
+                        openPhotoSwipe(index, clickedGallery);
+                    }
+                    return false;
+                };
+
+                // parse picture index and gallery index from URL (#&pid=1&gid=2)
+                var photoswipeParseHash = function() {
+                    var hash = window.location.hash.substring(1),
+                        params = {};
+
+                    if (hash.length < 5) {
+                        return params;
+                    }
+
+                    var vars = hash.split('&');
+                    for (var i = 0; i < vars.length; i++) {
+                        if (!vars[i]) {
+                            continue;
+                        }
+                        var pair = vars[i].split('=');
+                        if (pair.length < 2) {
+                            continue;
+                        }
+                        params[pair[0]] = pair[1];
+                    }
+
+                    if (params.gid) {
+                        params.gid = parseInt(params.gid, 10);
+                    }
+
+                    return params;
+                };
+
+                var openPhotoSwipe = function(index, galleryElement, disableAnimation, fromURL) {
+                    var pswpElement = document.querySelectorAll('.pswp')[0],
+                        gallery,
+                        options,
+                        items;
+
+                    items = parseThumbnailElements(galleryElement);
+
+                    // define options (if needed)
+                    options = {
+
+                        // define gallery index (for URL)
+                        galleryUID: galleryElement.getAttribute('data-pswp-uid'),
+
+                        getThumbBoundsFn: function(index) {
+                            // See Options -> getThumbBoundsFn section of documentation for more info
+                            var thumbnail = items[index].el.getElementsByTagName('img')[0], // find thumbnail
+                                pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
+                                rect = thumbnail.getBoundingClientRect();
+
+                            return {
+                                x: rect.left,
+                                y: rect.top + pageYScroll,
+                                w: rect.width
+                            };
+                        }
+                    };
+
+                    // PhotoSwipe opened from URL
+                    if (fromURL) {
+                        if (options.galleryPIDs) {
+                            // parse real index when custom PIDs are used
+                            // http://photoswipe.com/documentation/faq.html#custom-pid-in-url
+                            for (var j = 0; j < items.length; j++) {
+                                if (items[j].pid == index) {
+                                    options.index = j;
+                                    break;
+                                }
+                            }
+                        } else {
+                            // in URL indexes start from 1
+                            options.index = parseInt(index, 10) - 1;
+                        }
+                    } else {
+                        options.index = parseInt(index, 10);
+                    }
+
+                    // exit if index not found
+                    if (isNaN(options.index)) {
+                        return;
+                    }
+
+                    if (disableAnimation) {
+                        options.showAnimationDuration = 0;
+                    }
+
+                    // Pass data to PhotoSwipe and initialize it
+                    gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
+
+                    gallery.listen('imageLoadComplete', function(index, item) {
+                        var linkEl = item.el.children[0];
+                        var img = item.container.children[0];
+                        if (!linkEl.getAttribute('data-size')) {
+                            linkEl.setAttribute('data-size', img.naturalWidth + 'x' + img.naturalHeight);
+                            item.w = img.naturalWidth;
+                            item.h = img.naturalHeight;
+                            gallery.invalidateCurrItems();
+                            gallery.updateSize(true);
+                        }
+                    });
+
+                    gallery.init();
+                };
+
+                // loop through all gallery elements and bind events
+                var galleryElements = document.querySelectorAll(gallerySelector);
+
+                for (var i = 0, l = galleryElements.length; i < l; i++) {
+                    galleryElements[i].setAttribute('data-pswp-uid', i + 1);
+                    galleryElements[i].onclick = onThumbnailsClick;
+                }
+
+                // Parse URL and open gallery if it contains #&pid=3&gid=1
+                var hashData = photoswipeParseHash();
+                if (hashData.pid && hashData.gid) {
+                    openPhotoSwipe(hashData.pid, galleryElements[hashData.gid - 1], true, true);
+                }
+            };
+
+            // execute above function
+            initPhotoSwipeFromDOM(gallerySelector);
+        }
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 2px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    .pre-numbering{
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: ;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #2eb695;
+    }
+    
+    
+    .nav-right nav a.hover > span{
+        color: #999;
+    }
+    
+
+    /*列表样式*/
+    
+
+    /*引用块样式*/
+    
+    .post .pjax article blockquote {
+        padding: 10px 20px;
+        background-color: white;
+        border: none;
+        border-left: 4px solid #42b983;
+        border-right: 4px solid #42b983;
+        border-radius: 10px;
+    }
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.1;
+        background: url("");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+</style>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+         It's a separate element, as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
+        <!-- don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+<div class="mobile-menus-out" >
+
+</div>
+<div class="mobile-menus">
+    
+    
+    
+    <a class="dynamic-menu " target="_self"   href="https://walterhost.github.io/">令狐冲</a>
+    
+    
+    <a class="dynamic-menu " target="_blank"  href="https://github.com/walterhost">github</a>
+    
+</div>
+
+</html>
